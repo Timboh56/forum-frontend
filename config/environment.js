@@ -12,7 +12,9 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    CONSTANTS: {
+      GOOGLE_API_URL: 'https://apis.google.com/js/platform.js'
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -25,6 +27,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      'style-src': "'self' https://fonts.googleapis.com/",
+      'default-src': "'none'",
+      'script-src': "'self' https://cdn.mxpnl.com, https://apis.google.com/js/platform.js", // Allow scripts from https://cdn.mxpnl.com
+      'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+    }
   }
 
   if (environment === 'test') {

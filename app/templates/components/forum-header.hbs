@@ -1,0 +1,12 @@
+<ul class="nav forumtabs nav-tabs">
+  <li role="presentation" {{bind-attr class="posts:active"}}>
+    {{#link-to 'forum.index' }} All Posts {{/link-to}}
+  </li>
+  <li role="presentation" {{bind-attr class="questions:active"}}>
+    {{#link-to 'forum.questions' }} My Questions {{/link-to}}
+  </li>
+  <li role="presentation" {{bind-attr class="answers:active"}}>
+    {{#link-to 'forum.answers' }} My Questions {{/link-to}}
+  </li>
+  <li role="presentation"><a href="bookmark">Bookmark</a></li> 
+</ul>

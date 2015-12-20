@@ -1,25 +1,53 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mentormint</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head> 
+      
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Sessions - MentorMint</title> 
+<meta name="description" content="Booking and reserving sessions are how mentors and mentees coordinate their meetings. MentorMint provides a precise booking platform to serve this.">
+<meta name="author" content="MentorMint">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for 'head'}}
+{{content-for 'head'}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/mentormint.css">
 
-    {{content-for 'head-footer'}}
-  </head>
-  <body>
-    {{content-for 'body'}}
+<link rel="stylesheet" href="/assets/vendor.css">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<link rel="stylesheet" href="/assets/css/theme2.scss">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/sessions.css">
 
+{{content-for 'head-footer'}}
+
+  <body class="theme-main"> 
+    <div id='session-wrapper'>
+      <nav class="navbar navbar-dash navbar-fixed-top navbar-bottom" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="fa fa-leaf theme-text" aria-hidden="true"></span>
+            </button>
+            <a href="/requests" class="navbar-brand animated flipInX">
+              <img alt="Mentormint" src="/assets/img/logos/default.png" style="max-height: 32px;"> 
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="hidden-xs">
+                <a href="/requests" class="text-capitalize">
+                <i class="fa fa-power-off fa-fw"></i>&nbsp; end session
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {{content-for 'body'}}
+    </div>
     <script src="assets/vendor.js"></script>
     <script src="assets/mentormint.js"></script>
+    <script type='text/javascript' src='/assets/js/search-box.js'></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-    {{content-for 'body-footer'}}
   </body>
 </html>
