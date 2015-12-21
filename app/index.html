@@ -20,28 +20,6 @@
 
   <body class="theme-main"> 
     <div id='session-wrapper'>
-      <nav class="navbar navbar-dash navbar-fixed-top navbar-bottom" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="fa fa-leaf theme-text" aria-hidden="true"></span>
-            </button>
-            <a href="/requests" class="navbar-brand animated flipInX">
-              <img alt="Mentormint" src="/assets/img/logos/default.png" style="max-height: 32px;"> 
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="navCollapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="hidden-xs">
-                <a href="/requests" class="text-capitalize">
-                <i class="fa fa-power-off fa-fw"></i>&nbsp; end session
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
       {{content-for 'body'}}
     </div>
     <script src="assets/vendor.js"></script>

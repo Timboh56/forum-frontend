@@ -16,6 +16,10 @@ module.exports = function(environment) {
       GOOGLE_API_URL: 'https://apis.google.com/js/platform.js'
     },
     APP: {
+      GUEST_ATTR: { id: 0, username: "Guest", name_user: "Guest", status: 0 },
+      CURRENT_USER_PATH: "https://dev.mentormint.com/user/me",
+      NOTIFICATIONS_WEBSOCKETS_URI: "ws://mentormint-notifications.herokuapp.com/",
+      NOTIFICATIONS_SERVER_URI: "https://mentormint-notifications.herokuapp.com/"
       // Here you can pass flags/options to your application instance
       // when it is created
     }
