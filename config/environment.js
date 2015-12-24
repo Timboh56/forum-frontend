@@ -16,6 +16,11 @@ module.exports = function(environment) {
       GOOGLE_API_URL: 'https://apis.google.com/js/platform.js'
     },
     APP: {
+      API: {
+        NAMESPACE: 'api/v1',
+        HOST: 'https://mentormint.com',
+      },
+      TEST_USER_ATTR: { id: 1, username: "User", name_user: "User", status: 1 },
       GUEST_ATTR: { id: 0, username: "Guest", name_user: "Guest", status: 0 },
       CURRENT_USER_PATH: "https://dev.mentormint.com/user/me",
       NOTIFICATIONS_WEBSOCKETS_URI: "ws://mentormint-notifications.herokuapp.com/",
@@ -31,12 +36,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.environment = 'development';
     ENV.contentSecurityPolicy = {
       'style-src': "'self' https://fonts.googleapis.com/",
       'default-src': "'none'",
       'script-src': "'self' https://cdn.mxpnl.com, https://apis.google.com/js/platform.js", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     }
+  } else {
+    ENV.environment = 'production';
   }
 
   if (environment === 'test') {

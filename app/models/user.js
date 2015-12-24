@@ -1,6 +1,8 @@
 import DS from 'ember-data';
 
 var User = DS.Model.extend({
+  notifications: DS.hasMany('notification'),
+  questions: DS.hasMany('question'),
   username: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),

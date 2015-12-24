@@ -2,19 +2,52 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 var NotificationsService = Ember.Service.extend({
-  init: function() {
+  resourceName: 'notifications',
+  store: Ember.inject.service(),
+
+  setup: function(current_user) {
+    var dfd = jQuery.Deferred(),
+      query_string = '?user_id=' + current_user.id;
+
     if(!this.get('webSocket')) {
-      var ws = window.ws = new WebSocket(ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI);
+      var ws = window.ws = new WebSocket(ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI + query_string);
       ws.onmessage = this.get('onMessage');
       this.set('webSocket', ws);
     }
 
-    if(this.get('current-user.model.status') != 0) this.getMessages();
+    if(current_user.status != 0) {
+      this.getMessages(current_user).then(function() {
+        dfd.resolve();
+      });
+    }
+    return dfd.promise();
   },
 
-  getMessages: function() {
-    var current_id = this.get('current-user.model.id');
-    jQuery.get(ENV.APP.NOTIFICATIONS_SERVER_URI + 'channels/' + current_id);
+  getMessages: function(current_user) {
+    var dfd = jQuery.Deferred(),
+      current_id = current_user.id,
+      resource_name = this.get('resourceName'),
+      arr = [],
+      self = this;
+
+    jQuery.ajax({
+      type: 'GET',
+      dataType: 'JSON',
+      url: ENV.APP.NOTIFICATIONS_SERVER_URI + resource_name + '/' + current_id,
+      success: function(resp) {
+        if(resp.data && resp.data.length > 0) {
+          for(var i = 0; i < resp.data.length; i++)
+            arr.push(self.get('store').createRecord('notification', resp.data[i]));                                                   
+        }
+
+        dfd.resolve(arr);
+      },
+      error: function(resp) {
+        dfd.resolve();
+      }
+    });
+
+    return dfd.promise();
   },
 
   pushMessage: function(channel, content) {
@@ -22,6 +55,7 @@ var NotificationsService = Ember.Service.extend({
   },
 
   onMessage: function(resp) {
+    debugger
   }
 });
 

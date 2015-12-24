@@ -18,12 +18,13 @@
 ​
     <div class="collapse navbar-collapse" id="navCollapse">
       <ul class="nav navbar-nav navbar-right">
-        
-              <li class="hidden-xs">
-                <a href="/requests" class="dk-grey-text text-capitalize">
-                  <i class="fa fa-inbox fa-fw"></i>&nbsp;inboxes
-                </a>
-              </li>
+        {{#if (registered currentUser) }}
+          <li class="hidden-xs">
+            <a href="/requests" class="dk-grey-text text-capitalize">
+              <i class="fa fa-inbox fa-fw"></i>&nbsp;inboxes
+            </a>
+          </li>
+        {{/if}}
 
            
               <li class="hidden-xs">
