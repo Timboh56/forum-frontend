@@ -1,0 +1,61 @@
+<ul class="list-inline">
+  <li>
+    <p class="grey-text">
+      <small>
+        <i class="fa fa-flag">&nbsp;</i> Posted June 19, 2015
+      </small>
+    </p>
+  </li>
+  <li>
+    <p class="grey-text">
+      <small>
+        <a {{ action 'toggleComments' }} style="color:inherit;" class="answer_comment">
+          <i class="fa fa-comment">&nbsp;
+          </i> 1 Comments 
+        </a>
+      </small>
+    </p>
+  </li>
+</ul>
+{{#if isShowingComments }}
+  <div id="comment">
+    <div class="well">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <textarea class="form-control comment_box" rows="3" placeholder="Type your comments..." maxlength="180"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6">  
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="answer_anonymous">Comment anonymously
+              </label>
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+            <button type="submit" class="btn btn-theme">Submit</button>
+            <button type="button" {{ action 'toggleComments' }} class="btn btn-white close_comment">Close</button>
+          </div>
+        </div>
+      </form>
+      <ul class="list-group m-top pre-scrollable">
+        <li class="list-group-item">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object img-circle introImagePanel" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" alt="user">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="#">Paul Lu</a></h4>
+              <p> Holy cow I never knew such a thing. You are such a wonderful person, where in the world can I find a mentor like you. I think this is awesome, truly I have never been so enlightned!</p>
+              <p class="grey-text"><small>· 3h ago </small></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+{{/if}}

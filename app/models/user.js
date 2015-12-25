@@ -25,12 +25,4 @@ var User = DS.Model.extend({
   timezone: DS.attr('date')
 });
 
-
-User.reopenClass({
-  FIXTURES: [
-    { email: "trek@blahblah.com", username: "TrekGlowaski", name_first: 'Trek', name_last: 'Glowacki' },
-    { email: "tomdale@blah.com", username: "Tom Dale", name_first: 'Tom' , name_last: 'Dale' }
-  ]
-});
-
 export default User;

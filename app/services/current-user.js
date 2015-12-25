@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import ENV from '../config/environment';
-import App from '../app';
 
 export default Ember.Service.extend({
 
@@ -8,7 +7,7 @@ export default Ember.Service.extend({
     var self = this,
       dfd = jQuery.Deferred();
 
-    if(ENV.environment == 'development') {
+    if(ENV.environment === 'development') {
       var current_user = self.store.createRecord('user', ENV.APP.TEST_USER_ATTR);
       self.set('model', current_user);
       console.log('that shit set');
@@ -23,14 +22,14 @@ export default Ember.Service.extend({
           var current_user = self.store.createRecord('user', resp);
           self.set('model', current_user);
           dfd.resolve(current_user);
-          console.log('set bitch!');
         },
 
         error: function(resp) {
           var current_user = self.store.createRecord('user', ENV.APP.GUEST_ATTR);
           self.set('model', current_user);
           dfd.resolve(current_user);
-          console.log('set!');
+          console.log(resp);
+          console.log('You are not logged in');
         }
       });
     }

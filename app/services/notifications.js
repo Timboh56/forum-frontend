@@ -2,7 +2,6 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 var NotificationsService = Ember.Service.extend({
-  resourceName: 'notifications',
   store: Ember.inject.service(),
 
   setup: function(current_user) {
@@ -26,14 +25,14 @@ var NotificationsService = Ember.Service.extend({
   getMessages: function(current_user) {
     var dfd = jQuery.Deferred(),
       current_id = current_user.id,
-      resource_name = this.get('resourceName'),
+      resource_path = 'users/' + current_id + '/notifications',
       arr = [],
       self = this;
 
     jQuery.ajax({
       type: 'GET',
       dataType: 'JSON',
-      url: ENV.APP.NOTIFICATIONS_SERVER_URI + resource_name + '/' + current_id,
+      url: ENV.APP.NOTIFICATIONS_SERVER_URI + resource_path,
       success: function(resp) {
         if(resp.data && resp.data.length > 0) {
           for(var i = 0; i < resp.data.length; i++)
