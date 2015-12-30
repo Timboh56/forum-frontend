@@ -2114,14 +2114,14 @@ body.theme-main .navbar-front-important .navbar-link:hover {
   color: #E74D3B;
 }
 body.theme-main .navbar-dash {
-  font-family: "Varela Round" !important;
+  font-family: "NexaBold" !important;
   font-weight: normal;
   background-color: #FFF;
   border-color: #DDD;
   font-size: 12px;
 }
 body.theme-main .navbar-dash .nav-menu {
-  font-family: "Varela Round" !important;
+  font-family: "NexaBold" !important;
 }
 body.theme-main .navbar-dash .nav-menu > li > a {
   color: inherit;

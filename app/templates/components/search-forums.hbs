@@ -1,1 +1,19 @@
-{{yield}}
+<div class="row">
+  <div class="col-sm-12 search-bg">
+    <form class="form-horizontal">
+      <div class="form-group ">
+        <div class="col-sm-10">
+          {{input type='text' value=keywords placeholder='Search for a question topic' class='form-control' }}
+        </div>
+        <div class="col-sm-2 pull-in">
+          <button type="submit" {{ action 'search' }}class="btn btn-default btn-block">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row m-top">
+  <div class="col-sm-12">
+    {{#link-to 'forum.questions.new' class='btn btn-default'}} New Question {{/link-to}}
+  </div>
+</div>

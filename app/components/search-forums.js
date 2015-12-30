@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  onInit: function() {
-  }
+
+  searchKeywords: (function() {
+    var keywords = this.get('keywords');
+    this.sendAction('searchItems', keywords);
+  }).observes('keywords'),
 });

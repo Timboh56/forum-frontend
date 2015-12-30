@@ -22,9 +22,9 @@ module.exports = function(environment) {
       },
       TEST_USER_ATTR: { id: 1, username: "User", name_user: "User", status: 1 },
       GUEST_ATTR: { id: 0, username: "Guest", name_user: "Guest", status: 0 },
-      CURRENT_USER_PATH: "https://dev.mentormint.com/user/me",
+      CURRENT_USER_PATH: "https://mentormint.com/api/v1/user/me",
       NOTIFICATIONS_WEBSOCKETS_URI: "ws://mentormint-notifications.herokuapp.com/",
-      NOTIFICATIONS_SERVER_URI: "https://mentormint-notifications.herokuapp.com/"
+      NOTIFICATIONS_SERVER_URI: "https://mentormint-notifications.herokuapp.com/api/v1/"
       // Here you can pass flags/options to your application instance
       // when it is created
     }

@@ -1,7 +1,31 @@
 export default function() {
+  //this.urlPrefix = 'https://mentormint.com/';
+  //this.namespace = 'api/v1';
+  this.passthrough('https://apis.google.com/js/api.js');
+  //this.passthrough('https://mentormint-notifications.herokuapp.com/api/v1/users/1/notifications');
 
-  this.get('questions');
-  console.log('config ran');
+  this.get('https://mentormint.com/api/v1/questions', function(db, request) {
+    return {
+      questions: db.questions
+    };
+  });
+
+  this.get('https://mentormint.com/api/v1/comments', function(db, request) {
+    return {
+      comments: db.comments
+    };
+  });
+
+  //this.get('https://mentormint.com/api/v1/user/me', function(db, request) {
+  //  return db.user[0];
+  //});
+
+  this.get('https://mentormint-notifications.herokuapp.com/api/v1/users/1/notifications',function(db, request) {
+    return {
+      notifications: db.notifications
+    };
+  });
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

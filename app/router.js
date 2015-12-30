@@ -18,6 +18,7 @@ Router.map(function() {
     this.route('answers');
     this.route('questions', function() {
       this.route('new');
+      this.route('comments');
     });
   });
 });

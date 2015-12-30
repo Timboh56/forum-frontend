@@ -3,38 +3,19 @@
 <div class="tab-content p-top">
   <div class='container'>
     <h1>Questions</h1>
-    <div role="tabpanel" class="tab-pane active" id="qa">
+    <div role="tabpanel" class="tab-panel active" id="qa">
       <div class="col-sm-12">
         
         <div id="mainTable">
           <table class="table-simple">
             <tbody>
-              <tr>
-                <td class="col-sm-1"><button type="button" class="btn btn-proceed"><span class="fa fa-leaf fa-lg"></span><br>9</button></td>
-                <td class="col-sm-10">
-                  <h4 class="m-top-none"><strong><a href="#" onclick="return show('answerTable','mainTable')" style="color:inherit;">How and Why to Write a Career Development Plan?</a></strong></h4>
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <img alt="user" src="/assets/img/groups/roberthalf.png" class="img-circle introImagePanel">
-                      </a>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="#">Robert Half</a>, Opportunity is yours to take</h4>
-                      <p>Some people just wait for their career to happen to them. But you need to be proactive if you expect to achieve the results you really want. If you’re motivated to move up the career ladder, it may be time to write a career development plan — a roadmap for your growth and success.... <a href="#">more</a></p>
-                    </div>
-                  </div>
-                  {{ comment-box }}
-                </td>
-                <td class="col-sm-1 text-center">
-                  <p><small>Bookmark</small></p>
-                  <input type="checkbox" id="blankCheckbox" value="option1" aria-label="Bookmark">
-                </td>
-              </tr>
+              {{#each model as |question|}}
+                {{ question-container question=question }}
+              {{/each}}
             </tbody></table>
           </div>
         
-        <div id="answerTable" style="display:none">
+        <div id="answerTable">
           
           <div class="well-forum" style="padding-bottom:10px;">
             <div class="row">

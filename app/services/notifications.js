@@ -29,20 +29,26 @@ var NotificationsService = Ember.Service.extend({
       arr = [],
       self = this;
 
+    // return this.get('store').query('notification', { user_id: current_user.id });
+    // this currently doesnt work with ember cli mirage because notifications
+    // server does not work with store.query or store.find
+    // notifications server is separate.
+
     jQuery.ajax({
       type: 'GET',
-      dataType: 'JSON',
+      dataType: 'json',
       url: ENV.APP.NOTIFICATIONS_SERVER_URI + resource_path,
       success: function(resp) {
         if(resp.data && resp.data.length > 0) {
           for(var i = 0; i < resp.data.length; i++)
-            arr.push(self.get('store').createRecord('notification', resp.data[i]));                                                   
+            arr.push(this.get('store').createRecord('notification', resp.data[i]));
         }
-
-        dfd.resolve(arr);
       },
       error: function(resp) {
         dfd.resolve();
+      },
+
+      complete: function(resp) {
       }
     });
 
@@ -54,7 +60,7 @@ var NotificationsService = Ember.Service.extend({
   },
 
   onMessage: function(resp) {
-    debugger
+    
   }
 });
 

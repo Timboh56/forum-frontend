@@ -10,7 +10,6 @@ export default Ember.Service.extend({
     if(ENV.environment === 'development') {
       var current_user = self.store.createRecord('user', ENV.APP.TEST_USER_ATTR);
       self.set('model', current_user);
-      console.log('that shit set');
       dfd.resolve(current_user);
     } else {
       jQuery.ajax({
@@ -28,7 +27,6 @@ export default Ember.Service.extend({
           var current_user = self.store.createRecord('user', ENV.APP.GUEST_ATTR);
           self.set('model', current_user);
           dfd.resolve(current_user);
-          console.log(resp);
           console.log('You are not logged in');
         }
       });

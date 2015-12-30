@@ -1,4 +1,4 @@
-<div class="wrapper-body">
+<div class="wrapper-body m-top-lg">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 well-dash-heading">
@@ -6,9 +6,9 @@
       </div>
     </div>
 
-    {{ forum-center }}
+    {{ search-forums searchItems=(action 'searchItems') }}
 
-    <div class="row tabpanel">
+    <div class="row tabpanel m-top-lg">
       {{ liquid-outlet }}
     </div>
       

@@ -1,0 +1,30 @@
+<tr>
+  <td class="col-sm-1"><button type="button" class="btn btn-proceed"><span class="fa fa-leaf fa-lg"></span><br>9</button></td>
+  <td class="col-sm-10">
+    <h4 class="m-top-none">
+      <strong>
+        {{ question.text }}
+      </strong>
+    </h4>
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img alt="user" src="/assets/img/groups/roberthalf.png" class="img-circle introImagePanel">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><a href="#">{{ question.text}}</a></h4>
+        <p>{{ question.content }} <a {{ action 'toggleAnswers' }} >more</a></p>
+      </div>
+    </div>
+    {{#if showAnswers }}
+      Answers and shit
+    {{/if}}
+    {{ comment-box }}
+    {{ outlet }}
+  </td>
+  <td class="col-sm-1 text-center">
+    <p><small>Bookmark</small></p>
+    <input type="checkbox" id="blankCheckbox" value="option1" aria-label="Bookmark">
+  </td>
+</tr>
