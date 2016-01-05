@@ -16,18 +16,17 @@ module.exports = function(environment) {
       GOOGLE_API_URL: 'https://apis.google.com/js/platform.js'
     },
     APP: {
-      API: {
-        NAMESPACE: 'api/v1',
-        HOST: 'https://mentormint.com',
-      },
       TEST_USER_ATTR: { id: 1, username: "User", name_user: "User", status: 1 },
       GUEST_ATTR: { id: 0, username: "Guest", name_user: "Guest", status: 0 },
-      CURRENT_USER_PATH: "https://mentormint.com/api/v1/user/me",
       NOTIFICATIONS_WEBSOCKETS_URI: "ws://mentormint-notifications.herokuapp.com/",
       NOTIFICATIONS_SERVER_URI: "https://mentormint-notifications.herokuapp.com/api/v1/"
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['ember-cli-mirage'] = {
+    enabled: false
   };
 
   if (environment === 'development') {
@@ -36,6 +35,13 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.CURRENT_USER_PATH = "http://localhost:3000/api/v1/users/me";
+
+    ENV.APP.API = {
+      NAMESPACE: 'api/v1',
+      HOST: 'http://localhost:3000',
+    }
+
     ENV.environment = 'development';
     ENV.contentSecurityPolicy = {
       'style-src': "'self' https://fonts.googleapis.com/",
@@ -45,6 +51,11 @@ module.exports = function(environment) {
     }
   } else {
     ENV.environment = 'production';
+    ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/me";
+    ENV.APP.API = {
+      NAMESPACE: 'api/v1',
+      HOST: 'http://mentormint-api.herokuapp.com',
+    }
   }
 
   if (environment === 'test') {

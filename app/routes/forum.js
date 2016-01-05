@@ -1,8 +1,10 @@
 import Ember from 'ember';
 import Search from '../mixins/search';
+import Commentable from '../mixins/commentable';
 
-export default Ember.Route.extend(Search, {
-  setupController: function() {
-    this.get('setupSearch').call(this, 'forum');
+export default Ember.Route.extend(Search, Commentable, {
+  setupController: function(controller) {
+    this.get('setupSearch').call(this, ['forum', 'forum.questions']);
+    this.get('setupCommentable').call(this, ['forum', 'forum.questions']);
   }
 });
