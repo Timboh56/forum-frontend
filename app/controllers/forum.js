@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 
   actions: {
     searchItems(keyword) {
-      this.get('search').apply(this, [keyword, 'question']);
+      this.get('search').apply(this, [keyword, 'question', 'model']);
     }
   }
 });

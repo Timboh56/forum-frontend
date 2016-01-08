@@ -7,5 +7,9 @@ export default Ember.Component.extend({
     toggleAnswers() {
       this.toggleProperty('showAnswers');
     },
+
+    postComment(comment) {
+      this.sendAction('action', comment);
+    }
   }
 });

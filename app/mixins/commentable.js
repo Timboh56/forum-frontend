@@ -12,8 +12,12 @@ export default Ember.Mixin.create({
   },
 
   actions: {
-    postComment: function(params) {
-      this.store.createRecord('comment', params);
+    postComment: function(commentRecord) {
+      const flashMessages = this.get('flashMessages');
+      commentRecord.save().then((resp) => {
+        flashMessages.success('Comment posted!')
+        this.transitionTo('forum.questions');
+      });
     }
   }
 });

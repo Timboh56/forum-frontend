@@ -11,7 +11,7 @@
       <small>
         <a {{ action 'toggleComments' }} style="color:inherit;" class="answer_comment">
           <i class="fa fa-comment">&nbsp;
-          </i> 1 Comments 
+          </i> {{ commentable.commentsCount }}
         </a>
       </small>
     </p>
@@ -23,7 +23,7 @@
       <form class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">
-            <textarea class="form-control comment_box" rows="3" placeholder="Type your comments..." maxlength="180"></textarea>
+            {{ textarea class="form-control comment_box" rows="3" placeholder="Type your comment here.." maxlength="180" value=comment.text }}
           </div>
         </div>
         <div class="form-group">
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="col-sm-6 text-right">
-            <button {{ action 'postComment' }} class="btn btn-theme">Submit</button>
+            <button {{ action 'postComment' comment }} class="btn btn-theme">Submit</button>
             <button type="button" {{ action 'toggleComments' }} class="btn btn-white close_comment">Close</button>
           </div>
         </div>

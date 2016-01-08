@@ -1,5 +1,10 @@
 <tr>
-  <td class="col-sm-1"><button type="button" class="btn btn-proceed"><span class="fa fa-leaf fa-lg"></span><br>9</button></td>
+  <td class="col-sm-1">
+    <button type="button" class="btn btn-proceed">
+      <span class="fa fa-leaf fa-lg"></span>
+      <br>9
+    </button>
+  </td>
   <td class="col-sm-10">
     <h4 class="m-top-none">
       <strong>
@@ -13,14 +18,25 @@
         </a>
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><a href="#">{{ question.text}}</a></h4>
-        <p>{{ question.content }} <a {{ action 'toggleAnswers' }} >more</a></p>
+        <h4 class="media-heading">
+          <a href="#">
+            {{ question.text}}
+          </a>
+        </h4>
+        <p>
+          {{ question.content }}
+          <a {{ action 'toggleAnswers' }} >
+            more
+          </a>
+        </p>
       </div>
     </div>
+
     {{#if showAnswers }}
       Answers and shit
     {{/if}}
-    {{ comment-box }}
+
+    {{ comment-box action="postComment" commentable=question commentableType="question" }}
   </td>
   <td class="col-sm-1 text-center">
     <p><small>Bookmark</small></p>

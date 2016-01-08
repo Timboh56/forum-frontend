@@ -11,12 +11,10 @@ export default Ember.Service.extend({
         var current_user = self.store.createRecord('user', resp.user);
         self.set('model', current_user);
         dfd.resolve(current_user);
-        debugger
       },(resp) => {
         var current_user = self.store.createRecord('user', ENV.APP.GUEST_ATTR);
         self.set('model', current_user);
         dfd.resolve(current_user);
-        debugger
         console.log('You are not logged in');
       }
     );

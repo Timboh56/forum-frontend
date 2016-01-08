@@ -19,6 +19,7 @@ Router.map(function() {
     this.route('questions', function() {
       this.route('new');
       this.route('comments');
+      this.resource('question');
     });
   });
 });

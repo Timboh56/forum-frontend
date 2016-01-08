@@ -3,29 +3,36 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   needs: ['application'],
 
-  init: function() {
-    var question = this.store.createRecord('question');
-    this.set('model', question);
-  },
-
   actions: {
-    createQuestion: function() {
+    createQuestion() {
       const flashMessages = Ember.get(this, 'flashMessages');
+      const question = this.store.createRecord('question', this.get('model'));
 
-      this.get('model').save()
+      question.save()
       .then((resp) => {
-        this.set('model', this.storeCreateRecord('question'));
-        flashMessages.setSuccess('Saved!');
+        flashMessages.success('Saved!', {
+          timeout: 10000,
+          priority: 100,
+        });
+        $("html, body").animate(
+          { 
+            scrollTop: 0
+          }, 
+        "slow");
         this.transitionToRoute('forum.questions');
       })
       .catch((resp) => {
-
+        console.log(resp);
       });
       /**var question = this.store.createRecord('question', {
         content: this.get('question.content'),
         text: this.get('question.text')
       });**/
       //question.save();
+    },
+
+    cancel() {
+      this.transitionToRoute('forum.questions');
     }
   }
 }); 

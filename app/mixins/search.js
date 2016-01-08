@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-  setupSearch: function(controllerName) {
+  setupSearch: function(controllerName, resultsName) {
+    this.set('resultsName', resultsName);
     if(typeof controllerName === 'string')
       this.controllerFor(controllerName).set('search', this.get('actions.search'));
     if(controllerName instanceof Array) {
@@ -12,8 +13,16 @@ export default Ember.Mixin.create({
   },
 
   actions: {
-    search: function(keyword, resource_name) {
-      this.store.query(resource_name, { keywords: keyword });
+    search: function(keyword, resource_name, store) {
+      console.log(keyword);
+      var results_name = this.get('resultsName');
+
+      var resources = this.store.query(resource_name, { keywords: keyword }).then((resp) => {
+        
+        //this.set(results_name, resp);
+      });
+
+      return resources;
     }
   }
 });

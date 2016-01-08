@@ -7,6 +7,27 @@ html {
   min-height: 100%;
 }
 
+label {
+  font-family:  "NexaBold" !important;
+}
+
+h2 {
+  color: #555;
+}
+
+.no-margins { margin: 0 !important;}
+.border-bottom {
+  border-bottom: 1px solid #ccc !important;
+}
+
+.close-btn a {
+  color: #aaa !important;
+}
+
+.close-btn:hover a{
+  color: #eee !important;
+}
+
 body.theme-main {
   background-color: #FFFEF4;
   color: #000000;
@@ -2349,7 +2370,7 @@ body.theme-main .panel-important > .panel-footer + .panel-collapse > .panel-body
   border-bottom-color: #ddd;
 }
 body.theme-main .search-bg {
-  background-color: #DDD;
+  background-color: #eee;
   color: #000;
   padding: 15px 15px 0px;
   border-style: solid;

@@ -5,10 +5,10 @@
         <h3 class="align-inline">Minting</h3>
       </div>
     </div>
-
+    {{ flash-messages flashMessages=flashMessages }}
     {{ search-forums searchItems=(action 'searchItems') }}
 
-    <div class="row tabpanel m-top-lg">
+    <div class="row tabpanel m-top-sm">
       {{ liquid-outlet }}
     </div>
       
