@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
+  queryParams: {
+    search: {
+      refreshModel: true
+    }
+  },
+
   setupSearch: function(controllerName, resultsName) {
     this.set('resultsName', resultsName);
     if(typeof controllerName === 'string')
@@ -14,13 +20,14 @@ export default Ember.Mixin.create({
 
   actions: {
     search: function(keyword, resource_name, store) {
-      console.log(keyword);
-      var results_name = this.get('resultsName');
+      var self = this;
+      var results_name = self.get('resultsName');
 
-      var resources = this.store.query(resource_name, { keywords: keyword }).then((resp) => {
-        
-        //this.set(results_name, resp);
-      });
+      var resources = self.store.query(resource_name,
+        {
+          keywords: keyword
+        }
+      );
 
       return resources;
     }

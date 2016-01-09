@@ -41,20 +41,24 @@
         </div>
       </form>
       <ul class="list-group m-top pre-scrollable">
-        <li class="list-group-item">
-          <div class="media">
-            <div class="media-left">
-              <a href="#">
-                <img class="media-object img-circle introImagePanel" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" alt="user">
-              </a>
+        {{#each comment in commentable.comments}}
+          <li class="list-group-item">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle introImagePanel" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" alt="user">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="#">{{ comment.user.name }}</a>
+                </h4>
+                <p>{{ comment.text }}</p>
+                <p class="grey-text"><small>· 3h ago </small></p>
+              </div>
             </div>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#">Paul Lu</a></h4>
-              <p> Holy cow I never knew such a thing. You are such a wonderful person, where in the world can I find a mentor like you. I think this is awesome, truly I have never been so enlightned!</p>
-              <p class="grey-text"><small>· 3h ago </small></p>
-            </div>
-          </div>
-        </li>
+          </li>
+        {{/each}}
       </ul>
     </div>
   </div>

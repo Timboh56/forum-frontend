@@ -8,8 +8,12 @@ export default Ember.Component.extend({
       this.toggleProperty('showAnswers');
     },
 
+    getComments(commentableId, commentableType) {
+      var comments = this.sendAction('getComments', commentableId, commentableType);
+    },
+
     postComment(comment) {
-      this.sendAction('action', comment);
+      var comment = this.sendAction('postComment', comment);
     }
   }
 });

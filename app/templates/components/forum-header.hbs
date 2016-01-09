@@ -1,13 +1,13 @@
 <div class="m-top-sm">
   <ul class="nav forumtabs nav-tabs h5 border-bottom">
-    <li role="presentation" {{bind-attr class="posts:active :no-margins"}}>
+    <li role="presentation" {{bind-attr class=":border-bottom posts:active :no-margins"}}>
       {{#link-to 'forum.index' }} All Posts {{/link-to}}
     </li>
-    <li role="presentation" {{bind-attr class="questions:active no-margins"}}>
+    <li role="presentation" {{bind-attr class=":border-bottom questions:active no-margins"}}>
       {{#link-to 'forum.questions' }} My Questions {{/link-to}}
     </li>
-    <li role="presentation" {{bind-attr class="answers:active no-margins"}}>
-      {{#link-to 'forum.answers' }} My Questions {{/link-to}}
+    <li role="presentation" {{bind-attr class=":border-bottom answers:active no-margins"}}>
+      {{#link-to 'forum.answers' }} My Answers {{/link-to}}
     </li>
     <li role="presentation"><a href="bookmark">Bookmark</a></li> 
   </ul>

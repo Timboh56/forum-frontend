@@ -7,6 +7,7 @@ html {
   min-height: 100%;
 }
 
+a:hover { cursor: pointer !important;}
 label {
   font-family:  "NexaBold" !important;
 }
@@ -14,7 +15,7 @@ label {
 h2 {
   color: #555;
 }
-
+.nav-tabs li { border-bottom: 2px solid #eee;}
 .no-margins { margin: 0 !important;}
 .border-bottom {
   border-bottom: 1px solid #ccc !important;

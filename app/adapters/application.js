@@ -2,9 +2,12 @@ import DS from 'ember-data';
 import ENV from '../config/environment';
 
 // app/adapters/application.js
-import ActiveModelAdapter from 'active-model-adapter';
+//import active-model-adapterer from 'active-model-adapter';
 
-export default ActiveModelAdapter.extend({
+export default DS.RESTAdapter.extend({
   namespace: ENV.APP.API.NAMESPACE,
-  host: ENV.APP.API.HOST
+  host: ENV.APP.API.HOST,
+  headers: {
+    'AUTHORIZATION': ENV.APIKEY
+  }
 });

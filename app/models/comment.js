@@ -1,11 +1,12 @@
-import DsS from 'ember-data';
+import DS from 'ember-data';
 
 export default DS.Model.extend({
   user: DS.belongsTo('user'),
   text: DS.attr('string'),
   anonymous: DS.attr('boolean'),
-  question: DS.belongsTo('question'),
+  //commentable: DS.belongsTo('commentable', { polymorphic: true }),
   answer: DS.belongsTo('answer'),
-  commentable_id: DS.attr(),
-  commentable_type: DS.attr()
+  commentableId: DS.attr('number'),
+  commentableType: DS.attr('string'),
+
 });

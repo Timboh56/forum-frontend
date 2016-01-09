@@ -6,7 +6,7 @@
       </div>
     </div>
     {{ flash-messages flashMessages=flashMessages }}
-    {{ search-forums searchItems=(action 'searchItems') }}
+    {{ search-forums searchItems=(action 'searchItems') model=model }}
 
     <div class="row tabpanel m-top-sm">
       {{ liquid-outlet }}

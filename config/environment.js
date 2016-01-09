@@ -12,6 +12,7 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    APIKEY: 'e14b6cbf8c3b80d0bd1a680d984ca997',
     CONSTANTS: {
       GOOGLE_API_URL: 'https://apis.google.com/js/platform.js'
     },
@@ -22,6 +23,16 @@ module.exports = function(environment) {
       NOTIFICATIONS_SERVER_URI: "https://mentormint-notifications.herokuapp.com/api/v1/"
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    flashMessageDefaults: {
+      timeout: 9000,
+      extendedTimeout: 0,
+      priority: 200,
+      sticky: true,
+      showProgress: true,
+      injectionFactories: [ 'route', 'controller', 'view', 'component' ],
+      preventDuplicates: false
     }
   };
 

@@ -1,16 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  didInsertElement() {
+  init() {
 
-    const current_user = this.get('current-user.model');  
-    const commentable_id = parseInt(this.get('commentable.id'));
-    const commentable_type = this.get('commentableType');
+    const currentUser = this.get('current-user.model');  
+    const commentableId = parseInt(this.get('commentable.id'));
+    const commentableType = this.get('commentableType');
 
     this.set('comment', {
-      user: current_user,
-      commentable_type: 'question',
-      commentable_id: commentable_id
+      user: currentUser,
+      commentableType: commentableType,
+      commentableId: commentableId
     });
 
     this._super();
@@ -19,13 +19,21 @@ export default Ember.Component.extend({
   actions: {
     toggleComments: function() {
       this.toggleProperty('isShowingComments');
+      this.rerender();
+      this.get('actions.getComments').call(this);
+    },
+
+    getComments() {
+      const commentableId = this.get('commentable.id');
+      const commentableType = this.get('commentableType');
+      this.sendAction('getComments', commentableId, commentableType);
     },
 
     postComment(comment) {
       this.toggleProperty('isShowingComments');
-      const commentRecord = this.store.createRecord('comment', comment);
+      var commentRecord = this.store.createRecord('comment', comment);
       commentRecord.set('user', this.get('current-user.model'));
-      this.sendAction('action', commentRecord);
+      this.sendAction('postComment', commentRecord);
     }
   }
 });

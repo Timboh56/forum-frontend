@@ -1,14 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
+  queryParams: ['keywords'],
   init: function() {
 
   },
 
   actions: {
     searchItems(keyword) {
-      this.get('search').apply(this, [keyword, 'question', 'model']);
+      var self = this;
+      self.get('search').apply(
+        self, [keyword, 'question', 'model'])
+      .then((function(resp, klass){
+        this.set('model', resp);
+      }).bind(this));
     }
   }
 });
