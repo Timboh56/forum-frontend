@@ -29,7 +29,9 @@ export default Ember.Mixin.create({
     postComment: function(commentRecord) {
       const flashMessages = this.get('flashMessages');
       commentRecord.save().then((resp) => {
+        const incrementedCount = parseInt(commentRecord.get('commentable.commentsCount')) + 1; 
         flashMessages.success('Comment posted!');
+        commentRecord.set('commentable.commentsCount', incrementedCount );
         this.transitionTo('forum.questions');
       });
     }

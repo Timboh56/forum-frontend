@@ -127,12 +127,10 @@ a.list-group-item.active {
 }
 
 .pre-scrollable {
-  max-height: 360px;
   overflow-y: auto;
 }
 
 .pre-scrollable2 {
-  max-height: 760px;
   overflow-y: scroll;
 }
 
