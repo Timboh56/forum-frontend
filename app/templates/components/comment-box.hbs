@@ -46,7 +46,7 @@
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img class="media-object img-circle introImagePanel" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" alt="user">
+                  <img class="media-object img-circle introImagePanel" src="/assets/img/leaf.png" alt="user">
                 </a>
               </div>
               <div class="media-body">
@@ -54,7 +54,7 @@
                   <a href="#">{{ comment.user.name }}</a>
                 </h4>
                 <p>{{ comment.text }}</p>
-                <p class="grey-text"><small>· 3h ago </small></p>
+                <p class="grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
               </div>
             </div>
           </li>

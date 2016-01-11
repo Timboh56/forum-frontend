@@ -283,8 +283,10 @@ body.theme-main .lead {
 body.theme-main small,
 body.theme-main .small {
   font-size: 85%;
+  font-family:  "NexaBold" !important;
 }
 body.theme-main a {
+  font-family:  "NexaBold" !important;
   color: #49C2B3;
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
