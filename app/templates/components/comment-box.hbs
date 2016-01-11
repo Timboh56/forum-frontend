@@ -41,7 +41,7 @@
         </div>
       </form>
       <ul class="list-group m-top pre-scrollable">
-        {{#each comment in commentable.comments}}
+        {{#each commentable.comments as |comment|}}
           <li class="list-group-item">
             <div class="media">
               <div class="media-left">

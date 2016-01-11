@@ -2,11 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   init() {
-
     const currentUser = this.get('current-user.model');  
     const commentableId = parseInt(this.get('commentable.id'));
     const commentableType = this.get('commentableType');
-
     this.set('comment', {
       user: currentUser,
       commentableType: commentableType,
@@ -33,7 +31,9 @@ export default Ember.Component.extend({
       this.toggleProperty('isShowingComments');
       var commentRecord = this.store.createRecord('comment', comment);
       commentRecord.set('user', this.get('current-user.model'));
+      commentRecord.set('commentable', this.get('commentable'));
       this.sendAction('postComment', commentRecord);
+      this.set('comment', {});
     }
   }
 });

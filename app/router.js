@@ -18,12 +18,10 @@ Router.map(function() {
     this.route('answers');
     this.route('questions', function() {
       this.route('new');
-
+      this.resource('question');
     });
     this.resource('questions', { path: '/questions/:id' }, function() {
       this.route('comments', { path: '/comments/:page_id'});
-
-      //this.resource('question');
     });
   });
 });

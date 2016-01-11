@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Mixin.create({
   setupCommentable: function(controllerName) {
-    this.set('yep', controllerName);
     if(typeof controllerName === 'string')
       this.controllerFor(controllerName).set('postComment', this.get('actions.postComment'));
     if(controllerName instanceof Array) {
@@ -14,7 +13,7 @@ export default Ember.Mixin.create({
 
   actions: {
     getComments: function(commentableId, commentableType) {
-      var self = this
+      var self = this;
       var comments = this.store.query(
         'comment', {
           commentableId: commentableId,
