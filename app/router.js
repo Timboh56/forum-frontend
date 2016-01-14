@@ -16,6 +16,7 @@ Router.map(function() {
 
   this.route('forum', function() {
     this.route('answers');
+    this.route('bookmarks');
     this.route('questions', function() {
       this.route('new');
       this.resource('question');

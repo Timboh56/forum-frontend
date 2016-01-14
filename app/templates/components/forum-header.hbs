@@ -9,6 +9,10 @@
     <li role="presentation" {{bind-attr class=":border-bottom answers:active no-margins"}}>
       {{#link-to 'forum.answers' }} My Answers {{/link-to}}
     </li>
-    <li role="presentation"><a href="bookmark">Bookmark</a></li> 
+    <li role="presentation">
+      {{#link-to 'forum.bookmarks'}}
+        My Bookmarks
+      {{/link-to}}
+    </li> 
   </ul>
 </div>

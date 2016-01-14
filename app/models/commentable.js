@@ -1,5 +1,6 @@
 import DS from 'ember-data';
+import bookmarkable from './bookmarkable';
 
-export default DS.Model.extend({
+export default bookmarkable.extend({
   comments: DS.hasMany('comment', { embedded: 'always' })
 });

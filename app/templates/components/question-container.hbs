@@ -1,9 +1,16 @@
 <tr>
   <td class="col-sm-1">
-    <button type="button" class="btn btn-proceed">
-      <span class="fa fa-leaf fa-lg"></span>
-      <br>9
-    </button>
+    {{#if questionIsBookmarked }}
+      <button {{ action 'unbookmarkQuestion' question }} class='btn btn-proceed active' type="button">
+        <span class="fa fa-leaf fa-lg"></span>
+        <br>
+      </button>
+    {{else }}
+      <button {{ action 'bookmarkQuestion' question }} class='btn btn-proceed' type="button">
+        <span class="fa fa-leaf fa-lg"></span>
+        <br>
+      </button>
+    {{/if}}
   </td>
   <td class="col-sm-10">
     <h4 class="m-top-none">

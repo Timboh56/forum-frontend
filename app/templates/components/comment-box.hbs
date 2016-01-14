@@ -40,8 +40,8 @@
           </div>
         </div>
       </form>
-      <ul class="list-group m-top pre-scrollable">
-        {{#each commentable.comments as |comment|}}
+      <ul class="list-group m-top">
+        {{#each commentsLimited as |comment|}}
           <li class="list-group-item">
             <div class="media">
               <div class="media-left">
@@ -59,6 +59,11 @@
             </div>
           </li>
         {{/each}}
+        {{#if showNextFiveAction }}
+          <li class="list-group-item">
+            <a {{ action 'nextFiveComments' }}>Next 5</a>
+          </li>
+        {{/if}}
       </ul>
     </div>
   </div>

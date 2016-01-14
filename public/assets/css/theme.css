@@ -1078,6 +1078,7 @@ body.theme-main .btn-proceed {
   border-color: #DDD;
 }
 body.theme-main .btn-proceed:hover,
+body.theme-main .btn-proceed.active,
 body.theme-main .btn-proceed:focus {
   color: #49C2B3;
   border-color: #DDD;
