@@ -8,5 +8,6 @@ export default DS.Model.extend({
   answer: DS.belongsTo('answer'),
   commentableId: DS.attr('number'),
   commentableType: DS.attr('string'),
-  createdAt: DS.attr('date')
+  createdAt: DS.attr('date'),
+  authorUserName: DS.attr('string')
 });

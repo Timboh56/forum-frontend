@@ -6,12 +6,17 @@ html {
   position: relative;
   min-height: 100%;
 }
+.m-t-lg { margin-top: 32px; }
+.m-t-md { margin-top: 16px; }
+.m-t-sm { margin-top: 8px; }
 
-a:hover { cursor: pointer !important;}
-label {
-  font-family:  "NexaBold" !important;
+p, input[type="text"], textarea, label {
+  font-family: "VarelaRoundRegular" !important;
 }
 
+a:hover { cursor: pointer !important;}
+
+li { list-style-type: none !important; }
 h2 {
   color: #555;
 }
@@ -2186,9 +2191,10 @@ body.theme-main .signup.nav-tabs > li > a {
   margin-right: 4px;
   /*width: 180px;*/
 }
-body.theme-main .signup.nav-tabs > li > a:hover {
-  border-color: #DDD #DDD #DDD;
-  background-color: #F1F1F1;
+body.theme-main .nav-tabs > li > a:hover {
+  border-color: #F1683C !important;
+  background-color: #F9F9F9;
+  color: #111 !important;
 }
 body.theme-main .signup.nav-tabs > li.active > a {
   font-weight: bold;
@@ -2374,7 +2380,7 @@ body.theme-main .panel-important > .panel-footer + .panel-collapse > .panel-body
   border-bottom-color: #ddd;
 }
 body.theme-main .search-bg {
-  background-color: #eee;
+  background-color: #F7F7F7;
   color: #000;
   padding: 15px 15px 0px;
   border-style: solid;

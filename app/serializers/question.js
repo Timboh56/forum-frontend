@@ -4,7 +4,8 @@ import { ActiveModelSerializer } from 'active-model-adapter';
 export default ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin,
   {
     attrs: {
-     comments: { embedded: 'always' }
+     comments: { embedded: 'always' },
+     answers: { embedded: 'always' }
    }
   }
 );

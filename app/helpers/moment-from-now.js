@@ -16,8 +16,8 @@ export function momentFromNow(params) {
     'days': diffInDays
   };
 
-  if (diffInDays > 10) {
-    momentFromNowString = 'Posted ' + diffInDays.toString();
+  if (diffInDays > 5) {
+    momentFromNowString = 'Posted on ' + params.toLocaleString();
   } else {
     var topTimeRange = null;
 

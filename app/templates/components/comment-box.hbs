@@ -2,7 +2,7 @@
   <li>
     <p class="grey-text">
       <small>
-        <i class="fa fa-flag">&nbsp;</i> Posted June 19, 2015
+        <i class="fa fa-flag">&nbsp;</i> {{ moment-from-now commentable.createdAt }}
       </small>
     </p>
   </li>
@@ -11,7 +11,7 @@
       <small>
         <a {{ action 'toggleComments' }} style="color:inherit;" class="answer_comment">
           <i class="fa fa-comment">&nbsp;
-          </i> {{ commentable.commentsCount }}
+          </i> {{ commentable.commentsCount }} comments
         </a>
       </small>
     </p>
@@ -49,18 +49,18 @@
                   <img class="media-object img-circle introImagePanel" src="/assets/img/leaf.png" alt="user">
                 </a>
               </div>
-              <div class="media-body">
-                <h4 class="media-heading">
-                  <a href="#">{{ comment.user.name }}</a>
-                </h4>
+              <div class="media-body m-t-md">
+                <h6 class="media-heading">
+                  <a href="#">{{ comment.user.username }}</a>
+                </h6>
                 <p>{{ comment.text }}</p>
-                <p class="grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
+                <p class="m-t-md grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
               </div>
             </div>
           </li>
         {{/each}}
         {{#if showNextFiveAction }}
-          <li class="list-group-item">
+          <li class="m-t-lg">
             <a {{ action 'nextFiveComments' }}>Next 5</a>
           </li>
         {{/if}}

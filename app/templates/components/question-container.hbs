@@ -19,13 +19,13 @@
       </strong>
     </h4>
     <div class="media">
-      <div class="media-left">
+      <div class="col-xs-1">
         <img alt="user" src="/assets/img/groups/roberthalf.png" class="img-circle introImagePanel">
       </div>
-      <div class="media-body">
-        <h4 class="media-heading">
+      <div class="col-xs-11">
+        <h5 class="media-heading">
           {{ question.text}}
-        </h4>
+        </h5>
         <p>
           {{ question.content }}
           <a {{ action 'toggleAnswers' }} >
@@ -34,15 +34,38 @@
         </p>
       </div>
     </div>
-
-    {{#if showAnswers }}
-      Answers and shit
-    {{/if}}
-
+    <hr />
     {{ comment-box getComments="getComments" postComment='postComment' commentable=question commentableType="question" }}
+    {{#if showAnswers }}
+      {{#each question.answers as |answer| }}
+        <div class="media m-t-lg">
+          <div class="col-xs-offset-1 col-xs-11">
+            <p>
+              {{ answer.text }}
+            </p>
+            <div class="row">
+              <div class="col-xs-12 grey-text">
+                <small>
+                  {{ moment-from-now comment.createdAt }}
+                </small>
+              </div>
+            </div>
+            {{ comment-box getComments="getComments" postComment='postComment' commentable=answer commentableType="answer" }}
+          </div>
+        </div>
+      {{/each}}
+    {{/if}}
   </td>
   <td class="col-sm-1 text-center">
-    <p><small>Bookmark</small></p>
-    <input type="checkbox" id="blankCheckbox" value="option1" aria-label="Bookmark">
+    <p>
+      <a {{ action 'bookmarkQuestion'}} class="grey-text">
+        <small>
+          {{ fa-icon 'bookmark' question }}
+          <div class="m-t-sm">
+            Bookmark
+          </div>
+        </small>
+      </a>
+    </p>
   </td>
 </tr>

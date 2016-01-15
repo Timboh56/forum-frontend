@@ -3,7 +3,7 @@ import commentable from './commentable';
 
 export default commentable.extend({
   text: DS.attr('string'),
-  answers: DS.hasMany('answer'),
+  createdAt: DS.attr('date'),
+  answers: DS.hasMany('answer', { embedded: 'always' }),
   user: DS.belongsTo('user'),
-  commentsCount: DS.attr('number'),
 });

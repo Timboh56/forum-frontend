@@ -2,5 +2,8 @@ import DS from 'ember-data';
 import commentable from './commentable';
 
 export default commentable.extend({
-  question: DS.belongsTo('question')
+  text: DS.attr('string'),
+  createdAt: DS.attr('date'),
+  question: DS.belongsTo('question'),
+  user: DS.belongsTo('user')
 });
