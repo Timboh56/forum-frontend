@@ -3,6 +3,7 @@ import Ember from 'ember';
 export function momentFromNow(params) {
   var momentFromNowString = '';
   var nowInSecs = Date.now()/1000,
+    dateParam = new Date(params),
     thenInSecs = Date.parse(params)/1000,
     diffInSecs =  parseInt(nowInSecs - thenInSecs),
     diffInMins = parseInt(diffInSecs/60),
@@ -17,7 +18,7 @@ export function momentFromNow(params) {
   };
 
   if (diffInDays > 5) {
-    momentFromNowString = 'Posted on ' + params.toLocaleString();
+    momentFromNowString = 'Posted on ' + dateParam.toDateString();
   } else {
     var topTimeRange = null;
 
