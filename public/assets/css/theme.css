@@ -22,6 +22,7 @@ h2 {
 }
 .nav-tabs li { border-bottom: 2px solid #eee;}
 .no-margins { margin: 0 !important;}
+.no-margin-top { margin-top: 0 !important; }
 .border-bottom {
   border-bottom: 1px solid #ccc !important;
 }

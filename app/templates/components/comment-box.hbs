@@ -23,14 +23,21 @@
       <form class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">
-            {{ textarea class="form-control comment_box" rows="3" placeholder="Type your comment here.." maxlength="180" value=comment.text }}
+            {{ textarea class="form-control comment_box" rows="2" placeholder="Type your comment here.." maxlength="180" value=comment.text }}
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-6">  
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="answer_anonymous">Comment anonymously
+                <small class="grey-text">
+                  <div>
+                    <input type="checkbox" id="answer_anonymous" class='no-margin-top' />
+                  </div>
+                  <div class='m-t-sm'>
+                    Comment anonymously
+                  </div>
+                </small>
               </label>
             </div>
           </div>
