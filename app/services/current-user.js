@@ -14,7 +14,8 @@ export default Ember.Service.extend({
         contentType: 'application/json',
 
         beforeSend(xhr) {
-          xhr.setRequestHeader('AUTHORIZATION-USERID', self.get('session.authUserId'));
+          //xhr.setRequestHeader('AUTHORIZATION-USERID', self.get('session.authUserId'));
+          xhr.setRequestHeader('AUTHORIZATION-USERNAME', self.get('session.authUsername'));
           xhr.setRequestHeader('AUTHORIZATION-TOKEN',self.get('session.authToken'));
           xhr.setRequestHeader('AUTHORIZATION', ENV.APIKEY);
         },

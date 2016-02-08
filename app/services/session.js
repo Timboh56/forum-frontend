@@ -21,8 +21,15 @@ export default Ember.Service.extend({
 
         success: function(response) {
           self.set('authToken', response.auth_token);
-          self.set('authUserId', response.user_id);
+          self.set('authUsername', response.username);
           resolve(response.auth_token);
+
+          DS.RESTAdapter.reopen({
+            headers: { 
+              'AUTHORIZATION-USERNAME': response.username,
+            }
+          });
+
         },
 
         error: function(response) {
