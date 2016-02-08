@@ -25,6 +25,7 @@ Router.map(function() {
       this.route('comments', { path: '/comments/:page_id'});
     });
   });
+  this.route('login');
 });
 
 export default Router;

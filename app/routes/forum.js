@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import Search from '../mixins/search';
 import Commentable from '../mixins/commentable';
+//import ApplicationRoute from '../routes/application';
 
 export default Ember.Route.extend(Search, Commentable, {
   setupController: function(controller) {

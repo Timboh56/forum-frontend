@@ -4,6 +4,9 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   currentUserService: Ember.inject.service('current-user'),
   currentUser: Ember.computed.alias('currentUserService.model'),
-  init: function() {
+  actions: {
+    invalidateSession(){
+      this.get('session').invalidate();
+    }
   }
 });

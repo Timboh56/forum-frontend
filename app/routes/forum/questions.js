@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ApplicationRoute from '../application';
+//import ApplicationRoute from '../../routes/application';
 
 export default Ember.Route.extend({
   model() {

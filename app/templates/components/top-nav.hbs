@@ -31,8 +31,8 @@
           </li>
         {{/if}}
         <li class="hidden-xs">
-          <a class="text-capitalize">
-            <i class="fa fa-power-off fa-fw"></i>&nbsp; end session
+          <a class="text-capitalize" {{ action 'invalidateSession' }}>
+            <i class="fa fa-power-off fa-fw"></i>&nbsp; Logout
           </a>
         </li>
         {{ top-nav-drop-down }}
@@ -64,7 +64,7 @@
           <a href="/account-signout"><i class="fa fa-sign-out fa-fw nav-icon-text"></i>&nbsp; Sign out</a>
         </li>
 
-        {{#if (guest currentUser) }}
+        {{#if session.isAuthenticated }}
           <li><a href="/account-create?type=mentor"><strong>Become a Mentor</strong></a></li>
           <li><a href="/account-create?type=mentee"><strong>Find a Mentor</strong></a></li>
           <li><a href="/account-create">Sign Up</a></li>
