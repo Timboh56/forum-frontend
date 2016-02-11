@@ -14,14 +14,20 @@ export default Ember.Service.extend({
         contentType: 'application/json',
 
         beforeSend(xhr) {
-          //xhr.setRequestHeader('AUTHORIZATION-USERID', self.get('session.authUserId'));
+          xhr.setRequestHeader('Accept', 'application/vnd.api+json');
           xhr.setRequestHeader('AUTHORIZATION-USERNAME', self.get('session.authUsername'));
           xhr.setRequestHeader('AUTHORIZATION-TOKEN',self.get('session.authToken'));
           xhr.setRequestHeader('AUTHORIZATION', ENV.APIKEY);
         },
 
         success: (resp) => {
-          var current_user = self.store.createRecord('user', resp.user);
+          var userAttr = resp.data.attributes;
+          userAttr['id'] = resp.data.id;
+
+          var current_user = self.store.createRecord('user', userAttr); //resp.data);
+
+          // TO DO
+          // SET RELATIONSHIPS!!
           self.set('model', current_user);
           resolve(current_user);
         },

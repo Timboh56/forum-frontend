@@ -14,6 +14,7 @@ export default Ember.Service.extend({
         data: {
          username: username // || ENV.APP.TEST_USERNAME,
         },
+
         dataType: 'json',
 
         beforeSend(xhr) {
@@ -25,10 +26,10 @@ export default Ember.Service.extend({
           self.set('authUsername', response.username);
           resolve(response.auth_token);
 
-          /**Ember.$.ajaxPrefilter(function( options, oriOptions, jqXHR ) {
+          Ember.$.ajaxPrefilter(function( options, oriOptions, jqXHR ) {
             jqXHR.setRequestHeader("AUTHORIZATION_TOKEN", response.auth_token);
             jqXHR.setRequestHeader("AUTHORIZATION_USERNAME", response.username);
-          });**/
+          });
         },
 
         error: function(response) {

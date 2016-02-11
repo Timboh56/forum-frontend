@@ -6,6 +6,7 @@ export default DS.Model.extend({
   anonymous: DS.attr('boolean'),
   commentable: DS.belongsTo('commentable', { polymorphic: true }),
   answer: DS.belongsTo('answer'),
+  question: DS.belongsTo('question'),
   commentableId: DS.attr('number'),
   commentableType: DS.attr('string'),
   createdAt: DS.attr('date'),
