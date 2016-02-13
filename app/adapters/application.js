@@ -6,8 +6,8 @@ export default DS.JSONAPIAdapter.extend({
   namespace: ENV.APP.API.NAMESPACE,
   host: ENV.APP.API.HOST,
   headers: {
-    'Content-Type': 'application/json',
-    'AUTHORIZATION': ENV.APIKEY
+    'AUTHORIZATION': ENV.APIKEY,
+    'Content-Type': 'application/vnd.api+json'
   },
 
  // allows the multiword paths in urls to be underscored

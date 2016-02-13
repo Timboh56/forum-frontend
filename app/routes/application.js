@@ -8,11 +8,14 @@ export default Ember.Route.extend({
       SessionService = this.get('session');
 
     return new Ember.RSVP.Promise(function(resolve,reject) {
-      SessionService.getCredentials().then(function() {
-        CurrentUserService.getCurrentUser().then(function(currentUser) {
-          self.get('notifications').setup(currentUser);
-          resolve(currentUser);
-        }); 
+
+      Ember.run.once(this, function () {
+        SessionService.getCredentials().then(function() {
+          CurrentUserService.getCurrentUser().then(function(currentUser) {
+            self.get('notifications').setup(currentUser);
+            resolve(currentUser);
+          }); 
+        });
       });
     });
   }

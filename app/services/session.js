@@ -12,7 +12,7 @@ export default Ember.Service.extend({
         type: 'POST',
         url: ENV.APP.LOGIN_PATH,
         data: {
-         username: username // || ENV.APP.TEST_USERNAME,
+         username: username || ENV.APP.TEST_USERNAME,
         },
 
         dataType: 'json',

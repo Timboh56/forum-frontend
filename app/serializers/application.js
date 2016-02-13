@@ -1,3 +1,4 @@
+
 import DS from 'ember-data';
 import { ActiveModelSerializer } from 'active-model-adapter';
 import ENV from '../config/environment';
@@ -7,10 +8,11 @@ var underscore = Ember.String.underscore;
 export default DS.JSONAPISerializer.extend({
 
   headers: {
-    'AUTHORIZATION': ENV.APIKEY
+    'AUTHORIZATION': ENV.APIKEY,
+    'Content-Type': 'application/vnd.api+json'
   },
 
-  keyForAttribute: function(attr) {
+   keyForAttribute: function(attr) {
     return underscore(attr);
   },
 
