@@ -4,7 +4,7 @@
       "type": "S3",
       "accessKeyId": "AKIAIPIXGPTL4VWNORMQ",
       "secretAccessKey": "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",
-      "bucket": "mentormint"
+      "bucket": "mentormint-index"
     },
 
     "assets": {
