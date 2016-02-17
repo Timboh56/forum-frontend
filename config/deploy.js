@@ -2,22 +2,7 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {},
-
-    s3: {
-      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
-      accessKeyId: process.env.S3_ACCESS_KEY,
-      secretAccessKey: process.env.S3_SECRET,
-      bucket: process.env.ASSETS_BUCKET,
-      region: 'west-1'
-    },
-
-    's3-index': {
-      accessKeyId: process.env.S3_ACCESS_KEY,
-      secretAccessKey: process.env.S3_SECRET,
-      bucket: process.env.INDEX_BUCKET,
-      region: 'west-1'
-    }
+    build: {}
   };
 
   if (deployTarget === 'development') {
@@ -33,6 +18,24 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
+
+    ENV.s3 = {
+      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
+      accessKeyId: process.env.S3_ACCESS_KEY,
+      secretAccessKey: process.env.S3_SECRET,
+      bucket: process.env.ASSETS_BUCKET,
+      region: 'west-1',
+      endpoint: 'http://mentormint.s3-website-us-west-1.amazonaws.com/'
+    };
+
+    ENV['s3-index'] = {
+      accessKeyId: process.env.S3_ACCESS_KEY,
+      secretAccessKey: process.env.S3_SECRET,
+      bucket: process.env.INDEX_BUCKET,
+      region: 'west-1',
+      endpoint: 'http://mentormint-index.s3-website-us-west-1.amazonaws.com/'
+    };
+
     // configure other plugins for production deploy target here
   }
 

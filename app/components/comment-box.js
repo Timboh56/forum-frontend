@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   pageNo: 0,
+  isShowingComments: false, 
   init() {
     const currentUser = this.get('current-user.model');  
     const commentableId = parseInt(this.get('commentable.id'));
@@ -19,44 +20,53 @@ export default Ember.Component.extend({
     return this.get('commentable.comments.length') > 5;
   }.property('showNextFiveAction'),
 
-  commentsLimited: function() {
-    return this.get('commentable.comments').slice(0,5);
-  }.property('commentable.comments'),
-
   actions: {
-    nextFiveComments: function() {
-      var pageNo = parseInt(this.get('pageNo')) + 1,
-        comments = this.get('commentable.comments'),
-        nextFive = comments.slice(pageNo, pageNo + 5),
-        currentComments = this.get('commentsLimited'),
-        showNextFiveAction = currentComments.length < comments.get('length');
 
-      if (showNextFiveAction) {
-        this.set('commentsLimited', currentComments.concat(nextFive));
-        this.set('pageNo', pageNo);
-        this.rerender();
-      }
-    },
-
-    toggleComments: function() {
-      this.toggleProperty('isShowingComments');
-      this.rerender();
-      this.get('actions.getComments').call(this);
-    },
-
-    getComments() {
+    getComments: function() {
+      var self = this;
       const commentableId = this.get('commentable.id');
       const commentableType = this.get('commentableType');
-      this.sendAction('getComments', commentableId, commentableType);
+      var comments = this.store.query(
+        'comment', {
+          commentableId: commentableId,
+          commentableType: commentableType
+        }
+      ).then(function() {
+      });
     },
 
-    postComment(comment) {
-      this.toggleProperty('isShowingComments');
+    postComment: function(comment) {
       var commentRecord = this.store.createRecord('comment', comment);
+      var self = this;
       commentRecord.set('user', this.get('current-user.model'));
       commentRecord.set('commentable', this.get('commentable'));
-      this.sendAction('postComment', commentRecord);
-      this.set('comment', {});
+
+      const flashMessages = this.get('flashMessages');
+      commentRecord.save().then((resp) => {
+        const incrementedCount = parseInt(commentRecord.get('commentable.commentsCount')) + 1; 
+        flashMessages.success('Comment posted!');
+        commentRecord.set('commentable.commentsCount', incrementedCount );
+        //self.transitionTo('forum.questions');
+        self.set('comment', {});
+        self.toggleProperty('isShowingComments');
+        self.rerender();
+      });
+    },
+
+    nextFiveComments: function() {
+      var pageNo = parseInt(this.get('pageNo')) + 1,
+        commentableId = this.get('commentable.id');
+
+      this.store.query('comment', {
+        page: pageNo,
+        commentableId: commentableId 
+      });
+    },
+
+    toggleDisplay: function() {
+      this.toggleProperty('isShowingComments');
+      if (this.get('isShowingComments'))
+        this.get('actions.getComments').call(this);
     }
   }
 });

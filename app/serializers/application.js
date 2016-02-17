@@ -8,8 +8,7 @@ var underscore = Ember.String.underscore;
 export default DS.JSONAPISerializer.extend({
 
   headers: {
-    'AUTHORIZATION': ENV.APIKEY,
-    'Content-Type': 'application/vnd.api+json'
+    'AUTHORIZATION': ENV.APIKEY
   },
 
    keyForAttribute: function(attr) {

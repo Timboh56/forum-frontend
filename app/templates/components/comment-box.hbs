@@ -9,7 +9,7 @@
   <li>
     <p class="grey-text">
       <small>
-        <a {{ action 'toggleComments' }} style="color:inherit;" class="answer_comment">
+        <a {{ action 'toggleDisplay' }} style="color:inherit;" class="answer_comment">
           <i class="fa fa-comment">&nbsp;
           </i> {{ commentable.commentsCount }} comments
         </a>
@@ -43,12 +43,12 @@
           </div>
           <div class="col-sm-6 text-right">
             <button {{ action 'postComment' comment }} class="btn btn-theme">Submit</button>
-            <button type="button" {{ action 'toggleComments' }} class="btn btn-white close_comment">Close</button>
+            <button type="button" {{ action 'toggleDisplay' }} class="btn btn-white close_comment">Close</button>
           </div>
         </div>
       </form>
       <ul class="list-group m-top">
-        {{#each commentsLimited as |comment|}}
+        {{#each commentable.comments as |comment|}}
           <li class="list-group-item">
             <div class="media">
               <div class="media-left">

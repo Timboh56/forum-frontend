@@ -1,2 +1,4 @@
 {{ forum-header posts=true }}
-{{outlet}}
+{{#each model as |question| }}
+  {{ question-container question=question }}
+{{/each}}
