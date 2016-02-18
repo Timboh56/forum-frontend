@@ -7,6 +7,6 @@ export default Ember.Route.extend({
       param = this.modelFor('question'),
       currentUser = this.get('current-user.model');
 
-    return currentUser.get('questions');//this.store.query('question', { user_id: currentUser.id, param: param });
+    return this.store.query('question', { user_id: currentUser.id, param: param });
   }
 });

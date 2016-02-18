@@ -19,9 +19,9 @@ Router.map(function() {
     this.route('bookmarks');
     this.route('questions', function() {
       this.route('new');
-      this.resource('question');
     });
-    this.resource('questions', { path: '/questions/:id' }, function() {
+
+    this.resource('question', { path: '/question/:id' }, function() {
       this.route('comments', { path: '/comments/:page_id'});
     });
   });

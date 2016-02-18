@@ -2,13 +2,6 @@
   <li>
     <p class="grey-text">
       <small>
-        <i class="fa fa-flag">&nbsp;</i> {{ moment-from-now commentable.createdAt }}
-      </small>
-    </p>
-  </li>
-  <li>
-    <p class="grey-text">
-      <small>
         <a {{ action 'toggleDisplay' }} style="color:inherit;" class="answer_comment">
           <i class="fa fa-comment">&nbsp;
           </i> {{ commentable.commentsCount }} comments
@@ -48,7 +41,7 @@
         </div>
       </form>
       <ul class="list-group m-top">
-        {{#each commentable.comments as |comment|}}
+        {{#each commentsLimited as |comment|}}
           <li class="list-group-item">
             <div class="media">
               <div class="media-left">
@@ -58,6 +51,7 @@
               </div>
               <div class="media-body m-t-md">
                 <h6 class="media-heading">
+                  {{ comment.id }}
                   <a href="#">{{ comment.user.username }}</a>
                 </h6>
                 <p>{{ comment.text }}</p>
@@ -66,7 +60,7 @@
             </div>
           </li>
         {{/each}}
-        {{#if showNextFiveAction }}
+        {{#if showNextFive }}
           <li class="m-t-lg">
             <a {{ action 'nextFiveComments' }}>Next 5</a>
           </li>

@@ -8,6 +8,6 @@ export default Ember.Route.extend(Search, {
   },
 
   model() {
-    return this.store.findAll('question');
+    return this.store.query('question', {});
   }
 });

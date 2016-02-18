@@ -16,9 +16,14 @@ export default Ember.Component.extend({
     this._super();
   },
 
-  showNextFiveAction: function() {
+  commentsLimited: function(){
+    var commentsIndex = this.get('pageNo') * 5;
+    return this.get('commentable.comments').slice(commentsIndex , commentsIndex + 5);
+  }.property('commentsLimited'),
+
+  showNextFive: function() {
     return this.get('commentable.comments.length') > 5;
-  }.property('showNextFiveAction'),
+  }.property('showNextFive'),
 
   actions: {
 
@@ -55,12 +60,25 @@ export default Ember.Component.extend({
 
     nextFiveComments: function() {
       var pageNo = parseInt(this.get('pageNo')) + 1,
-        commentableId = this.get('commentable.id');
+        commentableId = this.get('commentable.id'),
+        commentsCount = this.get('commentable.commentsCount'),
+        currentFiveComments = this.get('commentsLimited'),
+        commentsCurrLength = this.get('commentable.comments.length'),
+        nextFiveIndex = pageNo * 5,
+        nextFiveComments = this.get('commentable.comments').slice(nextFiveIndex, nextFiveIndex + 5);
 
-      this.store.query('comment', {
-        page: pageNo,
-        commentableId: commentableId 
-      });
+      if((pageNo * 5) < commentsCurrLength) {
+        this.set('commentsLimited', currentFiveComments.concat(nextFiveComments));
+        this.set('pageNo', pageNo);
+        this.rerender();
+      } else {
+        if (commentsCount > commentsCurrLength) {
+          this.store.query('comment', {
+            page: pageNo,
+            commentableId: commentableId 
+          });
+        } else this.set('showNextFive', false);
+      }
     },
 
     toggleDisplay: function() {
