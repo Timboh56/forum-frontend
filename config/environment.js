@@ -64,6 +64,7 @@ module.exports = function(environment) {
   } else {
     ENV.environment = 'production';
     ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/me";
+    ENV.APP.LOGIN_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/login";
     ENV.APP.API = {
       NAMESPACE: 'api/v1',
       HOST: 'http://mentormint-api.herokuapp.com',
