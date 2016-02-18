@@ -5,7 +5,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     fingerprint: {
-      prepend: '//mentormint.s3-website-us-west-1.amazonaws.com/'
+      prepend: '//mentormint-index.s3-website-us-west-1.amazonaws.com/'
     }
   });
   app.import('bower_components/js-cookie/src/js.cookie.js');
