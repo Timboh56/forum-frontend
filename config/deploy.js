@@ -23,17 +23,15 @@ module.exports = function(deployTarget) {
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
       accessKeyId: process.env.S3_ACCESS_KEY,
       secretAccessKey: process.env.S3_SECRET,
-      bucket: process.env.ASSETS_BUCKET,
-      region: 'west-1',
-      endpoint: 'http://mentormint.s3-website-us-west-1.amazonaws.com/'
+      bucket: process.env.INDEX_BUCKET,
+      region: 'us-west-1',
     };
 
     ENV['s3-index'] = {
       accessKeyId: process.env.S3_ACCESS_KEY,
       secretAccessKey: process.env.S3_SECRET,
       bucket: process.env.INDEX_BUCKET,
-      region: 'west-1',
-      endpoint: 'http://mentormint-index.s3-website-us-west-1.amazonaws.com/'
+      region: 'us-west-1',
     };
 
     // configure other plugins for production deploy target here
