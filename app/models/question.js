@@ -6,5 +6,5 @@ export default commentable.extend({
   title: DS.attr('string'),
   createdAt: DS.attr('date'),
   answers: DS.hasMany('answer', { embedded: 'always' }),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
 });

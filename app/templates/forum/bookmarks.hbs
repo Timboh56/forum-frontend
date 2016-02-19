@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-12 no-padding">
+    {{#link-to 'forum.questions.new' class='btn btn-default'}} New Question {{/link-to}}
+  </div>
+</div>
+
+{{forum-header bookmarks=true }}
+<div class="tab-content p-top">
+  <div class='container-fluid'>
+    <div role="tabpanel" class="tab-panel active" id="qa">
+      <div class="col-sm-12">
+        
+        <div id="mainTable">
+          <table class="table-simple">
+            <tbody>
+              {{#each model as |bookmark|}}
+                {{ question-container question=bookmark.question }}
+              {{/each}}
+            </tbody></table>
+          </div>
+      </div>  
+    </div>
+  </div>
+</div>
