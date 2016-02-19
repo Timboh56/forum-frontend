@@ -62,6 +62,7 @@ module.exports = function(environment) {
       'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     }
   } else {
+    ENV.APIKEY = '5a07d6948217432e45ca9234a6b13b30';
     ENV.environment = 'production';
     ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/me";
     ENV.APP.LOGIN_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/login";
