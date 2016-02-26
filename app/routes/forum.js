@@ -5,9 +5,5 @@ import Search from '../mixins/search';
 export default Ember.Route.extend(Search, {
   setupController: function(controller) {
     this.get('setupSearch').call(this, ['forum', 'forum.questions'], 'model');
-  },
-
-  model() {
-    return this.store.query('question', {});
   }
 });

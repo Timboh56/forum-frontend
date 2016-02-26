@@ -14,6 +14,10 @@ export default Ember.Controller.extend({
       .then((function(resp, klass){
         this.set('model', resp);
       }).bind(this));
+    },
+
+    goToQuestion(id) {
+      this.transitionToRoute('question', id);
     }
   }
 });

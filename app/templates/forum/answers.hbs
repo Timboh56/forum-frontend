@@ -3,8 +3,8 @@
 <div class="tab-content p-top">
   <div class='container'>
     <h1>Answers</h1>
-    {{#each answer in model}}
-      {{ answers-container model=model}}
+    {{#each model as |answer|}}
+      {{ answer-container model=answer}}
     {{/each}}
   </div>
 </div>

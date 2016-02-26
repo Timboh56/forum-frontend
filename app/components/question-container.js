@@ -14,6 +14,10 @@ export default Ember.Component.extend({
 
     },
 
+    goToQuestion(id) {
+      this.sendAction('action', id);
+    },
+
     bookmarkQuestion(question) {
       var currentUser = this.get('current-user.model');
       var bookmark = this.store.createRecord('bookmark', {

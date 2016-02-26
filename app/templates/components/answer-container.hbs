@@ -1,0 +1,161 @@
+<div id="answerTable">
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-horizontal">
+        <div id="type_answer" style="display:none;">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="line"></div>
+              <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></button>
+                  <ul class="dropdown-menu">
+                  <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li><li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li><li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li><li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li><li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li><li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li><li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li><li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li><li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li><li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li><li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li><li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li><li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li><li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li><li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li></ul>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></button>
+                  <ul class="dropdown-menu">
+                    <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+                    <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+                    <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+                  </ul>
+                </div>
+                <div class="btn-group" role="group">
+                  <a role="button" class="btn btn-white" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                </div>
+                <div class="btn-group" role="group">
+                  <a role="button" class="btn btn-white" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="fa fa-list-ol"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i class="fa fa-outdent"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                </div>
+                <div class="btn-group" role="group">
+                  <a role="button" class="btn btn-white" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></button>
+                  <div class="dropdown-menu input-append">
+                    <input placeholder="URL" type="text" data-edit="createLink">
+                    <button type="button" class="btn btn-white">Add</button>
+                  </div>
+                  <a role="button" class="btn btn-white" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                </div>
+                <div class="btn-group" role="group">
+                  <a role="button" class="btn btn-white" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="fa fa-picture-o"></i></a>
+                  <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 104px; left: 0px; width: 0px; height: 0px;">
+                </div>
+                <div class="btn-group" role="group">
+                  <a role="button" class="btn btn-white" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                  <a role="button" class="btn btn-white" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                </div>
+              </div>
+              <div id="editor" class="m-top" contenteditable="true">
+                Type answer…
+              </div>
+            </div>
+          </div>
+          <div class="form-group m-top">
+            <div class="col-sm-6">  
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="answer_anonymous">Answer anonymously
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-6 text-right">
+              <button type="submit" class="btn btn-theme">Submit</button>
+              <button type="button" class="btn btn-white" id="close_answer">Close</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table">
+      <tbody><tr>
+        <td class="col-sm-11">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img alt="user" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" class="media-object img-circle forumImage">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="#">Paul Lu</a>, Engineer, Explorer, Entrepreneur</h4>
+              <p>{{ model.text }}</p>
+              <ul class="list-inline">
+                <li><p class="grey-text"><small><i class="fa fa-flag">&nbsp;</i> 1 hrs ago</small></p></li>
+                <li><p class="grey-text"><small><a href="#" style="color:inherit;" class="answer_comment2"><i class="fa fa-comment">&nbsp;</i> 2 Comments</a></small></p></li>
+              </ul>
+              <div id="comment2" style="display:none;">
+                <div class="well">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <textarea class="form-control comment_box" rows="3" placeholder="Type your comments..." maxlength="180"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-6">  
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" id="answer_anonymous"> Comment anonymously
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 text-right">
+                        <button type="submit" class="btn btn-theme">Submit</button>
+                        <button type="button" class="btn btn-white close_comment2">Close</button>
+                      </div>
+                    </div>
+                  </form>
+                  <ul class="list-group m-top pre-scrollable">
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object img-circle introImagePanel" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" alt="user">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading"><a href="#">Paul Lu</a></h4>
+                          <p> Holy cow I never knew such a thing. You are such a wonderful person, where in the world can I find a mentor like you. I think this is awesome, truly I have never been so enlightned!</p>
+                          <p class="grey-text"><small>· 3h ago </small></p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object img-circle introImagePanel" src="/assets/img/get-image?name=Tim_Hui&amp;size=thumb" alt="user">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading"><a href="#">Paul Lu</a></h4>
+                          <p> Holy cow I never knew such a thing. You are such a wonderful person, where in the world can I find a mentor like you. I think this is awesome, truly I have never been so enlightned!</p>
+                          <p class="grey-text"><small>· 3h ago </small></p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td> 
+        <td class="col-sm-1"><button type="submit" class="btn btn-proceed"><span class="fa fa-thumbs-up fa-lg"></span><br>6</button></td>
+      </tr>
+    </tbody></table>
+  </div>
+</div>

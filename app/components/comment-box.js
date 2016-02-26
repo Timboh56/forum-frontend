@@ -37,6 +37,7 @@ export default Ember.Component.extend({
           commentableType: commentableType
         }
       ).then(function() {
+        self.rerender();
       });
     },
 

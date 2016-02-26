@@ -21,9 +21,7 @@ Router.map(function() {
       this.route('new');
     });
 
-    this.resource('question', { path: '/question/:id' }, function() {
-      this.route('comments', { path: '/comments/:page_id'});
-    });
+    this.resource('question', { path: '/question/:id' });
   });
   this.route('login');
 });

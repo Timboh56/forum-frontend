@@ -16,9 +16,11 @@
       </div>
     </form>
     <div class='form-group'>
-      {{#each model as |question|}}
-        {{ question-container question=question postComment="postComment" getComments="getComments" }}
-      {{/each}}
+      {{#if showResults }}
+        {{#each model as |question|}}
+          {{ question-container question=question postComment="postComment" getComments="getComments" action='goToQuestion' }}
+        {{/each}}
+      {{/if}}
     </div>
   </div>
 </div>
