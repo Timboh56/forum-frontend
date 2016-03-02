@@ -8,6 +8,10 @@ export default Ember.Component.extend({
     return this.get('question.bookmarks.content.[]').filterBy('user_id', currentUserId);
   }),
 
+  goToQuestionSet: (function() {
+    return this.get('goToQuestion') != null;
+  }).property('goToQuestion'),
+
   actions: {
 
     unbookmarkQuestion(question) {

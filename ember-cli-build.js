@@ -4,6 +4,13 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    outputPaths: {
+      app: {
+        css: {
+          'app': '/assets/css/theme.css'
+        }
+      }
+    },
     fingerprint: {
       prepend: '//mentormint-index.s3-website-us-west-1.amazonaws.com/'
     }

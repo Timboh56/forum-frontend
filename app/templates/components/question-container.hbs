@@ -7,11 +7,19 @@
     </button>
   </td>
   <td class="col-sm-10 no-margin-bottom">
-    <h4 {{action 'goToQuestion' question.id }} class="m-top-none">
-      <strong>
-        {{ question.title }}
-      </strong>
-    </h4>
+    {{#if goToQuestionSet}}
+      <a {{action 'goToQuestion' question.id }} class="m-top-none">
+        <strong>
+          {{ question.title }}
+        </strong>
+      </a>
+    {{else}}
+      {{#link-to 'question' question class='m-top-none' }}
+        <strong>
+          {{ question.title }}
+        </strong>
+      {{/link-to}}
+    {{/if}}
     <div class="media">
       <div class="col-xs-1">
         <img alt="user" src="/assets/img/groups/roberthalf.png" class="img-circle introImagePanel">

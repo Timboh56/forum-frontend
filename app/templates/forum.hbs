@@ -1,14 +1,14 @@
 <div class="wrapper-body m-top-lg">
   <div class="container-fluid">
-    <div class="row">
+    <!--<div class="row">
       <div class="col-sm-12 well-dash-heading">
         <h3 class="align-inline">Minting</h3>
       </div>
-    </div>
+    </div> -->
     {{ flash-messages flashMessages=flashMessages }}
     {{ search-forums searchItems=(action 'searchItems') model=model goToQuestion='goToQuestion' }}
 
-    <div class="row tabpanel m-top-sm">
+    <div class="tabpanel m-top-sm">
       {{ liquid-outlet }}
     </div>
       

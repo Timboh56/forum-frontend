@@ -47,8 +47,6 @@
 
 .wrapper-body {
     padding-top: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
     min-height:100%;
     position:relative;
 }
@@ -1583,10 +1581,7 @@ p.matches-images {
 }
 
 .navbar-dash .navbar-nav li a {
-      line-height: 30px;
-      height: 60px;
       font-size: 20px;
-      /*min-width: 150px;*/   
 }
 
 .navbar-dash .navbar-nav .nav-menu li a {

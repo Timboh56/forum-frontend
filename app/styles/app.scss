@@ -1,0 +1,150 @@
+/*
+ * Themes for website
+ * Copyright 2015 MentorMint, Inc. 
+ */
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: 'NexaBold', 'MontserratBold', 'VarelaRoundRegular';
+}
+.m-t-lg { margin-top: 32px; }
+.m-t-md { margin-top: 16px; }
+.m-t-sm { margin-top: 8px; }
+
+p, input[type="text"], textarea, label {
+  font-family: "VarelaRoundRegular" !important;
+}
+
+a:hover { cursor: pointer !important;}
+
+li { list-style-type: none !important; }
+h2 {
+  color: #555;
+}
+nav.navbar {
+  background-color: #fff;
+
+}
+
+.nav-tabs {
+  li { border-bottom: 2px solid #eee; }
+}
+.no-margins { margin: 0 !important;}
+.no-margin-top { margin-top: 0 !important; }
+.no-margin-bottom { margin-bottom: 0 !important; }
+.no-padding { padding: 0 !important; }
+.no-padding-top { padding-top: 0 !important;}
+.fixed { position: fixed !important; }
+.border-bottom {
+  border-bottom: 1px solid #ccc !important;
+}
+.inline-block { display: inline-block !important; }
+.full-width { width: 100%; }
+.float-right { float: right; }
+
+.close-btn a {
+  color: #aaa !important;
+}
+
+.close-btn:hover a{
+  color: #eee !important;
+}
+
+.btn-header {
+  background-color: #43C3B3;
+  font-family: 'NationalRegular';
+  border-radius: 3px;
+  padding: 2px 12px !important;
+  height: auto !important;
+  display: block;
+  font-size: 14px;
+  color: white !important;
+}
+
+.top-nav-btn-li {
+  margin: 0px 12px;
+}
+
+li.dropdown { padding: 2px 24px !important; }
+
+body.theme-main {
+  background-color: #fff;
+  color: #000000;
+  font-family: "Varela Round" !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  min-height: 100%;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+  /* Footer */
+  /*Jumbotron
+   ----------------------------------------------------------------------------------------------------------------*/
+  /* Box
+  ----------------------------------------------------------------------------------------------------------------*/
+  /* Button
+  ----------------------------------------------------------------------------------------------------------------*/
+  /*Containers
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Featurette
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Input
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Images
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Communication Portal
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Match Card
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Request Card
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*.mentee-heading a, .mentor-heading a {
+    position: absolute; top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    z-index: 10;
+    background-color: #FFF;
+    opacity: 0;
+    filter: alpha(opacity=1);
+  }*/
+  /*Chat Box
+   ----------------------------------------------------------------------------------------------------------------*/
+  /* creates triangle */
+  /* Variant : for left positioned triangle
+  ------------------------------------------ */
+  /* Variant : left
+  ------------------------------------------ */
+  /* creates the larger triangle */
+  /* creates the smaller  triangle */
+  /*Nav Side Menu
+   ------------------------------------------------------------*/
+  /* Sidebar Styles */
+  /*Sessions
+   ------------------------------------------------------------*/
+  /* Session Sidebar Styles */
+  /*Navbar
+   -----------------------------------------------------------------*/
+  /*Navtabs
+   -----------------------------------------------------------------*/
+  /*Pagination
+   -----------------------------------------------------------------*/
+  /*Arrows
+   -----------------------------------------------------------------*/
+  /*Menus
+   -----------------------------------------------------------------*/
+ /*Panels
+-----------------------------------------------------------------*/
+  /* Search
+   ----------------------------------------------------------------------------------------------------------------*/
+  /*Tables
+   -----------------------------------------------------------------*/
+  /*Wells
+   -----------------------------------------------------------------*/
+  /* OTHER
+   --------------------------------*/
+}
+body.theme-main #content {
+  margin-bottom: 60px;
+}
+/*# sourceMappingURL=theme.css.map */
