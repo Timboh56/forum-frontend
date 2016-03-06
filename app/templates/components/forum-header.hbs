@@ -1,21 +1,11 @@
-{{#link-to 'forum.questions.new' class='btn btn-default'}} New Question {{/link-to}}
-<div class="m-top-lg">
-  <ul class="nav forumtabs nav-tabs h5 border-bottom">
-    <li role="presentation" {{bind-attr class=":border-bottom posts:active :no-margins"}}>
-      {{#link-to "forum.index" }}
-        All Posts
-      {{/link-to}}
-    </li>
-    <li role="presentation" {{bind-attr class=":border-bottom questions:active no-margins"}}>
-      {{#link-to "forum.questions" }} My Questions {{/link-to}}
-    </li>
-    <li role="presentation" {{bind-attr class=":border-bottom answers:active no-margins"}}>
-      {{#link-to "forum.answers" }} My Answers {{/link-to}}
-    </li>
-    <li role="presentation">
-      {{#link-to "forum.bookmarks"}}
-        My Bookmarks
-      {{/link-to}}
-    </li> 
-  </ul>
+<div class='row forum-tabs-container no-padding-left no-padding-right'>
+  <div class='col-xs-12 col-md-6 col-md-offset-6'>
+    {{#each tabs as |tab| }}
+      <div class='col-xs-3 forum-tab'>
+        {{#link-to tab.linkTo }}
+          {{ fa-icon tab.icon }} {{ tab.label }}
+        {{/link-to}}
+      </div>
+    {{/each}}
+  </div>
 </div>

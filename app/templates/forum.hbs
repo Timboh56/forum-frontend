@@ -1,4 +1,4 @@
-<div class="wrapper-body m-top-lg">
+<div class="wrapper-body">
   <div class="container-fluid">
     <!--<div class="row">
       <div class="col-sm-12 well-dash-heading">
@@ -7,7 +7,7 @@
     </div> -->
     {{ flash-messages flashMessages=flashMessages }}
     {{ search-forums searchItems=(action 'searchItems') model=model goToQuestion='goToQuestion' }}
-
+    {{forum-header questions=true }}
     <div class="tabpanel m-top-sm">
       {{ liquid-outlet }}
     </div>

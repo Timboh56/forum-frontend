@@ -7,4 +7,5 @@ export default commentable.extend({
   createdAt: DS.attr('date'),
   answers: DS.hasMany('answer', { embedded: 'always' }),
   user: DS.belongsTo('user'),
+  viewCount: DS.attr('integer')
 });

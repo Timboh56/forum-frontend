@@ -2,6 +2,7 @@
  * Themes for website
  * Copyright 2015 MentorMint, Inc. 
  */
+ $darkblue: #2c3e50;
 html {
   position: relative;
   min-height: 100%;
@@ -10,6 +11,12 @@ html {
 .m-t-lg { margin-top: 32px; }
 .m-t-md { margin-top: 16px; }
 .m-t-sm { margin-top: 8px; }
+.p-t-lg { padding-top: 32px; }
+.p-t-md { padding-top: 16px; }
+.p-t-sm { padding-top: 8px; }
+.p-b-lg { padding-bottom: 32px; }
+.p-b-md { padding-bottom: 16px; }
+.p-b-sm { padding-bottom: 8px; }
 
 p, input[type="text"], textarea, label {
   font-family: "VarelaRoundRegular" !important;
@@ -34,12 +41,15 @@ nav.navbar {
 .no-margin-bottom { margin-bottom: 0 !important; }
 .no-padding { padding: 0 !important; }
 .no-padding-top { padding-top: 0 !important;}
+.no-padding-left { padding-left: 0 !important; }
+.no-padding-right { padding-right: 0 !important; }
 .fixed { position: fixed !important; }
 .border-bottom {
   border-bottom: 1px solid #ccc !important;
 }
 .inline-block { display: inline-block !important; }
 .full-width { width: 100%; }
+.full-height { height: 100%; }
 .float-right { float: right; }
 
 .close-btn a {
@@ -60,6 +70,11 @@ nav.navbar {
   font-size: 14px;
   color: white !important;
 }
+.btn-fa { font-size: 20px; }
+.btn, .btn-default {
+  font-family: "VarelaRoundRegular" !important;
+  color: #888;
+}
 
 .top-nav-btn-li {
   margin: 0px 12px;
@@ -67,10 +82,46 @@ nav.navbar {
 
 li.dropdown { padding: 2px 24px !important; }
 
+.search-forums-container {
+  background: #43C3B3;  
+}
+
+.navbar-container {
+  vertical-align: middle;
+  height: 100%;
+  line-height: 45px;
+  top: 0;
+  position: relative;
+}
+
+.forum-tabs-container {
+  background: #eee;
+  padding: 0 25px;
+  .forum-tab {
+    padding: 15px 0;
+    text-align: center;
+    display: inline-block;
+    a {
+      font-family: "NexaBold" !important;
+      font-size: 11px;
+      color: black;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      background-color: #fff !important;
+      border-top: 2px solid $darkblue;
+    }
+  } 
+}
+
 body.theme-main {
   background-color: #fff;
   color: #000000;
-  font-family: "Varela Round" !important;
+  font-family: "VarelaRoundRegular" !important;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;

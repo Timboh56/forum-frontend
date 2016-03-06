@@ -19,9 +19,13 @@ Router.map(function() {
     this.route('bookmarks');
     this.route('questions', function() {
       this.route('new');
+      this.route('index');
+      this.route('newest');
+      this.route('most-voted');
+      this.route('most-viewed');
     });
 
-    this.resource('question', { path: '/question/:id' });
+    this.resource('question', { path: 'question/:id' });
   });
   this.route('login');
 });

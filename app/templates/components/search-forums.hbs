@@ -1,12 +1,14 @@
-<div class="row">
+<div class="row p-t-lg p-b-lg search-forums-container">
   <div class="col-sm-12 search-bg">
-    <form class="form-horizontal">
-      <div class="form-group ">
+    <form class="form-horizontal no-margins">
+      <div class="form-group no-margin-top no-margin-bottom">
         <div class="col-xs-12 col-sm-10">
           {{input type='text' value=keywords placeholder='Search for a question topic' class='form-control' }}
         </div>
         <div class="hidden-xs col-sm-2 pull-in">
-          <button type="submit" {{ action 'search' }}class="btn btn-default btn-block">Search</button>
+          <button type="submit" {{ action 'search' }}class="btn-fa btn btn-default">
+            {{ fa-icon 'search'}}
+          </button>
         </div>
       </div>
       <div class="visible-xs form-group">
@@ -15,7 +17,7 @@
         </div>
       </div>
     </form>
-    <div class='form-group'>
+    <div class='form-group no-margin-top no-margin-bottom'>
       {{#if showResults }}
         {{#each model as |question|}}
           {{ question-container question=question postComment="postComment" getComments="getComments" action='goToQuestion' }}
