@@ -34,24 +34,25 @@
   </div>
 </div>
 
+{{ forum-header tabs=tabs }}
 
-  <div class='m-t-lg'>
-    <h4> Answers </h4>
-  </div>
-  {{#each model.answers as |answer| }}
-    <div class="media m-t-lg">
-      <div class="col-xs-offset-1 col-xs-11">
-        <p>
-          {{ answer.text }}
-        </p>
-        <div class="row">
-          <div class="col-xs-12 grey-text">
-            <small>
-              {{ moment-from-now comment.createdAt }}
-            </small>
-          </div>
+<div class='m-t-lg'>
+  <h4> Answers </h4>
+</div>
+{{#each model.answers as |answer| }}
+  <div class="media m-t-lg">
+    <div class="col-xs-offset-1 col-xs-11">
+      <p>
+        {{ answer.text }}
+      </p>
+      <div class="row">
+        <div class="col-xs-12 grey-text">
+          <small>
+            {{ moment-from-now comment.createdAt }}
+          </small>
         </div>
-        {{ comment-box getComments="getComments" postComment='postComment' commentable=answer commentableType="answer" }}
       </div>
+      {{ comment-box getComments="getComments" postComment='postComment' commentable=answer commentableType="answer" }}
     </div>
-  {{/each}}
+  </div>
+{{/each}}
