@@ -1,11 +1,18 @@
 import DS from 'ember-data';
-import commentable from './commentable';
+import Commentable from '../mixins/commentable';
+import Votable from '../mixins/votable';
+import Bookmarkable from '../mixins/bookmarkable';
+import Taggable from '../mixins/taggable';
 
-export default commentable.extend({
+export default DS.Model.extend(Taggable, Bookmarkable, Commentable, Votable, {
   text: DS.attr('string'),
   title: DS.attr('string'),
   createdAt: DS.attr('date'),
+  updatedAt: DS.attr('date'),
   answers: DS.hasMany('answer', { embedded: 'always' }),
-  user: DS.belongsTo('user'),
-  viewCount: DS.attr('integer')
+  answersCount: DS.attr('number'),
+  user: DS.belongsTo('user', { embedded: 'always' }),
+  viewCount: DS.attr('number'),
+  questionUsername: DS.attr('string'),
+  latestAnswerer: DS.attr('string')
 });

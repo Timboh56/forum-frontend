@@ -3,10 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   prevKeywords: '',
   keywords: '',
-  showResults: true,
+  showResults: false,
   showingResults: (function() {
     if (this.get('model.length') > 0)
       this.set('showResults', true);
+    else
+      this.set('showResults', false);
+
   }).observes('model'),
 
   init: function() {

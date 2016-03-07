@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  showAnswers: false,
-
   questionIsBookmarked: Ember.computed('question.bookmarks.content.[]', function() {
     var currentUserId = this.get('current-user.model.id');
     return this.get('question.bookmarks.content.[]').filterBy('user_id', currentUserId);
@@ -19,7 +17,7 @@ export default Ember.Component.extend({
     },
 
     goToQuestion(id) {
-      this.sendAction('action', id);
+      this.sendAction('goToQuestion', id);
     },
 
     bookmarkQuestion(question) {

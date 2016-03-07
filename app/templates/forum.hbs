@@ -7,10 +7,8 @@
     </div> -->
     {{ flash-messages flashMessages=flashMessages }}
     {{ search-forums searchItems=(action 'searchItems') model=model goToQuestion='goToQuestion' }}
-    {{forum-header questions=true }}
-    <div class="tabpanel m-top-sm">
+    <div class='row'>
       {{ liquid-outlet }}
     </div>
-      
   </div>
 </div>

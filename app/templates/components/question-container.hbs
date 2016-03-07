@@ -1,66 +1,67 @@
-<div class='m-t-lg'>
-  <td class="col-sm-1">
-
-    <button {{ action 'bookmarkQuestion' question }} class='btn btn-proceed' type="button">
-      <span class="fa fa-leaf fa-lg"></span>
-      <br>
+<div class='row m-t-lg'>
+  <div class="col-xs-2 col-sm-1">
+    <button {{ action 'bookmarkQuestion' question }} class='btn btn-fa btn-proceed' type="button">
+      <div class='font-xlg bold'>
+        {{ question.answersCount}}
+      </div>
+      <div class='font-sm'>
+        answers
+      </div>
     </button>
-  </td>
-  <td class="col-sm-10 no-margin-bottom">
-    {{#if goToQuestionSet}}
-      <a {{action 'goToQuestion' question.id }} class="m-top-none">
-        <strong>
-          {{ question.title }}
-        </strong>
-      </a>
-    {{else}}
-      {{#link-to 'question' question class='m-top-none' }}
-        <strong>
-          {{ question.title }}
-        </strong>
-      {{/link-to}}
-    {{/if}}
-    <div class="media">
-      <div class="col-xs-1">
+    <br>
+    <div class='m-t-md text-center'>
+      <small class='bold'>
+        {{ question.votesCount }} votes
+      </small>
+    </div>
+  </div>
+  <div class="col-xs-10 col-sm-7 no-margin-bottom">
+    <div class='row'>
+      <div class='col-xs-2 text-center'>
         <img alt="user" src="/assets/img/groups/roberthalf.png" class="img-circle introImagePanel">
       </div>
-      <div class="col-xs-11">
-        <div class="media-heading">
-          {{ question.text }}
+      <div class='col-xs-10 m-t-md'>
+        {{#if goToQuestionSet}}
+          <a {{action 'goToQuestion' question.id }} class="m-top-none">
+            <strong>
+              {{ question.title }}
+            </strong>
+          </a>
+        {{else}}
+          {{#link-to 'question' question class='m-top-none' }}
+            <strong>
+              {{ question.title }}
+            </strong>
+          {{/link-to}}
+        {{/if}}
+        <p class='m-t-lg'>
+          {{ tags-container tags=question.tagWordsArray }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 text-center">
+    <div class='col-xs-2'>
+      <a {{ action 'bookmarkQuestion'}} class="gray-text font-lg">
+        {{ fa-icon 'bookmark' question }}
+      </a>
+    </div>
+    <div class='col-xs-10 border-left-blue font-sm text-left'>
+      <div class='row'>
+        <div class='col-xs-12 col-sm-12'>
+           <i class="fa fa-flag">
+           </i> {{ moment-from-now question.createdAt }} by <a class='bold' href=''>{{ question.questionUsername }}</a>
+        </div>
+        <div class='col-xs-12 m-t-sm'></div>
+        <div class='col-xs-12 col-sm-12'>
+          <i class="fa fa-comment">
+           </i> Answered {{ moment-from-now question.updatedAt }} by <a class='bold' href=''>{{ question.latestAnswerer }}</a>
+         </div>
+        <div class='col-xs-12 m-t-sm'></div>
+         <div class='col-xs-12 col-sm-12 light-gray-text'>
+          {{ fa-icon 'eye' }} {{ question.viewCount }} {{ fa-icon 'comment' }} {{ question.answersCount }} {{ fa-icon 'bookmark' }} {{ question.bookmarksCount }}
         </div>
       </div>
     </div>
-    <ul class="list-inline no-margin-bottom m-t-lg">
-      <li>
-        <p class="grey-text">
-          <small>
-            <i class="fa fa-flag">&nbsp;</i> {{ moment-from-now question.createdAt }}
-          </small>
-        </p>
-      </li>
-      <li>
-        <p class="grey-text">
-          <small>
-            <a {{ action 'toggleAnswers' }} style="color:inherit;" class="answer_comment">
-              <i class="fa fa-comment">&nbsp;
-              </i> {{ question.answers.length }} answers
-            </a>
-          </small>
-        </p>
-      </li>
-    </ul>
-    <hr class='no-margin-bottom m-t-sm' />
-  </td>
-  <td class="col-sm-1 text-center">
-    <p>
-      <a {{ action 'bookmarkQuestion'}} class="grey-text">
-        <small>
-          {{ fa-icon 'bookmark' question }}
-          <div class="m-t-sm">
-            Bookmark
-          </div>
-        </small>
-      </a>
-    </p>
-  </td>
+  </div>
 </div>

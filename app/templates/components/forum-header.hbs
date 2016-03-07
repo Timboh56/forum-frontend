@@ -1,11 +1,14 @@
 <div class='row forum-tabs-container no-padding-left no-padding-right'>
-  <div class='col-xs-12 col-md-6 col-md-offset-6'>
-    {{#each tabs as |tab| }}
-      <div class='col-xs-3 forum-tab'>
-        {{#link-to tab.linkTo }}
-          {{ fa-icon tab.icon }} {{ tab.label }}
-        {{/link-to}}
+  <div class='col-xs-2 col-md-6'>
+    {{#if forumHeaderLabel }}
+      <div class='col-xs-12 text-left forum-tab'>
+        {{ forumHeaderLabel }}
       </div>
+    {{/if}}
+  </div>
+  <div class='col-xs-10 col-md-6'>
+    {{#each tabs as |tab| }}
+      {{ tab-link action='goToLink' tab=tab selectedTab=selectedTab  }}
     {{/each}}
   </div>
 </div>

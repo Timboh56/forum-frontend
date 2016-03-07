@@ -6,7 +6,7 @@
           {{input type='text' value=keywords placeholder='Search for a question topic' class='form-control' }}
         </div>
         <div class="hidden-xs col-sm-2 pull-in">
-          <button type="submit" {{ action 'search' }}class="btn-fa btn btn-default">
+          <button type="submit" {{ action 'search' }} class="btn-fa btn btn-default">
             {{ fa-icon 'search'}}
           </button>
         </div>
@@ -17,12 +17,16 @@
         </div>
       </div>
     </form>
-    <div class='form-group no-margin-top no-margin-bottom'>
-      {{#if showResults }}
-        {{#each model as |question|}}
-          {{ question-container question=question postComment="postComment" getComments="getComments" action='goToQuestion' }}
-        {{/each}}
-      {{/if}}
-    </div>
   </div>
 </div>
+{{#if showResults }}
+  <div class='form-group row search-results-container no-margin-bottom padding-bottom-lg box-shadow fast-transition'>
+    <div class='m-t-md search-results-inner-padding'>
+      <h4 class='no-margins'> {{ model.length }} Search Result(s) </h4>
+      <br />
+      {{#each model as |question|}}
+        {{ question-container question=question postComment="postComment" getComments="getComments" goToQuestion='goToQuestion' }}
+      {{/each}}
+    </div>
+  </div>
+{{/if}}

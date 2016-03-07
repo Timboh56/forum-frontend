@@ -1,7 +1,7 @@
 export default function(){  
   this.transition(
-    this.fromRoute('main'),
-    this.toRoute('files'),
+    this.fromRoute('forum.questions.index'),
+    this.toRoute('forum.questions.newest'),
     this.use('toRight'),
     this.reverse('toLeft')
   );

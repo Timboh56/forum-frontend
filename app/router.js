@@ -24,8 +24,9 @@ Router.map(function() {
       this.route('most-voted');
       this.route('most-viewed');
     });
-
+    this.resource('user', { path: 'question/:id' });
     this.resource('question', { path: 'question/:id' });
+    this.route('inbox');
   });
   this.route('login');
 });

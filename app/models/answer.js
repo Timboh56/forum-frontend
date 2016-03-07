@@ -1,7 +1,8 @@
 import DS from 'ember-data';
-import commentable from './commentable';
+import Commentable from '../mixins/commentable';
+import Votable from '../mixins/votable';
 
-export default commentable.extend({
+export default DS.Model.extend(Votable, Commentable, {
   text: DS.attr('string'),
   createdAt: DS.attr('date'),
   question: DS.belongsTo('question'),

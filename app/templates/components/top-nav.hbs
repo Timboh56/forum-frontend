@@ -5,7 +5,7 @@
         <span class="sr-only">Toggle Navigation</span>
         <span class="fa fa-leaf theme-text" aria-hidden="true"></span>
       </button>
-      <a href="/requests" class="no-padding-top navbar-brand animated flipInX">
+      <a href="/forum/questions/index" class="no-padding-top navbar-brand animated flipInX">
         <img alt="Mentormint" src="/assets/img/logos/default.png" style="max-height: 32px;"> 
       </a>
       <a href="/" class="navbar-brand animated flipInX">
@@ -13,7 +13,7 @@
     </div>
 ​
     <div class="float-right collapse navbar-collapse inline-block" id="navCollapse">
-      <ul class="hidden-xs hidden-sm visible-md nav navbar-nav navbar-right">
+      <ul class="hidden-xs hidden-sm visible-md visible-lg visible-xlg nav navbar-nav navbar-right">
         {{#if currentUser }}
           <li class='top-nav-btn-li'>
             {{#link-to 'forum.answers' class='btn-header'}}
@@ -26,7 +26,7 @@
             {{/link-to}}
           </li>
           <li class='top-nav-btn-li'>
-            {{#link-to 'forum.questions.new' class='btn-header'}}
+            {{#link-to 'forum.questions.new' class='btn-header btn-orange'}}
               ask question
             {{/link-to}}
           </li>
