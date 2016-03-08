@@ -96,6 +96,20 @@ nav.navbar {
   font-size: 14px;
 }
 
+.btn-green {
+  background: $green;
+  color: white !important;
+
+  &:hover {
+    background: $teal;
+  }
+}
+
+.btn-primary {
+  border: none !important;
+  text-transform: uppercase;
+}
+
 .btn-header {
   background-color: $green;
   font-family: 'NationalRegular';
@@ -112,6 +126,7 @@ nav.navbar {
 
 .btn-orange {
   background: $orange !important;
+  color: #fff !important;
   &:hover {
     background: $lightorange !important;
   }
