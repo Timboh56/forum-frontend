@@ -54,6 +54,8 @@ nav.navbar {
 .no-padding-top { padding-top: 0 !important;}
 .no-padding-left { padding-left: 0 !important; }
 .no-padding-right { padding-right: 0 !important; }
+.padding-top-xs { padding-top: 5px !important; }
+.padding-left-md { padding-left: 15px !important; }
 .padding-left-lg { padding-left: 32px; }
 .padding-bottom-lg { padding-bottom: 32px !important; }
 .fixed { position: fixed !important; }
@@ -143,6 +145,13 @@ li.dropdown { padding: 2px 24px !important; }
 
 .search-results-container {
   background: #fff;
+  display: block;
+  height: auto !important;
+  -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    transition: all 1s;
   .search-results-inner-padding {
     padding: 15px;
   }

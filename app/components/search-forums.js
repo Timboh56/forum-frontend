@@ -3,12 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   prevKeywords: '',
   keywords: '',
-  showResults: false,
+  hideResults: true,
   showingResults: (function() {
     if (this.get('model.length') > 0)
-      this.set('showResults', true);
+      this.set('hideResults', false);
     else
-      this.set('showResults', false);
+      this.set('hideResults', true);
 
   }).observes('model'),
 
@@ -31,7 +31,7 @@ export default Ember.Component.extend({
 
   actions: {
     goToQuestion: function(id) {
-      this.set('showResults', false);
+      this.set('hideResults', true);
       this.sendAction('goToQuestion', id);
     }
   }

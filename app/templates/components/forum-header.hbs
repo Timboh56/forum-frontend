@@ -1,14 +1,14 @@
 <div class='row forum-tabs-container no-padding-left no-padding-right'>
   <div class='col-xs-2 col-md-6'>
     {{#if forumHeaderLabel }}
-      <div class='col-xs-12 text-left forum-tab'>
+      <div class='col-xs-12 text-left padding-left-lg forum-tab'>
         {{ forumHeaderLabel }}
       </div>
     {{/if}}
   </div>
   <div class='col-xs-10 col-md-6'>
     {{#each tabs as |tab| }}
-      {{ tab-link action='goToLink' tab=tab selectedTab=selectedTab  }}
+      {{ tab-link action='goToLink' tab=tab selectedTab=selectedTab question=question}}
     {{/each}}
   </div>
 </div>

@@ -19,14 +19,12 @@
     </form>
   </div>
 </div>
-{{#if showResults }}
-  <div class='form-group row search-results-container no-margin-bottom padding-bottom-lg box-shadow fast-transition'>
-    <div class='m-t-md search-results-inner-padding'>
-      <h4 class='no-margins'> {{ model.length }} Search Result(s) </h4>
-      <br />
-      {{#each model as |question|}}
-        {{ question-container question=question postComment="postComment" getComments="getComments" goToQuestion='goToQuestion' }}
-      {{/each}}
-    </div>
+<div class='{{ if hideResults 'hide' }} form-group row search-results-container no-margin-bottom padding-bottom-lg box-shadow fast-transition'>
+  <div class='m-t-md search-results-inner-padding fast-transition'>
+    <h4 class='no-margins'> {{ model.length }} Search Result(s) </h4>
+    <br />
+    {{#each model as |question|}}
+      {{ question-container question=question postComment="postComment" getComments="getComments" goToQuestion='goToQuestion' }}
+    {{/each}}
   </div>
-{{/if}}
+</div>

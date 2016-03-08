@@ -14,5 +14,13 @@ export default DS.Model.extend(Taggable, Bookmarkable, Commentable, Votable, {
   user: DS.belongsTo('user', { embedded: 'always' }),
   viewCount: DS.attr('number'),
   questionUsername: DS.attr('string'),
-  latestAnswerer: DS.attr('string')
+  latestAnswerer: DS.attr('string'),
+  answersCountString: function() {
+    let answersCount = parseInt(this.get('answersCount'));
+    if (answersCount > 1)
+      return this.get('answersCount') + ' answers';
+    else
+      return this.get('answersCount') + ' answer';
+
+  }.property('answersCountString')
 });

@@ -3,6 +3,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 import LoadingSpinnerMixin from '../mixins/loading-spinner';
 
 export default Ember.Route.extend(LoadingSpinnerMixin, {
+
   beforeModel: function(state) {
     var self = this,
       CurrentUserService = this.get('current-user'),

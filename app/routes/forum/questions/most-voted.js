@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import RouteHelpers from '../../../mixins/route-helpers';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(RouteHelpers, {
   model(params) {
-    return this.store.findAll('question', { page: params.page });
+    return this.peekOrFind(params);
   }
 });
