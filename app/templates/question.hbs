@@ -1,5 +1,5 @@
 <div class='m-t-lg row'>
-  <div class='col-xs-12 col-sm-9 padding-left-lg'>
+  <div class='col-xs-12 col-sm-8 padding-left-lg'>
     <div class='row'>
       <div class='col-xs-1 text-center'>
         {{ fa-icon 'lightbulb-o' class='font-xlg' }}
@@ -15,19 +15,20 @@
       </div>
     </div>
   </div>
-  <div class='col-xs-12 col-sm-3 border-left-blue font-sm text-left'>
-    <div class='row'>
-      <div class='col-xs-12 col-sm-12'>
-         <i class="fa fa-flag">
-         </i> {{ moment-from-now question.createdAt }} by <a class='bold' href=''>{{ question.questionUsername }}</a>
-      </div>
-      <div class='col-xs-12 m-t-sm'></div>
-      <div class='col-xs-12 col-sm-12'>
-        <i class="fa fa-comment">
-         </i> Answered {{ moment-from-now question.updatedAt }} by <a class='bold' href=''>{{ question.latestAnswerer }}</a>
-       </div>
-      <div class='col-xs-12 m-t-sm'></div>
-       <div class='col-xs-12 col-sm-12 light-gray-text'>
+  <div class='col-xs-12 col-sm-4 text-left'>
+    <div class='col-xs-2 col-sm-2'>
+      <a {{ action 'bookmarkAnswer' }} class="gray-text font-lg">
+        {{ fa-icon 'bookmark' question }}
+      </a>
+    </div>
+    <div class='col-xs-10 col-sm-10 border-left-blue font-sm col-sm-12'>
+      <i class="fa fa-flag">
+      </i> {{ moment-from-now question.createdAt }} by <a class='bold' href=''>{{ question.questionUsername }}</a>
+      <br />
+      <i class="fa fa-comment">
+      </i> Answered {{ moment-from-now question.updatedAt }} by <a class='bold' href=''>{{ question.latestAnswerer }}</a>
+      <br />
+      <div class='light-gray-text'>
         {{ fa-icon 'eye' }} {{ question.viewCount }} {{ fa-icon 'comment' }} {{ question.answersCount }} {{ fa-icon 'bookmark' }} {{ question.bookmarksCount }}
       </div>
     </div>

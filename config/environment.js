@@ -75,8 +75,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.CURRENT_USER_PATH = "http://localhost:3000/api/v1/users/me";
-    ENV.APP.LOGIN_PATH = "http://localhost:3000/api/v1/users/login";
+    ENV.APP.CURRENT_USER_PATH = "http://localhost:3000/api/v1/me";
+    ENV.APP.LOGIN_PATH = "http://localhost:3000/api/v1/login";
     ENV.APP.TEST_USERNAME = "test_user";
     ENV.APP.API = {
       NAMESPACE: 'api/v1',
@@ -93,8 +93,8 @@ module.exports = function(environment) {
   } else {
     ENV.APIKEY = '5a07d6948217432e45ca9234a6b13b30';
     ENV.environment = 'production';
-    ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/me";
-    ENV.APP.LOGIN_PATH = "http://mentormint-api.herokuapp.com/api/v1/users/login";
+    ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/me";
+    ENV.APP.LOGIN_PATH = "http://mentormint-api.herokuapp.com/api/v1/login";
     ENV.APP.API = {
       NAMESPACE: 'api/v1',
       HOST: 'http://mentormint-api.herokuapp.com',

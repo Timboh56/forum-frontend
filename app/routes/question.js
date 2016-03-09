@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('question', params.id);
+    return this.store.findRecord('question', params.id, { reload: true });
   },
 
   setupController: function(controller, model) {
