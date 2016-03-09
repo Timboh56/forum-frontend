@@ -1,1 +1,7 @@
-Oldest
+<div class='row'>
+  <div class='col-xs-12'>
+    {{#each model.answers as |answer| }}
+      {{ answer-container answer=answer }}
+    {{/each}}
+  </div>
+</div>

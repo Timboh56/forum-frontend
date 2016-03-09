@@ -8,6 +8,10 @@ export default Ember.Component.extend({
 
     downVote: function() {
 
+    },
+
+    bookmarkAnswer: function() {
+
     }
   }
 });

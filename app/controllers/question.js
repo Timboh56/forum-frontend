@@ -1,18 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  answer: {},
+  init() {
+    this.set('answer', this.store.createRecord('answer'));
+  },
   actions: {
     submitAnswer() {
-      let answerHash =  this.get('answer');
-      let answerRecord = this.store.createRecord('answer', answerHash);
+      let answerRecord =  this.get('answer');
       answerRecord.set('question', this.get('model'));
       answerRecord.set('user', this.get('current-user.model'));
       answerRecord.save();
+      this.init();
     },
 
     resetAnswer() {
-      this.set('answer', {});
+      this.init();
     }
   }
 });

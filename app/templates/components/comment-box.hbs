@@ -35,8 +35,11 @@
             </div>
           </div>
           <div class="col-sm-6 text-right">
-            <button {{ action 'postComment' comment }} class="btn btn-theme">Submit</button>
-            <button type="button" {{ action 'toggleDisplay' }} class="btn btn-white close_comment">Close</button>
+            <button type="button" {{ action 'toggleDisplay' }} class="btn btn-primary btn-red close_comment">
+              {{ fa-icon 'times '}} Close </button>
+            <button {{ action 'postComment' comment }} class="btn btn-primary btn-green">
+              {{ fa-icon 'plus' }} Submit
+            </button>
           </div>
         </div>
       </form>
@@ -51,11 +54,14 @@
               </div>
               <div class="media-body m-t-md">
                 <h6 class="media-heading">
-                  {{ comment.id }}
-                  <a href="#">{{ comment.user.username }}</a>
+                  {{#link-to 'user' comment.user }}
+                    {{ comment.user.username }}
+                  {{/link-to }}
                 </h6>
-                <p>{{ comment.text }}</p>
-                <p class="m-t-md grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
+                <p class='font-md'>
+                  {{ comment.text }}
+                </p>
+                <p class="grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
               </div>
             </div>
           </li>

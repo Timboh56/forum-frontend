@@ -1,11 +1,11 @@
 <div class='m-t-lg row'>
   <div class='col-xs-12 col-sm-9 padding-left-lg'>
     <div class='row'>
-      <div class='col-xs-1'>
+      <div class='col-xs-1 text-center'>
         {{ fa-icon 'lightbulb-o' class='font-xlg' }}
       </div>
       <div class='col-xs-11'>
-        <h4>  {{ model.title }} </h4>
+        <h4 class='no-padding no-margins'>  {{ model.title }} </h4>
         <p class='font-md m-t-lg'>
           {{ model.text }}
         </p>
@@ -56,11 +56,11 @@
   <div class='col-xs-12'>
     <div class='row'>
       <div class='col-xs-10 col-xs-offset-1'>
-        {{content-editable value=answer.text class='form-control' tagName='textarea' placeholder="Type your answer here.." type="text"}}
+        {{ textarea value=answer.text class='form-control' placeholder='Type your answer here..' }}
         <br />
         <div class='text-right'>
           <button {{ action 'resetAnswer' }} class='btn btn-primary btn-orange'>
-            {{ fa-icon 'reset' }} Reset
+            {{ fa-icon 'eraser' }} Reset
           </button>
           <button {{ action 'submitAnswer' }} class='btn btn-primary btn-green'>
             {{ fa-icon 'edit' }} Answer question

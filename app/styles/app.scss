@@ -8,8 +8,11 @@
  $lightgray: #aaa;
  $orange: #F95000;
  $lightorange: #f39c12;
- $green: #43C3B3;
- $teal: #79CABF;
+ $green: #329854;
+ $lightgreen: #76DA98;
+ $teal: #43C3B3;
+ $red: #c0392b;
+ $lightred: #e74c3c;
 
 html {
   position: relative;
@@ -37,6 +40,7 @@ h2,h1,h3,h4,h5 {
   font-family: 'MontserratBold' !important;
   color: #555;
 }
+textarea { resize: none; }
 nav.navbar {
   background-color: #fff;
 
@@ -89,11 +93,24 @@ nav.navbar {
 }
 
 .tag {
-  background: $green;
+  background: $teal;
   border-radius: 3px;
   padding: 3px 7px;
   color: white;
   font-size: 14px;
+}
+
+.well {
+  background-color: #efefef !important; 
+}
+
+.btn-red {
+  background: $red;
+  color: white !important;
+
+  &:hover {
+    background: $lightred;
+  }
 }
 
 .btn-green {
@@ -101,7 +118,7 @@ nav.navbar {
   color: white !important;
 
   &:hover {
-    background: $teal;
+    background: $lightgreen !important;
   }
 }
 
@@ -111,7 +128,7 @@ nav.navbar {
 }
 
 .btn-header {
-  background-color: $green;
+  background-color: $teal;
   font-family: 'NationalRegular';
   border-radius: 3px;
   padding: 5px 12px !important;
@@ -146,6 +163,8 @@ nav.navbar {
 .btn, .btn-default {
   font-family: "VarelaRoundRegular" !important;
   color: #888;
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
 }
 
 .top-nav-btn-li {
@@ -155,7 +174,7 @@ nav.navbar {
 li.dropdown { padding: 2px 24px !important; }
 
 .search-forums-container {
-  background: $green;  
+  background: $teal;  
 }
 
 .search-results-container {
@@ -204,24 +223,44 @@ li.dropdown { padding: 2px 24px !important; }
 .forum-tabs-container {
   background: #eee;
   padding: 0 25px;
-  .forum-tab {
+  max-height: 45px;
+  .forum-tab, .forum-header-tab {
     padding-top: 15px;
     padding-bottom: 15px;
     display: inline-block;
     font-family: "NexaBold" !important;
     font-size: 10px;
     color: black;
+    height: inherit;
     text-transform: uppercase;
+    transition: all 0.5s;
+  }
+  .forum-tab {
+    border-top: 3px solid rgba(0,0,0,0.01);
+
     &:hover {
       cursor: pointer;
+      background-color: $darkblue;
+      color: white;
     }
 
     &.active {
       background-color: #fff !important;
+      color: black !important;
       border-top: 3px solid $darkblue;
       padding-top: 13px !important;
     }
-  } 
+  }
+}
+
+.profile-pic-container {
+    
+}
+
+.profile-pic {
+  height: 40px;
+  border-radius: 30px;
+  margin: auto;
 }
 
 body.theme-main {

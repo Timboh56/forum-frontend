@@ -7,5 +7,6 @@ export default DS.Model.extend(Votable, Commentable, {
   createdAt: DS.attr('date'),
   question: DS.belongsTo('question'),
   user: DS.belongsTo('user'),
-  commentsCount: DS.attr('number')
+  commentsCount: DS.attr('number'),
+  answererUsername: DS.attr('string')
 });
