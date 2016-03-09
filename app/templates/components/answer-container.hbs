@@ -1,8 +1,8 @@
 <div class="row m-t-lg">
   <div class='col-xs-1 col-sm-1 text-center'>
     <h3 class='no-margins'>
-      <div {{ action 'upVote' }} class='pointer full-width text-center'>
-        {{ fa-icon 'caret-up' class='font-xlg gray-text' }}
+      <div {{ action 'upVote' }} class='{{ if userHasVoted 'btn-green-caret' 'gray-text' }} pointer full-width text-center'>
+        {{ fa-icon 'caret-up' class='font-xlg' }}
       </div>
       <div class='full-width text-center'>
         {{ answer.votesCount }}
@@ -37,7 +37,7 @@
           <div class='profile-pic-container text-left'>
             <img src='/assets/img/misc/profilepic.jpg' class='profile-pic' />
             <div class='m-t-md full-width'>
-              {{#link-to 'user' answer.user }}
+              {{#link-to 'user' answer.user.id }}
                 {{ answer.answererUsername }}
               {{/link-to}}
             </div>

@@ -5,6 +5,7 @@ var User = DS.Model.extend({
   questions: DS.hasMany('question'),
   comments: DS.hasMany('comment'),
   answers: DS.hasMany('answer'),
+  votes: DS.hasMany('vote'),
   bookmarks: DS.hasMany('bookmark'),
   username: DS.attr('string'),
   firstName: DS.attr('string'),

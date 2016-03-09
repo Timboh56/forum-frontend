@@ -24,7 +24,7 @@ Router.map(function() {
       this.route('most-voted');
       this.route('most-viewed');
     });
-    this.resource('user', { path: 'question/:id' });
+    this.resource('user', { path: '/user/:id' });
     this.resource('question', { path: '/question/:id' }, function() {
       this.route('index');
       this.route('newest');
