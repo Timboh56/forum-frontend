@@ -1,4 +1,4 @@
-<div class="row m-t-lg">
+<div class="row m-t-lg" id='answer-{{ answer.id }}'>
   <div class='col-xs-1 col-sm-1 text-center'>
     <h3 class='no-margins'>
       <div {{ action 'upVote' }} class='{{ if answer.hasVoted 'btn-green-caret' 'gray-text' }} pointer full-width text-center'>
@@ -27,8 +27,7 @@
           {{ profile-container model=answer }}
         </div>
         <div class='col-xs-12 m-t-sm'></div>
-        <div class='col-xs-12 m-t-sm'></div>
-         <div class='col-xs-12 col-sm-12 light-gray-text'>
+         <div class='col-xs-12 col-sm-12'>
           {{ fa-icon 'comment' }} {{ answer.commentsCount }}
         </div>
       </div>

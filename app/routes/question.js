@@ -1,18 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
   model(params) {
     return this.store.findRecord('question', params.id, { reload: true });
   },
 
-  setupController: function(controller, model) {
+  setupController(controller, model) {
     let answers = model.get('answers');
-    this.controllerFor('question.newest').set('model', answers);
-    this.controllerFor('question.most-voted').set('model', answers);
-    this.controllerFor('question.most-viewed').set('model', answers);
-    this.controllerFor('question.index').set('model', answers);
-
     controller.set('model', model);
+    this.controllerFor('question.newest').set('sortedModel', answers);
+    this.controllerFor('question.most-viewed').set('sortedModel', answers);
+    this.controllerFor('question.most-voted').set('sortedModel', answers);
+
     controller.set('tabs', [
       {
         label: 'all-answers',

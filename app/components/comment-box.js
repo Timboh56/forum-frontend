@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ViewHelpers from '../mixins/view-helpers';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(ViewHelpers, {
   pageNo: 0,
   isShowingComments: false, 
   init() {
@@ -15,11 +16,6 @@ export default Ember.Component.extend({
 
     this._super();
   },
-
-  commentsLimited: function(){
-    var commentsIndex = this.get('pageNo') * 5;
-    return this.get('commentable.comments').slice(commentsIndex , commentsIndex + 5);
-  }.property('commentsLimited'),
 
   showNextFive: function() {
     return this.get('commentable.comments.length') > 5;
@@ -36,9 +32,7 @@ export default Ember.Component.extend({
           commentableId: commentableId,
           commentableType: commentableType
         }
-      ).then(function() {
-        self.rerender();
-      });
+      );
     },
 
     postComment: function(comment) {
@@ -54,7 +48,6 @@ export default Ember.Component.extend({
         commentRecord.set('commentable.commentsCount', incrementedCount );
         //self.transitionTo('forum.questions');
         self.set('comment', {});
-        self.toggleProperty('isShowingComments');
         self.rerender();
       });
     },

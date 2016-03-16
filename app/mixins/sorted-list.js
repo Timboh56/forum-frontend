@@ -1,27 +1,45 @@
 import Ember from 'ember';
 
-export default Ember.Mixin.create({
-  sortedProperty: 'model',
+const sortableProperties = [ 
+  {
+    propertyName: 'sortedByViewCount',
+    sortedProperty: 'viewCount'
+  },
+  {
+    propertyName: 'sortedByVotesCount',
+    sortedProperty: 'votesCount'
+  },
+  {
+    propertyName: 'sortedByCreatedAt',
+    sortedProperty: 'createdAt'
+  }
+];
 
-  sortedByVotesCount: function() {
-    let sortedProperty = this.get('sortedProperty');
+var mixin = {
+  sortedModelName: 'sortedModel'
+};
+
+for (var i = 0; i < sortableProperties.length; i++) ( function(s){
+  var propertyName = s['propertyName'],
+    sortedProperty = s['sortedProperty'];
+
+  mixin[propertyName] = function() {
+    let sortedModelName = this.get('sortedModelName');
+    let sortedModel = this.get(sortedModelName);
     return Ember.ArrayProxy.create({
-      content: this.get(sortedProperty)
-    }).sortBy('votesCount').reverse();
-  }.property('sortedByVotesCount'),
+      content: sortedModel
+    }).sortBy(sortedProperty).reverse();
+  }.property(propertyName);
 
-  sortedByViewCount: function() {
-    let sortedProperty = this.get('sortedProperty');
-    return Ember.ArrayProxy.create({
-      content: this.get(sortedProperty)
-    }).sortBy('viewCount').reverse();
-  }.property('sortedByViewCount'),
+  mixin[propertyName + 'Observer'] = function() {
+    let sortedModelName = this.get('sortedModelName');
+    let sortedModel = this.get(sortedModelName);
 
+    this.set(propertyName, Ember.ArrayProxy.create({
+      content: sortedModel
+    }).sortBy(sortedProperty).reverse());
+  }.observes('model.answers.[]');
 
-  sortedByCreatedAt: function() {
-    let sortedProperty = this.get('sortedProperty');
-    return Ember.ArrayProxy.create({
-      content: this.get(sortedProperty)
-    }).sortBy('createdAt').reverse();
-  }.property('sortedByCreatedAt')
-});
+})(sortableProperties[i]);
+
+export default Ember.Mixin.create(mixin);

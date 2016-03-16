@@ -6,7 +6,13 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
+    let questions = model.get('questions');
     controller.set('model', model);
+    this.controllerFor('user.index').set('sortedModel', questions);
+    this.controllerFor('user.newest').set('sortedModel', questions);
+    this.controllerFor('user.most-voted').set('sortedModel', questions);
+    this.controllerFor('user.most-viewed').set('sortedModel', questions);
+
     controller.set('tabs', [
       {
         label: 'all',
@@ -23,10 +29,10 @@ export default Ember.Route.extend({
         recordId: model.id
       },
       {
-        label: 'oldest',
-        id: 'oldest',
+        label: 'most-viewed',
+        id: 'most-viewed',
         icon: 'plus',
-        linkTo: 'user.oldest',
+        linkTo: 'user.most-viewed',
         recordId: model.id
       },
       {

@@ -11,67 +11,65 @@
   </li>
 </ul>
 {{#if isShowingComments }}
-  <div id="comment">
-    <div class="well">
-      <form class="form-horizontal">
-        <div class="form-group">
-          <div class="col-sm-12">
-            {{ textarea class="form-control comment_box" rows="2" placeholder="Type your comment here.." maxlength="180" value=comment.text }}
+  <div class="col-xs-12">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-12">
+          {{ textarea class="form-control comment_box" rows="2" placeholder="Type your comment here.." maxlength="180" value=comment.text }}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">  
+          <div class="checkbox">
+            <label>
+              <small class="grey-text">
+                <div>
+                  <input type="checkbox" id="answer_anonymous" class='no-margin-top' />
+                </div>
+                <div class='m-t-sm'>
+                  Comment anonymously
+                </div>
+              </small>
+            </label>
           </div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-6">  
-            <div class="checkbox">
-              <label>
-                <small class="grey-text">
-                  <div>
-                    <input type="checkbox" id="answer_anonymous" class='no-margin-top' />
-                  </div>
-                  <div class='m-t-sm'>
-                    Comment anonymously
-                  </div>
-                </small>
-              </label>
-            </div>
-          </div>
-          <div class="col-sm-6 text-right">
-            <button type="button" {{ action 'toggleDisplay' }} class="btn btn-primary btn-red close_comment">
-              {{ fa-icon 'times '}} Close </button>
-            <button {{ action 'postComment' comment }} class="btn btn-primary btn-green">
-              {{ fa-icon 'plus' }} Submit
-            </button>
-          </div>
+        <div class="col-sm-6 text-right">
+          <button type="button" {{ action 'toggleDisplay' }} class="btn btn-primary btn-red close_comment">
+            {{ fa-icon 'times '}} Close </button>
+          <button {{ action 'postComment' comment }} class="btn btn-primary btn-green">
+            {{ fa-icon 'plus' }} Submit
+          </button>
         </div>
-      </form>
-      <ul class="list-group m-top">
-        {{#each commentsLimited as |comment|}}
-          <li class="list-group-item">
-            <div class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class="media-object img-circle introImagePanel" src="/assets/img/logos/leaf.png" alt="user">
-                </a>
-              </div>
-              <div class="media-body m-t-md">
-                <h6 class="media-heading">
-                  {{#link-to 'user' comment.user }}
-                    {{ comment.user.username }}
-                  {{/link-to }}
-                </h6>
-                <p class='font-md'>
-                  {{ comment.text }}
-                </p>
-                <p class="grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
-              </div>
+      </div>
+    </form>
+    <ul class="list-group m-top font-sm">
+      {{#each commentable.comments as |comment|}}
+        <li class='border-bottom p-t-sm p-b-sm'>
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object img-circle introImagePanel" src="/assets/img/logos/leaf.png" alt="user">
+              </a>
             </div>
-          </li>
-        {{/each}}
-        {{#if showNextFive }}
-          <li class="m-t-lg">
-            <a {{ action 'nextFiveComments' }}>Next 5</a>
-          </li>
-        {{/if}}
-      </ul>
-    </div>
+            <div class="media-body m-t-md">
+              <h6 class="media-heading">
+                {{#link-to 'user' comment.user }}
+                  {{ comment.user.username }}
+                {{/link-to }}
+              </h6>
+              <p class='font-sm'>
+                {{ comment.text }}
+              </p>
+              <p class="grey-text"><small> {{ moment-from-now comment.createdAt }} </small></p>
+            </div>
+          </div>
+        </li>
+      {{/each}}
+      <!--
+        <li class="m-t-lg">
+          <a {{ action 'nextFiveComments' }}>Next 5</a>
+        </li>
+      -->
+    </ul>
   </div>
 {{/if}}
