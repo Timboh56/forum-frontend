@@ -6,6 +6,12 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
+    let answers = model.get('answers');
+    this.controllerFor('question.newest').set('model', answers);
+    this.controllerFor('question.most-voted').set('model', answers);
+    this.controllerFor('question.most-viewed').set('model', answers);
+    this.controllerFor('question.index').set('model', answers);
+
     controller.set('model', model);
     controller.set('tabs', [
       {
@@ -23,10 +29,10 @@ export default Ember.Route.extend({
         recordId: model.id
       },
       {
-        label: 'oldest',
-        id: 'oldest',
+        label: 'most-viewed',
+        id: 'most-viewed',
         icon: 'plus',
-        linkTo: 'question.oldest',
+        linkTo: 'question.most-viewed',
         recordId: model.id
       },
       {

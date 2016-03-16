@@ -20,13 +20,26 @@ export default Ember.Component.extend({
       this.sendAction('goToQuestion', id);
     },
 
-    bookmarkQuestion(question) {
-      var currentUser = this.get('current-user.model');
-      var bookmark = this.store.createRecord('bookmark', {
-        bookmarkable: question,
-        user: currentUser
-      });
-      bookmark.save();
+    bookmarkQuestion() {
+      let question = this.get('question');
+      let currentUserBookmarkId = question.get('currentUserBookmarkId');
+      if (!question.get('hasBookmarked')) {
+        var currentUser = this.get('current-user.model');
+        var bookmark = this.store.createRecord('bookmark');
+        bookmark.set('bookmarkable',question);
+        bookmark.set('user', currentUser);
+        question.set('hasBookmarked', true);
+        question.set('currentUserBookmarkId', bookmark.get('id'));
+        bookmark.save();
+        this.set('question', question);
+      } else {
+        this.store.find('bookmark', currentUserBookmarkId).then(function(bookmark) {
+          question.set('hasBookmarked', false);
+          question.set('currentUserBookmarkId', null);
+          bookmark.destroyRecord();
+          this.set('question', question);
+        });
+      }
     },
 
     toggleAnswers() {

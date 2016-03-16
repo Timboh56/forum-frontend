@@ -18,13 +18,14 @@ export function momentFromNow(params) {
   };
 
   if (diffInDays > 5) {
-    momentFromNowString = 'Posted on ' + dateParam.toDateString();
+    var dateString = (dateParam.getMonth() + 1) + '/' + dateParam.getDate() + '/' + dateParam.getFullYear();
+    momentFromNowString = dateString;
   } else {
     var topTimeRange = null;
 
     for (var i in diffs) {
       if(diffs[i] > 0) {
-        momentFromNowString = 'Posted ' + diffs[i] + ' ' + i + ' ago.';
+        momentFromNowString = diffs[i] + ' ' + i + ' ago.';
       }
     }
   }

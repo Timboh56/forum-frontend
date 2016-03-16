@@ -42,15 +42,14 @@
   </div>
   <div class="col-xs-12 col-sm-4 text-center">
     <div class='col-xs-2'>
-      <a {{ action 'bookmarkQuestion'}} class="gray-text font-lg">
+      <a {{ action 'bookmarkQuestion' }} class="{{ if question.hasBookmarked 'green-link'}} gray-text font-xlg">
         {{ fa-icon 'bookmark' question }}
       </a>
     </div>
     <div class='col-xs-10 border-left-blue font-sm text-left'>
       <div class='row'>
         <div class='col-xs-12 col-sm-12'>
-           <i class="fa fa-flag">
-           </i> {{ moment-from-now question.createdAt }} by <a class='bold' href=''>{{ question.questionUsername }}</a>
+          {{ profile-container model=question}}
         </div>
         <div class='col-xs-12 m-t-sm'></div>
         <div class='col-xs-12 col-sm-12'>

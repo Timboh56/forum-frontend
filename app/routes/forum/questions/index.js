@@ -8,6 +8,6 @@ export default Ember.Route.extend(RouteHelpers, {
     }
   },
   model(params) {
-    return this.peekOrFind(params);
+    return this.peekOrFind('question', params);
   }
 });

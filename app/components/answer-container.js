@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  userHasVoted: function() {
-    return this.get('answer.hasVoted') || false;
-  }.property('userHasVoted'),
 
   actions: {
     upVote: function() {
@@ -14,19 +11,30 @@ export default Ember.Component.extend({
       if (answer.get('hasVoted') == false) {
         vote.set('votable', answer);
         vote.set('user', this.get('current-user.model'));
-        vote.save();
-        answer.set('hasVoted', true);
-        answer.set('votesCount', votesCount + 1);
+        vote.save().then( () => {
+          answer.set('hasVoted', true);
+          answer.set('votesCount', votesCount + 1);
+          answer.set('currentUserVoteId', vote.get('id'));
+        })
       }
     },
 
     downVote: function() {
-      let answer = this.get('answer');
-      answer.set('hasVoted', false);
+      let answer = this.get('answer'),
+        currentUserVoteId = answer.get('currentUserVoteId');
 
-      this.store.destroyRecord('vote', {
-        votable_id: 2
-      });
+      var self = this,
+        votesCount = parseInt(answer.get('votesCount'));
+
+      if (answer.get('hasVoted')  == true) {
+        this.store.find('vote', currentUserVoteId).then(function(vote) {
+          answer.set('hasVoted', false);
+          answer.set('votesCount', votesCount - 1);
+          answer.set('currentUserVoteId', null);
+          vote.destroyRecord();
+        });
+
+      }
     },
 
     bookmarkAnswer: function() {

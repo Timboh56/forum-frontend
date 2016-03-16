@@ -1,1 +1,7 @@
-Most voted
+<div class='row'>
+  <div class='col-xs-12'>
+    {{#each sortedByVotesCount as |answer| }}
+      {{ answer-container answer=answer }}
+    {{/each}}
+  </div>
+</div>

@@ -3,6 +3,8 @@ import DS from 'ember-data';
 var User = DS.Model.extend({
   notifications: DS.hasMany('notification'),
   questions: DS.hasMany('question'),
+  receivedMessages: DS.hasMany('message', { inverse: 'receiver' }),
+  sentMessages: DS.hasMany('message', { inverse: 'sender' }),
   comments: DS.hasMany('comment'),
   answers: DS.hasMany('answer'),
   votes: DS.hasMany('vote'),
@@ -26,7 +28,11 @@ var User = DS.Model.extend({
   date_signedin: DS.attr('date'),
   status: DS.attr('integer'),
   landing_page: DS.attr('string'),
-  timezone: DS.attr('date')
+  timezone: DS.attr('date'),
+  createdAt: DS.attr('date'),
+  questionsCountString: function() {
+    return this.get('questions.length') + ' questions';
+  }.property('questionsCountString')
 });
 
 export default User;

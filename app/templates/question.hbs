@@ -17,19 +17,22 @@
   </div>
   <div class='col-xs-12 col-sm-4 text-left'>
     <div class='col-xs-2 col-sm-2'>
-      <a {{ action 'bookmarkAnswer' }} class="gray-text font-lg">
-        {{ fa-icon 'bookmark' question }}
-      </a>
+     <a {{ action 'bookmarkQuestion' }} class="{{ if question.hasBookmarked 'green-link'}} gray-text font-xlg">
+      {{ fa-icon 'bookmark' model }}
+    </a>
     </div>
     <div class='col-xs-10 col-sm-10 border-left-blue font-sm col-sm-12'>
-      <i class="fa fa-flag">
-      </i> {{ moment-from-now question.createdAt }} by <a class='bold' href=''>{{ question.questionUsername }}</a>
-      <br />
-      <i class="fa fa-comment">
-      </i> Answered {{ moment-from-now question.updatedAt }} by <a class='bold' href=''>{{ question.latestAnswerer }}</a>
-      <br />
-      <div class='light-gray-text'>
-        {{ fa-icon 'eye' }} {{ question.viewCount }} {{ fa-icon 'comment' }} {{ question.answersCount }} {{ fa-icon 'bookmark' }} {{ question.bookmarksCount }}
+      {{ profile-container model=model }}
+      <div class='light-gray-text m-t-sm'>
+        <span class='m-r-md'>
+          {{ fa-icon 'eye' }} {{ model.viewCount }}
+        </span>
+        <span class='m-r-md'>
+          {{ fa-icon 'comment' }} {{ model.answersCount }}
+        </span>
+        <span class='m-r-md'>
+          {{ fa-icon 'bookmark' }} {{ model.bookmarksCount }}
+        </span>
       </div>
     </div>
   </div>

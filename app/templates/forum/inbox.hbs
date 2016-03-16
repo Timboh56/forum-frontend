@@ -1,1 +1,21 @@
+<div class='inbox-container container-fluid m-t-lg'>
+  <div class='row'>
+    <div class='col-xs-12 col-sm-2 m-t-lg text-center'>
+      <img src="/assets/img/misc/profilepic.jpg" class="profile-pic-lg">
+    </div>
+    <div class='col-xs-12 col-sm-10 m-t-lg text-left'>
+      <h2 class='m-t-md'>
+        Inbox
+      </h2>
+    </div>
+  </div>
+  <div class='row m-t-lg'>
+    <div class='col-xs-12 gray-bg'>
+      {{#each model as |message| }}
+        {{ message }}
+
+      {{/each}}
+    </div>
+  </div>
+</div>
 {{outlet}}

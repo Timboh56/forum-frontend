@@ -1,1 +1,24 @@
-<h2>User Route </h2>
+<div class='container-fluid profile-container'>
+  <div class='row m-t-xlg'>
+    <div class='col-xs-12 col-sm-2 text-right'>
+      <div class='profile-pic-container'>
+        <img src='/assets/img/misc/profilepic.jpg' class='profile-pic-lg' />
+      </div>
+    </div>
+    <div class='col-xs-12 col-sm-10 text-left'>
+      <h4>
+        {{ model.username }}
+      </h4>
+      <div class='m-t-md font-md'>
+        Member since {{ moment-from-now model.createdAt }}
+      </div>
+    </div>
+  </div>
+
+  <div class='row m-t-lg'>
+    <div class='col-xs-12'>
+      {{ forum-header forumHeaderLabel=model.questionsCountString tabs=tabs}}
+    </div>
+  </div>
+</div>
+{{ liquid-outlet }}

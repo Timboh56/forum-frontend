@@ -1,3 +1,4 @@
+
 /*
  * Themes for website
  * Copyright 2015 MentorMint, Inc. 
@@ -19,7 +20,11 @@ html {
   min-height: 100%;
   font-family: 'NexaBold', 'MontserratBold', 'VarelaRoundRegular';
 }
+.m-r-sm { margin-right: 8px; }
+.m-r-md { margin-right: 16px; }
+.m-r-lg { margin-right: 32px; }
 .m-t-lg { margin-top: 32px; }
+.m-t-xlg { margin-top: 64px; }
 .m-t-md { margin-top: 16px; }
 .m-t-sm { margin-top: 8px; }
 .p-t-lg { padding-top: 32px; }
@@ -88,6 +93,12 @@ nav.navbar {
 .gray-text, .grey-text { color: $gray; }
 .light-gray-text { color: $lightgray; }
 
+.green-text, .green-link { 
+  color: $green;
+  &:hover {
+    color: $lightgreen;
+  }
+}
 .close-btn:hover a{
   color: #eee !important;
 }
@@ -98,6 +109,16 @@ nav.navbar {
   padding: 3px 7px;
   color: white;
   font-size: 14px;
+}
+
+.tags-input .tags-input {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  margin: 0 !important;
+}
+
+.tag.label {
+  margin: 5px !important;
 }
 
 .well {
@@ -115,6 +136,9 @@ nav.navbar {
 
 .btn-green-caret {
   color: $green !important;  
+  &:hover {
+    color: $lightgreen !important;
+  }
 }
 
 .btn-green {
@@ -179,6 +203,10 @@ li.dropdown { padding: 2px 24px !important; }
 
 .search-forums-container {
   background: $teal;  
+}
+
+.alert {
+  margin-bottom: 0 !important;
 }
 
 .search-results-container {
@@ -257,8 +285,18 @@ li.dropdown { padding: 2px 24px !important; }
   }
 }
 
-.profile-pic-container {
-    
+.profile-pic-container {}
+
+.profile-pic-lg {
+  height: 80px;
+  border-radius: 80px;
+  margin: auto;  
+}
+
+.profile-pic-xlg {
+  height: 160px;
+  margin: auto;
+  border-radius: 160px; 
 }
 
 .profile-pic {

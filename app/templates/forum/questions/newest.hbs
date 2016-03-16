@@ -7,7 +7,7 @@
         <div id="mainTable">
           <table class="table-simple">
             <tbody>
-              {{#each sortedList as |question|}}
+              {{#each sortedByCreatedAt as |question|}}
                 {{ question-container question=question }}
               {{/each}}
             </tbody>

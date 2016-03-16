@@ -1,12 +1,8 @@
 import Ember from 'ember';
 import ENV from '../../../config/environment';
+import SortedList from '../../../mixins/sorted-list';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(SortedList, {
   tabs: ENV.RESOURCES.FORUM_TABS,
 
-  sortedList: function() {
-    return Ember.ArrayProxy.create({
-      content: this.get('model')
-    }).sortBy('viewCount').reverse();
-  }.property('model'),
 });
