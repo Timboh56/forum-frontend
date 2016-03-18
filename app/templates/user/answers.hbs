@@ -5,8 +5,8 @@
         <div id="mainTable">
           <table class="table-simple">
             <tbody>
-              {{#each sortedByVotesCount as |question|}}
-                {{ question-container question=question }}
+              {{#each answers as |answer|}}
+                {{ answer-container answer=answer }}
               {{/each}}
             </tbody>
           </table>

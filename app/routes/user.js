@@ -7,39 +7,24 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model) {
     let questions = model.get('questions');
+    let answers = model.get('answers');
     controller.set('model', model);
-    this.controllerFor('user.index').set('sortedModel', questions);
-    this.controllerFor('user.newest').set('sortedModel', questions);
-    this.controllerFor('user.most-voted').set('sortedModel', questions);
-    this.controllerFor('user.most-viewed').set('sortedModel', questions);
+    this.controllerFor('user.index').set('model', questions);
+    this.controllerFor('user.answers').set('answers', answers);
 
     controller.set('tabs', [
       {
-        label: 'all',
+        label: 'questions',
         id: 'index',
         icon: 'edit',
         linkTo: 'user.index',
         recordId: model.id
       },
       {
-        label: 'newest',
-        id: 'newest',
+        label: 'answers',
+        id: 'answers',
         icon: 'edit',
-        linkTo: 'user.newest',
-        recordId: model.id
-      },
-      {
-        label: 'most-viewed',
-        id: 'most-viewed',
-        icon: 'plus',
-        linkTo: 'user.most-viewed',
-        recordId: model.id
-      },
-      {
-        label: 'most-voted',
-        id: 'voted',
-        icon: 'plus',
-        linkTo: 'user.most-voted',
+        linkTo: 'user.answers',
         recordId: model.id
       }
     ]);

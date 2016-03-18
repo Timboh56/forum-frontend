@@ -11,10 +11,10 @@ export default DS.Model.extend(Taggable, Bookmarkable, Commentable, Votable, {
   updatedAt: DS.attr('date'),
   answers: DS.hasMany('answer', { embedded: 'always' }),
   answersCount: DS.attr('number'),
-  user: DS.belongsTo('user', { async: false }),
+  user: DS.belongsTo('user'),
   viewCount: DS.attr('number'),
   questionUsername: DS.attr('string'),
-  latestAnswerer: DS.attr('string'),
+  lastAnswererUsername: DS.attr('string'),
   hasBookmarked: DS.attr('boolean'),
   answersCountString: function() {
     let answersCount = parseInt(this.get('answersCount'));

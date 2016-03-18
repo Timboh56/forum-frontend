@@ -27,15 +27,13 @@ Router.map(function() {
 
     this.resource('user', { path: '/user/:id' }, function() {
       this.route('index');
-      this.route('newest');
-      this.route('most-voted');
-      this.route('most-viewed');    
+      this.route('answers');
     });
 
     this.resource('question', { path: '/question/:id' }, function() {
       this.route('index');
       this.route('newest');
-      this.route('most-viewed');
+      this.route('most-active');
       this.route('most-voted');
     });
     this.route('inbox');
