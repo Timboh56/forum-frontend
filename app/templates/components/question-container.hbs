@@ -52,13 +52,15 @@
           {{ profile-container model=question}}
         </div>
         <div class='col-xs-12 m-t-sm'></div>
-        <div class='col-xs-12 col-sm-12'>
-          <i class="fa fa-comment">
-          </i> Answered {{ moment-from-now question.updatedAt }} by 
-          {{#link-to 'user' question.latestAnswerer }}
-            {{ question.latestAnswerer }}
-          {{/link-to}}
-         </div>
+        {{#if question.lastAnswererUsername}}
+          <div class='col-xs-12 col-sm-12'>
+            <i class="fa fa-comment">
+            </i> Answered by 
+            {{#link-to 'user' question.lastAnswererUsername }}
+              {{ question.lastAnswererUsername }}
+            {{/link-to}}
+           </div>
+        {{/if}}
         <div class='col-xs-12 m-t-sm'></div>
          <div class='col-xs-12 col-sm-12 light-gray-text'>
           {{ fa-icon 'eye' }} {{ question.viewCount }} {{ fa-icon 'comment' }} {{ question.answersCount }} {{ fa-icon 'bookmark' }} {{ question.bookmarksCount }}

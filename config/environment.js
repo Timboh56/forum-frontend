@@ -7,13 +7,27 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     RESOURCES: {
-      FORUM_TABS: [
+      QUESTION_TABS: [
         {
-          label: 'all-posts',
+          label: 'newest',
+          id: 'newest',
+          icon: 'edit',
+          linkTo: 'question.newest',
+        },
+        {
+          label: 'most-voted',
+          id: 'voted',
+          icon: 'plus',
+          linkTo: 'question.most-voted',
+        },
+        {
+          label: 'all-answers',
           id: 'index',
           icon: 'edit',
-          linkTo: 'forum.questions.index'
+          linkTo: 'question.index',
         },
+      ],
+      FORUM_TABS: [
         {
           label: 'newest',
           id: 'newest',
@@ -21,16 +35,16 @@ module.exports = function(environment) {
           linkTo: 'forum.questions.newest'
         },
         {
-          label: 'most-viewed',
-          id: 'viewed',
+          label: 'most-active',
+          id: 'active',
           icon: 'plus',
-          linkTo: 'forum.questions.most-viewed'
+          linkTo: 'forum.questions.most-active'
         },
         {
-          label: 'most-voted',
-          id: 'voted',
-          icon: 'plus',
-          linkTo: 'forum.questions.most-voted'
+          label: 'all',
+          id: 'index',
+          icon: 'edit',
+          linkTo: 'forum.questions.index'
         }
       ]
     },

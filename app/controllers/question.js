@@ -6,6 +6,16 @@ export default Ember.Controller.extend(ViewHelpers, {
   init() {
     this.set('answer', {});
   },
+
+  currentUserHasAnswered: function() {
+    var answers = this.get('model.answers'),
+      currentUser = this.get('current-user.model'),
+      filtered = answers.filter(function(answer, index, enumerable){
+        return answer.get('user.id') == currentUser.id;
+      });
+    return filtered.length > 0;
+  }.property('model.answers.[]'),
+
   actions: {
     submitAnswer() {
       const flashMessages = this.get('flashMessages'),

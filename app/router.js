@@ -22,7 +22,7 @@ Router.map(function() {
       this.route('index');
       this.route('newest');
       this.route('most-voted');
-      this.route('most-viewed');
+      this.route('most-active');
     });
 
     this.resource('user', { path: '/user/:id' }, function() {

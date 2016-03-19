@@ -12,7 +12,11 @@ const sortableProperties = [
   {
     propertyName: 'sortedByCreatedAt',
     sortedProperty: 'createdAt'
-  }
+  },
+  {
+    propertyName: 'sortedByActivityCount',
+    sortedProperty: 'activityCount'
+  },
 ];
 
 var mixin = {
