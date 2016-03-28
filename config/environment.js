@@ -7,6 +7,26 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     RESOURCES: {
+      BOOKMARK_TABS: [
+        {
+          label: 'newest',
+          id: 'newest',
+          icon: 'edit',
+          linkTo: 'forum.bookmarks.newest'
+        },
+        {
+          label: 'most-active',
+          id: 'active',
+          icon: 'plus',
+          linkTo: 'forum.bookmarks.most-active'
+        },
+        {
+          label: 'all',
+          id: 'index',
+          icon: 'edit',
+          linkTo: 'forum.bookmarks.index'
+        }
+      ],
       QUESTION_TABS: [
         {
           label: 'newest',
@@ -69,10 +89,10 @@ module.exports = function(environment) {
     },
 
     flashMessageDefaults: {
-      timeout: 9000,
+      timeout: 2000,
       extendedTimeout: 0,
       priority: 200,
-      sticky: true,
+      sticky: false,
       showProgress: true,
       injectionFactories: [ 'route', 'controller', 'view', 'component' ],
       preventDuplicates: false

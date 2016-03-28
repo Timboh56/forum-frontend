@@ -43,8 +43,8 @@
       </div>
     </form>
     <ul class="list-group m-top font-sm">
-      {{#each commentable.comments as |comment|}}
-        <li class='border-bottom p-t-sm p-b-sm'>
+      {{#each sortedComments as |comment|}}
+        <li class='border-bottom p-t-sm p-b-sm fade-in'>
           <div class="media">
             <div class="media-left">
               <a href="#">

@@ -25,37 +25,41 @@ var NotificationsService = Ember.Service.extend({
   getMessages: function(currentUser) {
     var dfd = jQuery.Deferred(),
       current_id = currentUser.id,
-      resource_path = 'users/' + current_id + '/messages',
+      received_resource_path = 'users/' + current_id + '/received_messages',
+      sent_resource_path = 'users/' + current_id + '/sent_messages',
       arr = [],
-      self = this;
+      self = this,
+      paths = [received_resource_path, sent_resource_path],
+      promise = null;
 
+    for (var path of paths) {
+      promise = new Ember.RSVP.Promise((fullfill, reject) => {
+        jQuery.ajax({
+          type: 'GET',
+          dataType: 'json',
+          url: ENV.APP.NOTIFICATIONS_SERVER_URI + path,
+          success: function(resp) {
+            if(resp.data && resp.data.length > 0) {
+              for(var i = 0; i < resp.data.length; i++)
+                arr.push(self.get('store').createRecord('message', resp.data[i]));
+            }
+            fullfill(resp);
+          },
+          error: function(resp) {
+            reject(resp);
+          },
 
-    var promise = new Ember.RSVP.Promise((fullfill, reject) => {
-      jQuery.ajax({
-        type: 'GET',
-        dataType: 'json',
-        url: ENV.APP.NOTIFICATIONS_SERVER_URI + resource_path,
-        success: function(resp) {
-          if(resp.data && resp.data.length > 0) {
-            for(var i = 0; i < resp.data.length; i++)
-              arr.push(self.get('store').createRecord('message', resp.data[i]));
+          complete: function(resp) {
           }
-          fullfill(resp);
-        },
-        error: function(resp) {
-          reject(resp);
-        },
+        });
 
-        complete: function(resp) {
-        }
+      }).then((resp) => {
+        dfd.resolve(resp);
+      }, (resp) => {
+        dfd.reject();
       });
 
-    }).then((resp) => {
-      dfd.resolve(resp);
-    }, (resp) => {
-      dfd.reject();
-    });
-
+    }
   },
 
   getNotifications: function(currentUser) {

@@ -12,32 +12,33 @@ export default Ember.Component.extend({
 
   actions: {
 
-    unbookmarkQuestion(question) {
-
-    },
-
     goToQuestion(id) {
       this.sendAction('goToQuestion', id);
     },
 
     bookmarkQuestion() {
-      let question = this.get('question');
-      let currentUserBookmarkId = question.get('currentUserBookmarkId');
+      var self = this,
+        currentUser = null,
+        bookmark = null,
+        question = this.get('question'),
+        currentUserBookmarkId = question.get('currentUserBookmarkId');
       if (!question.get('hasBookmarked')) {
-        var currentUser = this.get('current-user.model');
-        var bookmark = this.store.createRecord('bookmark');
+        currentUser = this.get('current-user.model');
+        bookmark = this.store.createRecord('bookmark');
         bookmark.set('bookmarkable',question);
         bookmark.set('user', currentUser);
         question.set('hasBookmarked', true);
-        question.set('currentUserBookmarkId', bookmark.get('id'));
-        bookmark.save();
-        this.set('question', question);
+        bookmark.save().then( (resp)=> {
+          question.set('currentUserBookmarkId', resp.get('id'));
+          this.set('question', question);
+        });
       } else {
-        this.store.find('bookmark', currentUserBookmarkId).then(function(bookmark) {
+        this.store.peek('bookmark', currentUserBookmarkId).then(function(bookmark) {
           question.set('hasBookmarked', false);
           question.set('currentUserBookmarkId', null);
           bookmark.destroyRecord();
-          this.set('question', question);
+          self.set('question', question);
+          self.sendAction('bookmarkCallback', question.get('id'));
         });
       }
     },

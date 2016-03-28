@@ -16,7 +16,13 @@ Router.map(function() {
 
   this.route('forum', function() {
     this.route('answers');
-    this.route('bookmarks');
+    this.route('bookmarks', function() {
+      this.route('index');
+      this.route('most-active');
+      this.route('most-voted');
+      this.route('newest');
+    });
+
     this.route('questions', function() {
       this.route('new');
       this.route('index');

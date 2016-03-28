@@ -5,9 +5,10 @@ export default Ember.Component.extend(ViewHelpers, {
   pageNo: 0,
   isShowingComments: false, 
   init() {
-    const currentUser = this.get('current-user.model');  
-    const commentableId = parseInt(this.get('commentable.id'));
-    const commentableType = this.get('commentableType');
+    let currentUser = this.get('current-user.model'),
+      commentableId = parseInt(this.get('commentable.id')),
+      commentableType = this.get('commentableType');
+
     this.set('comment', {
       user: currentUser,
       commentableType: commentableType,
@@ -17,6 +18,14 @@ export default Ember.Component.extend(ViewHelpers, {
     this._super();
   },
 
+  sortedComments: function() {
+    return Ember.ArrayProxy.create({
+      sortProperties: ['createdAt'],
+      sortAscending: false,
+      content: this.get('commentable.comments')
+    });
+  }.property('sortedComments'),
+
   showNextFive: function() {
     return this.get('commentable.comments.length') > 5;
   }.property('showNextFive'),
@@ -24,20 +33,27 @@ export default Ember.Component.extend(ViewHelpers, {
   actions: {
 
     getComments: function() {
-      var self = this;
-      const commentableId = this.get('commentable.id');
-      const commentableType = this.get('commentableType');
-      var comments = this.store.query(
+      var self = this,
+        commentable = this.get('commentable'),
+        sortedComments = null;
+
+      const commentableId = this.get('commentable.id'),
+      commentableType = this.get('commentableType');
+      this.store.query(
         'comment', {
           commentableId: commentableId,
           commentableType: commentableType
         }
-      );
+      ).then((resp) => {
+        self.set('commentable.comments', resp);
+        self.toggleProperty('isShowingComments');
+        self.rerender();
+      });
     },
 
     postComment: function(comment) {
-      var commentRecord = this.store.createRecord('comment', comment);
-      var self = this;
+      var commentRecord = this.store.createRecord('comment', comment),
+        self = this;
       commentRecord.set('user', this.get('current-user.model'));
       commentRecord.set('commentable', this.get('commentable'));
 
@@ -46,7 +62,6 @@ export default Ember.Component.extend(ViewHelpers, {
         const incrementedCount = parseInt(commentRecord.get('commentable.commentsCount')) + 1; 
         flashMessages.success('Comment posted!');
         commentRecord.set('commentable.commentsCount', incrementedCount );
-        //self.transitionTo('forum.questions');
         self.set('comment', {});
         self.rerender();
       });
@@ -76,9 +91,7 @@ export default Ember.Component.extend(ViewHelpers, {
     },
 
     toggleDisplay: function() {
-      this.toggleProperty('isShowingComments');
-      if (this.get('isShowingComments'))
-        this.get('actions.getComments').call(this);
+      this.get('actions.getComments').call(this);
     }
   }
 });

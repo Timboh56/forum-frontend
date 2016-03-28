@@ -1,18 +1,23 @@
-{{forum-header bookmarks=true }}
-<div class="tab-content p-top">
-  <div class='container-fluid'>
-    <div role="tabpanel" class="tab-panel active" id="qa">
-      <div class="col-sm-12">
-        
-        <div id="mainTable">
-          <table class="table-simple">
-            <tbody>
-              {{#each model as |bookmark|}}
-                {{ question-container question=bookmark.question }}
-              {{/each}}
-            </tbody></table>
-          </div>
-      </div>  
+<div class='tab-content'>
+  <div class="container-fluid">
+    <div class='row m-t-lg'>
+      <div class='col-xs-12 col-sm-2 text-center'>
+        <div class='profile-pic-container'>
+          <img src='/assets/img/misc/profilepic.jpg' class='profile-pic-lg' />
+        </div>
+      </div>
+      <div class='col-xs-12 col-sm-10 text-left'>
+        <h4>
+          My Bookmarks
+        </h4>
+        <div class='m-t-md font-md'>
+          Member since {{ moment-from-now model.createdAt }}
+        </div>
+      </div>
     </div>
+    <div class='row m-t-xlg'>
+      {{forum-header goToLink='goToLink' tabs=tabs }}
+    </div>
+    {{ liquid-outlet }}
   </div>
 </div>

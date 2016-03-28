@@ -36,13 +36,13 @@ for (var i = 0; i < sortableProperties.length; i++) ( function(s){
   }.property(propertyName);
 
   mixin[propertyName + 'Observer'] = function() {
-    let sortedModelName = this.get('sortedModelName');
-    let sortedModel = this.get(sortedModelName);
+    let sortedModelName = this.get('sortedModelName'),
+      sortedModel = this.get(sortedModelName);
 
     this.set(propertyName, Ember.ArrayProxy.create({
       content: sortedModel
     }).sortBy(sortedProperty).reverse());
-  }.observes('model.answers.[]');
+  }.observes('sortedModel');
 
 })(sortableProperties[i]);
 

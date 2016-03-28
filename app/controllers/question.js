@@ -8,6 +8,7 @@ export default Ember.Controller.extend(ViewHelpers, {
   },
 
   currentUserHasAnswered: function() {
+    console.log('current user has answered');
     var answers = this.get('model.answers'),
       currentUser = this.get('current-user.model'),
       filtered = answers.filter(function(answer, index, enumerable){
