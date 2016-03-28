@@ -98,6 +98,7 @@ module.exports = function(environment) {
       preventDuplicates: false
     }
   };
+  ENV.APP.TEST_USERNAME = "test_user";
 
   ENV['ember-cli-mirage'] = {
     enabled: false
@@ -111,7 +112,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.CURRENT_USER_PATH = "http://localhost:3000/api/v1/me";
     ENV.APP.LOGIN_PATH = "http://localhost:3000/api/v1/login";
-    ENV.APP.TEST_USERNAME = "test_user";
     ENV.APP.API = {
       NAMESPACE: 'api/v1',
       HOST: 'http://localhost:3000',
