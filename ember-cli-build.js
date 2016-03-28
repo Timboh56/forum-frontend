@@ -12,7 +12,7 @@ module.exports = function(defaults) {
       }
     },**/
     fingerprint: {
-      prepend: '//mentormint-index.s3-website-us-west-1.amazonaws.com/'
+      prepend: 'http://mentormint-index.s3-website-us-west-1.amazonaws.com/'
     }
   });
   app.import('bower_components/js-cookie/src/js.cookie.js');
