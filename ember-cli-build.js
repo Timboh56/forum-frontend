@@ -11,13 +11,21 @@ module.exports = function(defaults) {
         }
       }
     },**/
+    sassOptions: {
+      includePaths: [
+        'public/assets/css/'
+      ]
+    },
+
     fingerprint: {
-      prepend: '//mentormint-index.s3-website-us-west-1.amazonaws.com/'
+      enabled: false,
+      //exclude: ['vendor'],
+      prepend: '//mentormint-index.s3-website-us-west-1.amazonaws.com/assets/'
     }
   });
   app.import('bower_components/js-cookie/src/js.cookie.js');
 
-  app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 
 
   // Use `app.import` to add additional libraries to the generated
