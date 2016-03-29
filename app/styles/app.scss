@@ -14,9 +14,9 @@
  $teal: #43C3B3;
  $red: #c0392b;
  $lightred: #e74c3c;
-@import 'main.css';
-@import 'font.css';
-@import 'sessions.css';
+@import 'main.scss';
+@import 'font.scss';
+@import 'sessions.scss';
 
 html {
   position: relative;
