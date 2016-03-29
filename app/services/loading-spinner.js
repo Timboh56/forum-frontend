@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.Mixin.create({
+export default Ember.Service.extend({
   start: function() {
     $('.loading-container').removeClass('hide');
   },
 
   stop: function() {
-    $('.loading-container').addClass('hide')
+    $('.loading-container').addClass('hide');
   }
 });

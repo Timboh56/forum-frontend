@@ -1,13 +1,15 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-import LoadingSpinnerMixin from '../mixins/loading-spinner';
 
-export default Ember.Route.extend(LoadingSpinnerMixin, {
-
+export default Ember.Route.extend({
+  loadingSpinner: Ember.inject.service('loading-spinner'),
   beforeModel: function(state) {
     var self = this,
       CurrentUserService = this.get('current-user'),
-      SessionService = this.get('session');
+      SessionService = this.get('session'),
+      LoadingSpinnerService = self.get('loadingSpinner');
+
+    LoadingSpinnerService.start();
 
     return new Ember.RSVP.Promise(function(resolve,reject) {
 
@@ -15,6 +17,7 @@ export default Ember.Route.extend(LoadingSpinnerMixin, {
         SessionService.getCredentials().then(function() {
           CurrentUserService.getCurrentUser().then(function(currentUser) {
             self.get('notifications').setup(currentUser);
+          LoadingSpinnerService.stop();
             resolve(currentUser);
           }); 
         });
