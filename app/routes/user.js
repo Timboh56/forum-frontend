@@ -2,14 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.find('user', params.id);
+    console.log('fetching model')
+    return this.store.queryRecord('user', {id: params.id});
   },
 
   setupController: function(controller, model) {
     let questions = model.get('questions');
     let answers = model.get('answers');
     controller.set('model', model);
-    this.controllerFor('user.index').set('model', questions);
+    this.controllerFor('user.index').set('questions', questions);
     this.controllerFor('user.answers').set('answers', answers);
 
     controller.set('tabs', [

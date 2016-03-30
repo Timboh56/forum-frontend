@@ -8,7 +8,11 @@
               {{#each answers as |answer|}}
                 <div class='row'>
                   <div class='col-xs-12'>
-                    <h4> {{ answer.questionTitle }}</h4>
+                    <h4>
+                      {{#link-to 'question' answer.questionTitle }}
+                        {{ answer.questionTitle }}
+                      {{/link-to}}
+                    </h4>
                   </div>
                 </div>
                 {{ answer-container answer=answer }}

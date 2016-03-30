@@ -5,7 +5,7 @@
         <div id="mainTable">
           <table class="table-simple">
             <tbody>
-              {{#each model.questions as |question|}}
+              {{#each questions as |question|}}
                 {{ question-container question=question }}
               {{/each}}
             </tbody>
