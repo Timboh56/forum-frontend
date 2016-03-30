@@ -6,10 +6,12 @@ export default Ember.Service.extend({
   perPage: 25,
   page: 1,
   fetching: false,
+  model: null,
   initializePaginator(model) {
     var self = this,
       w = $(window),
-      LoadingSpinner = this.get('loadingSpinner');
+      LoadingSpinner = this.get('loadingSpinner'),
+      model = model || self.get('model');
 
     self.set('model', model);
 
@@ -40,9 +42,10 @@ export default Ember.Service.extend({
   paginate() {
     var self = this,
       page = self.get('page') + 1,
-      Store = self.get('store');
+      Store = self.get('store'),
+      modelName = self.get('model').modelName;
 
-    return Store.query('question', { page: page }).then((resp) => {
+    return Store.query(modelName, { page: page }).then((resp) => {
       self.get('model.content').pushObjects(resp.get('content'));
       self.set('page', page);
       self.set('fetching', false);
