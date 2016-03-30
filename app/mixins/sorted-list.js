@@ -42,7 +42,7 @@ for (var i = 0; i < sortableProperties.length; i++) ( function(s){
     this.set(propertyName, Ember.ArrayProxy.create({
       content: sortedModel
     }).sortBy(sortedProperty).reverse());
-  }.observes('model.content');
+  }.observes(propertyName);
 
 })(sortableProperties[i]);
 

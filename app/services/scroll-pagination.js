@@ -7,21 +7,23 @@ export default Ember.Service.extend({
   page: 1,
   fetching: false,
   model: null,
-  initializePaginator(model) {
+  initializePaginator(model, paginateOnElement) {
     var self = this,
       w = $(window),
       LoadingSpinner = this.get('loadingSpinner'),
-      model = model || self.get('model');
+      model = model || self.get('model'),
+      paginateOnElement = paginateOnElement || document;
 
     self.set('model', model);
 
     Ember.run.once(this, function () {
       var lastScrollTop = 0;
       $(window).scroll(function() {
+
           let scrollTop = w.scrollTop(),
              windowHeight = window.innerHeight,
-             documentHeight = $(document).height(),
-             shouldPaginate = (scrollTop + windowHeight > documentHeight - 200) && (scrollTop > lastScrollTop);
+             documentHeight = $(paginateOnElement).height(),
+             shouldPaginate = ($(paginateOnElement).length > 0) && (scrollTop + windowHeight > documentHeight - 200) && (scrollTop > lastScrollTop);
 
           if(shouldPaginate) {
             let fetching = self.get('fetching');
@@ -43,7 +45,7 @@ export default Ember.Service.extend({
     var self = this,
       page = self.get('page') + 1,
       Store = self.get('store'),
-      modelName = self.get('model').modelName;
+      modelName = self.get('model').modelName || self.get('model.type.modelName');
 
     return Store.query(modelName, { page: page }).then((resp) => {
       self.get('model.content').pushObjects(resp.get('content'));
