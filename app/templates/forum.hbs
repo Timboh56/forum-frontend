@@ -1,14 +1,12 @@
-<div class="wrapper-body">
-  <div class="container-fluid">
-    <!--<div class="row">
-      <div class="col-sm-12 well-dash-heading">
-        <h3 class="align-inline">Minting</h3>
-      </div>
-    </div> -->
-    {{ flash-messages flashMessages=flashMessages }}
-    {{ search-forums searchItems=(action 'searchItems') model=model goToQuestion='goToQuestion' }}
-    <div class='row'>
-      {{ liquid-outlet }}
+<div class='container-fluid'>
+  <!--<div class="row">
+    <div class="col-sm-12 well-dash-heading">
+      <h3 class="align-inline">Minting</h3>
     </div>
+  </div> -->
+  {{ flash-messages flashMessages=flashMessages }}
+  {{ search-forums searchItems=(action 'searchItems') model=model goToQuestion='goToQuestion' }}
+  <div class='row'>
+    {{ liquid-outlet }}
   </div>
 </div>

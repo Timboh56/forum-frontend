@@ -114,8 +114,8 @@ module.exports = function(environment) {
       NAMESPACE: 'api/v1',
       HOST: 'http://localhost:3000',
     }
-    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "ws://localhost:4567/";
-    ENV.APP.NOTIFICATIONS_SERVER_URI = "http://localhost:4567/api/v1/";
+    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "ws://localhost:9292/";
+    ENV.APP.NOTIFICATIONS_SERVER_URI = "http://localhost:9292/api/v1/";
     ENV.environment = 'development';
     ENV.contentSecurityPolicy = {
       'style-src': "'self' https://fonts.googleapis.com/",
