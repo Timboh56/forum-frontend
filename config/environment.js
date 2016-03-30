@@ -82,8 +82,6 @@ module.exports = function(environment) {
     APP: {
       TEST_USER_ATTR: { id: 1, username: "User", name_user: "User", status: 1 },
       GUEST_ATTR: { id: 0, username: "Guest", name_user: "Guest", status: 0 },
-      NOTIFICATIONS_WEBSOCKETS_URI: "ws://mentormint-notifications.herokuapp.com/",
-      NOTIFICATIONS_SERVER_URI: "https://mentormint-notifications.herokuapp.com/api/v1/"
       // Here you can pass flags/options to your application instance
       // when it is created
     },
@@ -116,7 +114,8 @@ module.exports = function(environment) {
       NAMESPACE: 'api/v1',
       HOST: 'http://localhost:3000',
     }
-
+    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "ws://localhost:4567/";
+    ENV.APP.NOTIFICATIONS_SERVER_URI = "http://localhost:4567/api/v1/";
     ENV.environment = 'development';
     ENV.contentSecurityPolicy = {
       'style-src': "'self' https://fonts.googleapis.com/",
@@ -125,6 +124,9 @@ module.exports = function(environment) {
       'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     }
   } else {
+
+    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "ws://mentormint-notifications.herokuapp.com/";
+    ENV.APP.NOTIFICATIONS_SERVER_URI = "https://mentormint-notifications.herokuapp.com/api/v1/";
     ENV.APIKEY = '5a07d6948217432e45ca9234a6b13b30';
     ENV.environment = 'production';
     ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/me";

@@ -27,11 +27,14 @@ export default Ember.Controller.extend(ViewHelpers, {
 
       answerRecord.set('question', this.get('model'));
       answerRecord.set('user', this.get('current-user.model'));
-      answerRecord.save().then(function(resp) {
+      answerRecord.save().then((resp) => {
         answerRecord.set('createdAt', Date.now());
         flashMessages.success('Answer posted!');
         self.init();
         self.scrollToTop();
+      }, (resp) => {
+        flashMessages.danger('Fail!');
+        self.store.unloadRecord(answerRecord);
       });
     }
   }

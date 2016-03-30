@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
+  loadingSpinner: Ember.inject.service('loading-spinner'),
   init() {
 
     var currentPath = this.container.lookup("controller:application").currentPath;
@@ -18,12 +18,18 @@ export default Ember.Component.extend({
 
   actions: {
     goToLink: function(tab) {
-      var link = tab.linkTo;
+      var link = tab.linkTo,
+        self = this,
+        LoadingSpinner = self.get('loadingSpinner');
+
+      LoadingSpinner.start();
 
       if (tab.recordId)
-        this.get('router').transitionTo(link, tab.recordId);
-      else
-        this.get('router').transitionTo(link);
+        this.get('router').transitionTo(link, tab.recordId).then(LoadingSpinner.stop);
+      else {
+        this.get('router').transitionTo(link).then(LoadingSpinner.stop);
+
+      }
 
       this.set('selectedTab', tab.label);
 
