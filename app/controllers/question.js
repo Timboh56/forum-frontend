@@ -1,14 +1,14 @@
 import Ember from 'ember';
 import ViewHelpers from '../mixins/view-helpers';
+import BookmarkableAction from '../mixins/bookmarkable-action';
 
-export default Ember.Controller.extend(ViewHelpers, {
+export default Ember.Controller.extend(BookmarkableAction, ViewHelpers, {
   answer: {},
   init() {
     this.set('answer', {});
   },
 
   currentUserHasAnswered: function() {
-    console.log('current user has answered');
     var answers = this.get('model.answers'),
       currentUser = this.get('current-user.model'),
       filtered = answers.filter(function(answer, index, enumerable){

@@ -17,7 +17,7 @@
   </div>
   <div class='col-xs-12 col-sm-4 text-left'>
     <div class='col-xs-2 col-sm-2'>
-     <a {{ action 'bookmarkQuestion' }} class="{{ if question.hasBookmarked 'green-link'}} gray-text font-xlg">
+     <a {{ action 'bookmarkQuestion' }} class="{{ if model.hasBookmarked 'green-link'}} gray-text font-xlg">
       {{ fa-icon 'bookmark' model }}
     </a>
     </div>
