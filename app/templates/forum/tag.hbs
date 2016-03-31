@@ -5,6 +5,7 @@
     </h1>
   </div>
   {{#each model as |question| }}
-    {{question-container question}}
+    {{ question }}
+    {{question-container question=question}}
   {{/each}}
 </div>
