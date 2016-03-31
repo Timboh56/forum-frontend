@@ -2,14 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service('store'),
-  router: Ember.inject.router('main'),
+  router: Ember.inject.service('router:main'),
   actions: {
-    searchTag(tag) {
+    searchTag(tagText) {
       var self = this,
         router = self.get('router');
-      return this.store.query('tag', { text: tag }).then((resp) => {
-        router.transitionTo('forum.questions.index');
-      });
+      
+      router.transitionTo('tag', tagText);
     }
   }
 });
