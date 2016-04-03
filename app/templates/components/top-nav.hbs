@@ -17,6 +17,7 @@
         {{#if currentUser }}
           <li class='top-nav-btn-li'>
             {{#link-to 'forum.bookmarks' class='btn-header'}}
+
               bookmarks
             {{/link-to}}
           </li>
@@ -27,12 +28,12 @@
           </li>
           <li class='top-nav-btn-li'>
             {{#link-to 'user' currentUser class='btn-header'}}
-              my profile
+              me
             {{/link-to}}
           </li>
           <li class='top-nav-btn-li'>
             {{#link-to 'forum.questions.new' class='btn-header btn-orange'}}
-              ask question
+              ask
             {{/link-to}}
           </li>
           <li class='top-nav-btn-li'>
@@ -57,7 +58,7 @@
         </li>-->
         <li class="visible-xs">
           <a class="text-capitalize">
-            <i class="fa fa-paper-plane-o fa-fw nav-icon-text"></i>&nbsp; inbox
+            <img src='/assets/img/icons/session.png' class='mm-icon' /> inbox
           </a>
         </li>
         <li class="visible-xs">
