@@ -29,7 +29,8 @@ module.exports = function(deployTarget) {
     ENV.cloudfront = {
       accessKeyId: process.env.S3_ACCESS_KEY,
       secretAccessKey: process.env.S3_SECRET,
-      distribution: process.env.DISTRIBUTION_ID
+      distribution: process.env.DISTRIBUTION_ID,
+      region: 'us-west-1'
     };
     ENV['s3-index'] = {
       accessKeyId: process.env.S3_ACCESS_KEY,
