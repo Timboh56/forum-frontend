@@ -18,7 +18,6 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-
     ENV.s3 = {
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
       accessKeyId: process.env.S3_ACCESS_KEY,
