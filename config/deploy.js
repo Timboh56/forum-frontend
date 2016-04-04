@@ -2,43 +2,38 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {}
+    build: {},
+    pipeline: {
+      // This setting runs the ember-cli-deploy activation hooks on every deploy
+      // which is necessary in order to run ember-cli-deploy-cloudfront.
+      // To disable CloudFront invalidation, remove this setting or change it to `false`.
+      // To disable ember-cli-deploy-cloudfront for only a particular environment, add
+      // `ENV.pipeline.activateOnDeploy = false` to an environment conditional below.
+      activateOnDeploy: true
+    },
+    s3: {
+      accessKeyId: process.env.AWS_KEY,
+      secretAccessKey: process.env.AWS_SECRET,
+      filePattern: "*"
+    },
+    cloudfront: {
+      accessKeyId: process.env.AWS_KEY,
+      secretAccessKey: process.env.AWS_SECRET
+    }
   };
-
-  if (deployTarget === 'development') {
-    ENV.build.environment = 'development';
-
-    // configure other plugins for development deploy target here
-  }
 
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
-    // configure other plugins for staging deploy target here
+    ENV.s3.bucket = process.env.STAGING_BUCKET;
+    ENV.s3.region = process.env.STAGING_REGION;
+    ENV.cloudfront.distribution = process.env.STAGING_DISTRIBUTION;
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-    ENV.s3 = {
-      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
-      accessKeyId: process.env.S3_ACCESS_KEY,
-      secretAccessKey: process.env.S3_SECRET,
-      bucket: process.env.ASSETS_BUCKET,
-      region: 'us-west-1',
-    };
-    ENV.cloudfront = {
-      accessKeyId: process.env.S3_ACCESS_KEY,
-      secretAccessKey: process.env.S3_SECRET,
-      distribution: process.env.DISTRIBUTION_ID,
-      region: 'us-west-1'
-    };
-    ENV['s3-index'] = {
-      accessKeyId: process.env.S3_ACCESS_KEY,
-      secretAccessKey: process.env.S3_SECRET,
-      bucket: process.env.INDEX_BUCKET,
-      region: 'us-west-1',
-    };
-
-    // configure other plugins for production deploy target here
+    ENV.s3.bucket = process.env.PRODUCTION_BUCKET;
+    ENV.s3.region = process.env.PRODUCTION_REGION;
+    ENV.cloudfront.distribution = process.env.PRODUCTION_DISTRIBUTION;
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
