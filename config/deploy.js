@@ -34,6 +34,11 @@ module.exports = function(deployTarget) {
     ENV.s3.bucket = process.env.PRODUCTION_BUCKET;
     ENV.s3.region = process.env.PRODUCTION_REGION;
     ENV.cloudfront.distribution = process.env.PRODUCTION_DISTRIBUTION;
+    ENV['s3-index'] = {
+      bucket: process.env.PRODUCTION_BUCKET,
+      region: 'us-west-1',
+    };
+
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
