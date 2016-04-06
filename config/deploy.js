@@ -2,7 +2,7 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
-    baseURL: '/'
+    baseURL: '/',
     build: {},
     pipeline: {
       // This setting runs the ember-cli-deploy activation hooks on every deploy
