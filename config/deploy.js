@@ -2,7 +2,7 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
-      baseURL: null,
+      rootURL: null,
       locationType: 'none',
       development: {
       store: {
