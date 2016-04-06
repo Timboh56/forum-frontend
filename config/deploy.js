@@ -2,6 +2,8 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
+      baseURL: null,
+      locationType: 'hash',
       development: {
       store: {
         type: "s3",
