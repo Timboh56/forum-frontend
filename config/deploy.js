@@ -2,6 +2,24 @@
 
 module.exports = function(deployTarget) {
   var ENV = {
+      development: {
+      store: {
+        type: "s3",
+        accessKeyId: process.env.AWS_KEY,
+        secretAccessKey: process.env.AWS_SECRET,
+        bucket: process.env.PRODUCTION_BUCKET,
+        acl: 'public-read', 
+        hostName: process.env.PRODUCTION_HOST,
+        indexMode: "indirect", 
+      },
+
+      assets: {
+        type: "S3",
+        accessKeyId: process.env.AWS_KEY,
+        secretAccessKey: process.env.AWS_SECRET,
+        bucket: process.env.PRODUCTION_BUCKET,
+      }
+    },
     build: {},
     pipeline: {
       // This setting runs the ember-cli-deploy activation hooks on every deploy
