@@ -20,10 +20,10 @@ module.exports = function(defaults) {
     fingerprint: {
       //enabled: false,
       //exclude: ['vendor'],
-      prepend: 'https://s3-us-west-1.amazonaws.com/mentormint-index/'
+      prepend: '//s3-us-west-1.amazonaws.com/mentormint-index/'
     }
   });
-  //app.import('bower_components/js-cookie/src/js.cookie.js');
+  app.import('bower_components/js-cookie/src/js.cookie.js');
 
   app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 
