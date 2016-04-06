@@ -38,7 +38,7 @@ module.exports = function(deployTarget) {
     ENV['s3-index'] = {
       bucket: process.env.PRODUCTION_BUCKET,
       region: 'us-west-1',
-      host: process.env.PRODUCTION_HOST
+      hostName: process.env.PRODUCTION_HOST
     };
 
   }
