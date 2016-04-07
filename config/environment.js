@@ -129,11 +129,11 @@ module.exports = function(environment) {
     ENV.APP.NOTIFICATIONS_SERVER_URI = "https://mentormint-notifications.herokuapp.com/api/v1/";
     ENV.APIKEY = '5a07d6948217432e45ca9234a6b13b30';
     ENV.environment = 'production';
-    ENV.APP.CURRENT_USER_PATH = "http://mentormint-api.herokuapp.com/api/v1/me";
-    ENV.APP.LOGIN_PATH = "http://mentormint-api.herokuapp.com/api/v1/login";
+    ENV.APP.CURRENT_USER_PATH = "https://mentormint-api.herokuapp.com/api/v1/me";
+    ENV.APP.LOGIN_PATH = "https://mentormint-api.herokuapp.com/api/v1/login";
     ENV.APP.API = {
       NAMESPACE: 'api/v1',
-      HOST: 'http://mentormint-api.herokuapp.com',
+      HOST: 'https://mentormint-api.herokuapp.com',
     }
   }
 
