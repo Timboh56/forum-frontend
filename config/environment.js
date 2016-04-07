@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'mentormint',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/forum/',
     locationType: 'auto',
     RESOURCES: {
       BOOKMARK_TABS: [
