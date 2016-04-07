@@ -114,7 +114,7 @@ module.exports = function(environment) {
       NAMESPACE: 'api/v1',
       HOST: 'http://localhost:3000',
     }
-    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "ws://localhost:9292/";
+    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "wss://localhost:9292/";
     ENV.APP.NOTIFICATIONS_SERVER_URI = "http://localhost:9292/api/v1/";
     ENV.environment = 'development';
     ENV.contentSecurityPolicy = {
@@ -125,7 +125,7 @@ module.exports = function(environment) {
     }
   } else {
 
-    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "ws://mentormint-notifications.herokuapp.com/";
+    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "wss://mentormint-notifications.herokuapp.com/";
     ENV.APP.NOTIFICATIONS_SERVER_URI = "https://mentormint-notifications.herokuapp.com/api/v1/";
     ENV.APIKEY = '5a07d6948217432e45ca9234a6b13b30';
     ENV.environment = 'production';
