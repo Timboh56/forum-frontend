@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('new');
   });
 
-  this.route('forums', function() {
+  this.route('forum', function() {
     this.route('answers');
     this.route('bookmarks', function() {
       this.route('index');
