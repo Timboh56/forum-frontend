@@ -324,6 +324,13 @@ li.dropdown { padding: 2px 24px !important; }
   margin: auto;
   background: rgba(255,255,255,0.4);
   top: 0px;
+  z-index:9;
+}
+
+.loading-spinner-gif {
+  top: calc(50% - 60px);
+  left: calc(50%  - 60px);
+  position: fixed;
 }
 
 .fast-transition {
