@@ -45,6 +45,7 @@ Router.map(function() {
     this.route('inbox');
     this.resource('tag', { path: '/tag/:text' });
   });
+  this.route("404", { path: "*path"});
   this.route('login');
 });
 

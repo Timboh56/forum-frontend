@@ -1,10 +1,12 @@
 <div class='container-fluid'>
-  <div class='row'>
-    <h1>
-      Tag: {{ model.text }}
-    </h1>
+  <div class='row m-t-lg'>
+    <div class='col-xs-12'>
+      <h3>
+        Questions tagged with "{{ model.text }}""
+      </h3>
+    </div>
   </div>
-  {{#each model as |question| }}
-    {{question-container question}}
+  {{#each model.taggings as |tagging| }}
+    {{question-container question=tagging.taggable}}
   {{/each}}
 </div>
