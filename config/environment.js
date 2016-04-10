@@ -123,18 +123,6 @@ module.exports = function(environment) {
       'script-src': "'self' https://cdn.mxpnl.com, https://apis.google.com/js/platform.js", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     }
-  } else {
-
-    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = process.env.NOTIFICATIONS_WEBSOCKETS_URI;
-    ENV.APP.NOTIFICATIONS_SERVER_URI = process.env.NOTIFICATIONS_SERVER_URI;
-    ENV.APIKEY = process.env.PRODUCTION_API_KEY;
-    ENV.environment = 'production';
-    ENV.APP.CURRENT_USER_PATH = "https://mentormint-api.herokuapp.com/api/v1/me";
-    ENV.APP.LOGIN_PATH = "https://mentormint-api.herokuapp.com/api/v1/login";
-    ENV.APP.API = {
-      NAMESPACE: 'api/v1',
-      HOST: process.env.PRODUCTION_API_HOST,
-    }
   }
 
   if (environment === 'test') {
