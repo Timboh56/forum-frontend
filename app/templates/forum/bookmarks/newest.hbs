@@ -1,1 +1,13 @@
-{{outlet}}
+<div class='row m-t-xlg'>
+  <div class="col-sm-12">
+    
+    <div id="mainTable">
+      <table class="table-simple">
+        <tbody>
+          {{#each sortedByCreatedAt as |bookmark|}}
+            {{ question-container question=bookmark.question bookmarkCallback='bookmarkCallback'}}
+          {{/each}}
+        </tbody></table>
+      </div>
+  </div>  
+</div>

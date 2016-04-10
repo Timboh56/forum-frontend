@@ -125,15 +125,15 @@ module.exports = function(environment) {
     }
   } else {
 
-    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = "wss://mentormint-notifications.herokuapp.com/";
-    ENV.APP.NOTIFICATIONS_SERVER_URI = "https://mentormint-notifications.herokuapp.com/api/v1/";
-    ENV.APIKEY = '5a07d6948217432e45ca9234a6b13b30';
+    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = process.env.NOTIFICATIONS_WEBSOCKETS_URI;
+    ENV.APP.NOTIFICATIONS_SERVER_URI = process.env.NOTIFICATIONS_SERVER_URI;
+    ENV.APIKEY = process.env.PRODUCTION_API_KEY;
     ENV.environment = 'production';
     ENV.APP.CURRENT_USER_PATH = "https://mentormint-api.herokuapp.com/api/v1/me";
     ENV.APP.LOGIN_PATH = "https://mentormint-api.herokuapp.com/api/v1/login";
     ENV.APP.API = {
       NAMESPACE: 'api/v1',
-      HOST: 'https://mentormint-api.herokuapp.com',
+      HOST: process.env.PRODUCTION_API_HOST,
     }
   }
 
