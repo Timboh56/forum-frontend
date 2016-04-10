@@ -42,18 +42,6 @@ module.exports = function(deployTarget) {
       host: process.env.PRODUCTION_HOST
     };
 
-
-
-    ENV.APP.NOTIFICATIONS_WEBSOCKETS_URI = process.env.NOTIFICATIONS_WEBSOCKETS_URI;
-    ENV.APP.NOTIFICATIONS_SERVER_URI = process.env.NOTIFICATIONS_SERVER_URI;
-    ENV.APIKEY = process.env.PRODUCTION_API_KEY;
-    ENV.environment = 'production';
-    ENV.APP.CURRENT_USER_PATH = "https://mentormint-api.herokuapp.com/api/v1/me";
-    ENV.APP.LOGIN_PATH = "https://mentormint-api.herokuapp.com/api/v1/login";
-    ENV.APP.API = {
-      NAMESPACE: 'api/v1',
-      HOST: process.env.PRODUCTION_API_HOST
-    }
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
