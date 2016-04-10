@@ -12,6 +12,10 @@ export default Ember.Component.extend({
 
   }).observes('model'),
 
+  currentUser: Ember.computed(function() {
+    return this.get('current-user.model');
+  }),
+
   init: function() {
     var self = this;
     setInterval(

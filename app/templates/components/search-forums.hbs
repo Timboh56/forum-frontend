@@ -1,5 +1,5 @@
 <div class="row p-t-lg p-b-lg search-forums-container">
-  <div class="col-sm-12 search-bg">
+  <div class="col-sm-6 search-bg">
     <form class="form-horizontal no-margins">
       <div class="form-group no-margin-top no-margin-bottom">
         <div class="col-xs-12 col-sm-10">
@@ -19,6 +19,31 @@
         </div>
       </div>
     </form>
+  </div>
+  <div class='col-sm-6'>
+    <ul class="hidden-xs visible-sm visible-md visible-lg visible-xlg nav navbar-nav navbar-right">
+      <li class='top-nav-btn-li'>
+        {{#link-to 'forum.bookmarks' class='btn-header'}}
+
+          {{ fa-icon 'bookmark'}} bookmarks
+        {{/link-to}}
+      </li>
+      <li class='top-nav-btn-li'>
+        {{#link-to 'forum.questions' class='btn-header'}}
+          {{ fa-icon 'question' }} questions
+        {{/link-to}}
+      </li>
+      <li class='top-nav-btn-li'>
+        {{#link-to 'user' currentUser class='btn-header'}}
+          {{ fa-icon 'user' }} me
+        {{/link-to}}
+      </li>
+      <li class='top-nav-btn-li'>
+        {{#link-to 'forum.questions.new' class='btn-header btn-orange'}}
+          ask
+        {{/link-to}}
+      </li>
+    </ul>
   </div>
 </div>
 <div class='fade-in {{ if hideResults 'hide' }} form-group row search-results-container padding-bottom-lg box-shadow'>

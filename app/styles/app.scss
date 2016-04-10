@@ -235,7 +235,7 @@ nav.navbar {
 }
 
 .btn-header {
-  background-color: $teal;
+  background-color: $lightgray;
   font-family: 'NationalRegular';
   border-radius: 3px;
   padding: 5px 12px !important;
@@ -244,7 +244,7 @@ nav.navbar {
   font-size: 14px;
   color: white !important;
   &:hover, &:active  {
-    background: $teal !important;
+    background: $gray !important;
   }
 }
 

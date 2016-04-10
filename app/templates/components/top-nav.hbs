@@ -14,34 +14,6 @@
 ​
     <div class="float-right collapse navbar-collapse inline-block" id="navCollapse">
       <ul class="hidden-xs visible-sm visible-md visible-lg visible-xlg nav navbar-nav navbar-right">
-        {{#if currentUser }}
-          <li class='top-nav-btn-li'>
-            {{#link-to 'forum.bookmarks' class='btn-header'}}
-
-              bookmarks
-            {{/link-to}}
-          </li>
-          <li class='top-nav-btn-li'>
-            {{#link-to 'forum.questions' class='btn-header'}}
-              questions
-            {{/link-to}}
-          </li>
-          <li class='top-nav-btn-li'>
-            {{#link-to 'user' currentUser class='btn-header'}}
-              me
-            {{/link-to}}
-          </li>
-          <li class='top-nav-btn-li'>
-            {{#link-to 'forum.questions.new' class='btn-header btn-orange'}}
-              ask
-            {{/link-to}}
-          </li>
-          <li class='top-nav-btn-li'>
-            {{#link-to 'login' class='btn-header btn-orange'}}
-              login
-            {{/link-to}}
-          </li>
-        {{/if}}
         {{#if (guest currentUser) }}
           <li class='hidden-xs'>
             Welcome, guest.
@@ -51,11 +23,11 @@
         <li class="visible-xs">
           <a><i class="fa fa-line-chart fa-fw nav-icon-text"></i>&nbsp; Admin</a> 
         </li>
-        <!--<li class="visible-xs">
-          <a href="<?php echo $GLOBAL["url"]["sub"]; ?>/dashboard" class="text-capitalize">
-            <i class="fa fa-clipboard fa-fw nav-icon-text"></i>&nbsp; dashboard
-          </a>
-        </li>-->
+        <li class='top-nav-btn-li'>
+          {{#link-to 'login' class='btn-header'}}
+            login
+          {{/link-to}}
+        </li>
         <li class="visible-xs">
           <a class="text-capitalize">
             <img src='/assets/img/icons/session.png' class='mm-icon' /> inbox
