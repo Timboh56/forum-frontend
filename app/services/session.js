@@ -26,7 +26,6 @@ export default Ember.Service.extend({
           self.set('authToken', response.auth_token);
           self.set('authUsername', response.username);
           resolve(response.auth_token);
-
           Ember.$.ajaxPrefilter(function( options, oriOptions, jqXHR ) {
             jqXHR.setRequestHeader("AUTHORIZATION_TOKEN", response.auth_token);
             jqXHR.setRequestHeader("AUTHORIZATION_USERNAME", response.username);

@@ -17,8 +17,7 @@ export default Ember.Service.extend({
 
         beforeSend(xhr) {
           xhr.setRequestHeader('Accept', 'application/vnd.api+json');
-          xhr.setRequestHeader('AUTHORIZATION-USERNAME', self.get('session.authUsername'));
-          xhr.setRequestHeader('AUTHORIZATION-TOKEN',self.get('session.authToken'));
+          xhr.setRequestHeader('AUTHORIZATION_TOKEN',self.get('session.authToken'));
           xhr.setRequestHeader('AUTHORIZATION', ENV.APIKEY);
         },
 
