@@ -3,7 +3,7 @@ import ENV from '../config/environment';
 export default Ember.Route.extend({
 
   model(params) {
-    return this.store.find('question', params.id);
+    return this.store.queryRecord('question', { id: params.id});
   },
 
   setupController(controller, model) {
