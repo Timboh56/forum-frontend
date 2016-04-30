@@ -30,9 +30,12 @@ var User = DS.Model.extend({
   landing_page: DS.attr('string'),
   timezone: DS.attr('date'),
   createdAt: DS.attr('date'),
-  questionsCountString: function() {
-    return this.get('questions.length') + ' questions';
-  }.property('questionsCountString')
+  questionsCountString: DS.attr('string'),
+  answersCountString: DS.attr('string'),
+  avatar: function() {
+    return 'https://mentormint.com/assets/img/get-image.php?name=Tim_Hui&size=thumb';
+  }.property('avatar')
+
 });
 
 export default User;

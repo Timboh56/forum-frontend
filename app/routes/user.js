@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    console.log('fetching model')
     return this.store.queryRecord('user', {id: params.id});
   },
 
@@ -19,14 +18,18 @@ export default Ember.Route.extend({
         id: 'index',
         icon: 'edit',
         linkTo: 'user.index',
-        recordId: model.id
+        modelName: 'question',
+        recordId: model.id,
+        count: questions.length
       },
       {
         label: 'answers',
         id: 'answers',
         icon: 'edit',
         linkTo: 'user.answers',
-        recordId: model.id
+        modelName: 'answer',
+        recordId: model.id,
+        count: answers.length
       }
     ]);
   }

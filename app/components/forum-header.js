@@ -6,7 +6,6 @@ export default Ember.Component.extend({
 
     var currentPath = this.container.lookup("controller:application").currentPath;
     const tabs = this.get('tabs');
-
     if (tabs) {
       for (var i = 0; i < tabs.length; i ++) {
         if (currentPath.match(tabs[i].id)) this.set('selectedTab', tabs[i].label);
@@ -26,10 +25,11 @@ export default Ember.Component.extend({
 
       if (tab.recordId)
         this.get('router').transitionTo(link, tab.recordId).then(LoadingSpinner.stop);
-      else {
+      else
         this.get('router').transitionTo(link).then(LoadingSpinner.stop);
 
-      }
+      if (tab.count && tab.modelName)
+        this.set('forumHeaderLabel', tab.count + ' ' + tab.modelName + '(s)')
 
       this.set('selectedTab', tab.label);
 

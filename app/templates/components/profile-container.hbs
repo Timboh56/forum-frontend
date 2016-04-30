@@ -1,7 +1,7 @@
 <span class='m-r-md'>
   <i class='fa fa-user m-r-sm'></i> Posted by
   {{#link-to 'user' model.user.id class='bold'}}
-    <span class='profile-pic-container m-l-sm m-r-sm'>
+    <span class='profile-pic-container m-l-sm'>
       <img src='/assets/img/misc/profilepic.jpg' class='profile-pic-sm' />
     </span>
     {{ model.user.username }}
@@ -14,6 +14,9 @@
 {{#if model.lastAnswererUsername}}
   <i class="fa fa-comment">
   </i> Answered by
+  <span class='profile-pic-container m-l-sm'>
+    <img src='https://mentormint.com/assets/img/get-image.php?name=Tim_Hui&size=thumb' class='profile-pic-sm' />
+  </span>
   {{#link-to 'user' model.lastAnswererUsername }}
     {{ model.lastAnswererUsername }}
   {{/link-to}}
