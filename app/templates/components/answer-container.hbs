@@ -18,19 +18,7 @@
     </p>
     <div class='m-t-xlg'>
       {{ comment-box getComments="getComments" postComment='postComment' commentable=answer commentableType="answer" }}
-    </div>
-  </div>
-  <div class='col-xs-12 col-sm-4'>
-    <div class='col-xs-10 col-xs-offset-2 border-left-blue font-sm text-left'>
-      <div class='row'>
-        <div class='col-xs-12 col-sm-12'>
-          {{ profile-container model=answer }}
-        </div>
-        <div class='col-xs-12 m-t-sm'></div>
-         <div class='col-xs-12 col-sm-12'>
-          {{ fa-icon 'comment' }} {{ answer.commentsCount }}
-        </div>
-      </div>
+      {{ profile-container model=answer }}
     </div>
   </div>
 </div>
