@@ -1,43 +1,28 @@
-<div class='m-t-lg row'>
-  <div class='col-xs-12 col-sm-8 padding-left-lg'>
-    <div class='row'>
-      <div class='col-xs-1 text-center'>
-        <img src='/assets/img/icons/speaker.png' class='mm-icon' />
-      </div>
-      <div class='col-xs-11'>
-        <h4 class='no-padding no-margins'>  {{ model.title }} </h4>
-        <p class='font-md m-t-lg'>
-          {{ model.text }}
-        </p>
-        <p class='m-t-lg'>
-          {{ tags-container tags=model.tagWordsArray }}
-        </p>
-      </div>
+<div class='m-t-lg'>
+  <div class='row'>
+    <div class='col-xs-1 text-center'>
+      <a {{ action 'bookmarkQuestion' }} class="{{ if model.hasBookmarked 'green-link'}} margin-auto gray-text font-xlg">
+       {{ fa-icon 'bookmark' model }}
+     </a>
     </div>
-  </div>
-  <div class='col-xs-12 col-sm-4 text-left'>
-    <div class='col-xs-2 col-sm-2'>
-     <a {{ action 'bookmarkQuestion' }} class="{{ if model.hasBookmarked 'green-link'}} gray-text font-xlg">
-      {{ fa-icon 'bookmark' model }}
-    </a>
-    </div>
-    <div class='col-xs-10 col-sm-10 border-left-blue font-sm col-sm-12'>
-      {{ profile-container model=model }}
-      <div class='light-gray-text m-t-sm'>
-        <span class='m-r-md'>
-          {{ fa-icon 'eye' }} {{ model.viewCount }}
-        </span>
-        <span class='m-r-md'>
-          {{ fa-icon 'comment' }} {{ model.answersCount }}
-        </span>
-        <span class='m-r-md'>
-          {{ fa-icon 'bookmark' }} {{ model.bookmarksCount }}
-        </span>
-      </div>
+    <div class='col-xs-11'>
+      <h4 class='no-padding no-margins'>
+        {{ model.title }}
+      </h4>
+      <p class='font-md m-t-lg'>
+        {{ model.text }}
+      </p>
+      <p class='m-t-lg'>
+        {{ tags-container tags=model.tagWordsArray }}
+      </p>
     </div>
   </div>
 </div>
-
+<div class='row m-t-md'>
+  <div class='col-xs-11 col-xs-offset-1 font-sm light-gray-text'>
+    {{ profile-container model=model }}
+  </div>
+</div>
 <div class='row m-t-lg'>
   <div class='col-xs-12'>
     {{ forum-header forumHeaderLabel=model.answersCountString tabs=tabs question=model }}

@@ -1,14 +1,20 @@
-<div class='profile-pic-container'>
-  <img src='/assets/img/misc/profilepic.jpg' class='profile-pic' />
-</div>
-<div class='m-t-sm'>
-  <i class="fa fa-flag">
-  </i> Posted {{ moment-from-now model.createdAt }}
-  <br />
-</div>
-<div class='m-t-sm'>
-  <i class='fa fa-user m-r-sm'></i>By 
+<span class='m-r-md'>
+  <i class='fa fa-user m-r-sm'></i> Posted by
   {{#link-to 'user' model.user.id class='bold'}}
+    <span class='profile-pic-container m-l-sm m-r-sm'>
+      <img src='/assets/img/misc/profilepic.jpg' class='profile-pic-sm' />
+    </span>
     {{ model.user.username }}
   {{/link-to}}
-</div>
+</span>
+<span class='m-r-md'>
+  <i class='fa fa-flag m-r-sm'></i>
+  {{ moment-from-now model.createdAt }}
+</span>
+{{#if model.lastAnswererUsername}}
+  <i class="fa fa-comment">
+  </i> Answered by
+  {{#link-to 'user' model.lastAnswererUsername }}
+    {{ model.lastAnswererUsername }}
+  {{/link-to}}
+{{/if}}

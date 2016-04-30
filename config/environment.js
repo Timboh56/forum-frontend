@@ -17,7 +17,7 @@ module.exports = function(environment) {
         {
           label: 'most-active',
           id: 'active',
-          icon: 'plus',
+          icon: 'arrow-up',
           linkTo: 'forum.bookmarks.most-active'
         },
         {
@@ -35,13 +35,13 @@ module.exports = function(environment) {
           linkTo: 'question.newest',
         },
         {
-          label: 'most-voted',
+          label: 'voted',
           id: 'voted',
-          icon: 'plus',
+          icon: 'arrow-up',
           linkTo: 'question.most-voted',
         },
         {
-          label: 'all-answers',
+          label: 'all',
           id: 'index',
           icon: 'edit',
           linkTo: 'question.index',

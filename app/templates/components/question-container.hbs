@@ -1,6 +1,6 @@
 
 <div id='{{ question.id }}' class='row m-t-lg'>
-  <div class="col-xs-2 col-sm-1">
+  <div class="col-xs-1 col-sm-1">
     <button {{ action 'bookmarkQuestion' question }} class='btn btn-fa btn-proceed' type="button">
       <div class='font-xlg bold'>
         {{ question.answersCount}}
@@ -10,18 +10,21 @@
       </div>
     </button>
     <br>
-    <div class='m-t-md text-center'>
-      <small class='bold'>
-        {{ question.votesCount }} votes
-      </small>
+    <div class='font-sm m-t-md text-center'>
+      {{ question.votesCount }} votes
+    </div>
+    <div class='font-sm m-t-md text-center'>
+      {{ fa-icon 'eye' }} {{ question.viewCount }} views
     </div>
   </div>
-  <div class="col-xs-10 col-sm-7 no-margin-bottom">
+  <div class='col-xs-1 text-center'>
+    <a {{ action 'bookmarkQuestion' }} class="{{ if question.hasBookmarked 'green-link'}} gray-text margin-auto font-xlg">
+      {{ fa-icon 'bookmark' question }}
+    </a>
+  </div>
+  <div class="col-xs-10 col-sm-10 no-margin-bottom">
     <div class='row'>
-      <div class='col-xs-2 text-center'>
-        <img src='/assets/img/icons/speaker.png' class='mm-icon' />
-      </div>
-      <div class='col-xs-10'>
+      <div class='col-xs-12'>
         {{#if goToQuestionSet}}
           <a {{action 'goToQuestion' question.id }} class="m-top-none">
             <strong>
@@ -35,37 +38,14 @@
             </strong>
           {{/link-to}}
         {{/if}}
-        <p class='m-t-lg'>
+        <p class='m-t-xlg'>
           {{ tags-container tags=question.tagWordsArray }}
         </p>
       </div>
     </div>
-  </div>
-  <div class="col-xs-12 col-sm-4 text-center">
-    <div class='col-xs-2'>
-      <a {{ action 'bookmarkQuestion' }} class="{{ if question.hasBookmarked 'green-link'}} gray-text font-xlg">
-        {{ fa-icon 'bookmark' question }}
-      </a>
-    </div>
-    <div class='col-xs-10 border-left-blue font-sm text-left'>
-      <div class='row'>
-        <div class='col-xs-12 col-sm-12'>
-          {{ profile-container model=question}}
-        </div>
-        <div class='col-xs-12 m-t-sm'></div>
-        {{#if question.lastAnswererUsername}}
-          <div class='col-xs-12 col-sm-12'>
-            <i class="fa fa-comment">
-            </i> Answered by 
-            {{#link-to 'user' question.lastAnswererUsername }}
-              {{ question.lastAnswererUsername }}
-            {{/link-to}}
-           </div>
-        {{/if}}
-        <div class='col-xs-12 m-t-sm'></div>
-         <div class='col-xs-12 col-sm-12 light-gray-text'>
-          {{ fa-icon 'eye' }} {{ question.viewCount }} {{ fa-icon 'comment' }} {{ question.answersCount }} {{ fa-icon 'bookmark' }} {{ question.bookmarksCount }}
-        </div>
+    <div class='row m-t-md'>
+      <div class='col-sm-10 light-gray-text font-sm'>
+        {{ profile-container model=question}}
       </div>
     </div>
   </div>

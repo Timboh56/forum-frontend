@@ -1,7 +1,7 @@
 
 /*
  * Themes for website
- * Copyright 2015 MentorMint, Inc. 
+ * Copyright 2015 MentorMint, Inc.
  */
  $darkblue: #2c3e50;
  $asphalt: #34495e;
@@ -21,21 +21,27 @@
 html {
   position: relative;
   min-height: 100%;
-  font-family: 'NexaBold', 'MontserratBold', 'VarelaRoundRegular';
+  font-family: 'NexaLight', 'NexaBold', 'MontserratBold', 'VarelaRoundRegular';
 }
 .tiny-icon {
   height: 10px;
   width: 10px;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 .mm-icon {
   height: 30px;
   width: 30px;
   border-radius: 30px;
 }
+a:hover {
+  text-decoration: none !important;
+}
 .m-r-sm { margin-right: 8px; }
 .m-r-md { margin-right: 16px; }
 .m-r-lg { margin-right: 32px; }
+.m-l-sm { margin-left: 8px; }
+.m-l-md { margin-left: 16px; }
+.m-l-lg { margin-left: 32px; }
 .m-t-lg { margin-top: 32px; }
 .m-t-xlg { margin-top: 64px; }
 .m-t-md { margin-top: 16px; }
@@ -172,7 +178,7 @@ nav.navbar {
 .gray-text, .grey-text { color: $gray; }
 .light-gray-text { color: $lightgray; }
 
-.green-text, .green-link { 
+.green-text, .green-link {
   color: $green;
   &:hover {
     color: $lightgreen;
@@ -201,7 +207,7 @@ nav.navbar {
 }
 
 .well {
-  background-color: #efefef !important; 
+  background-color: #efefef !important;
 }
 
 .btn-red {
@@ -214,7 +220,7 @@ nav.navbar {
 }
 
 .btn-green-caret {
-  color: $green !important;  
+  color: $green !important;
   &:hover {
     color: $lightgreen !important;
   }
@@ -281,7 +287,7 @@ nav.navbar {
 li.dropdown { padding: 2px 24px !important; }
 
 .search-forums-container {
-  background: $teal;  
+  background: $teal;
 }
 
 .alert {
@@ -371,18 +377,27 @@ li.dropdown { padding: 2px 24px !important; }
   }
 }
 
+.question-container-right-col {
+  min-height: 100px;
+}
 .profile-pic-container {}
 
 .profile-pic-lg {
   height: 80px;
   border-radius: 80px;
-  margin: auto;  
+  margin: auto;
 }
 
 .profile-pic-xlg {
   height: 160px;
   margin: auto;
-  border-radius: 160px; 
+  border-radius: 160px;
+}
+
+.profile-pic-sm {
+  height: 20px;
+  border-radius: 20px;
+  margin: auto;
 }
 
 .profile-pic {
@@ -394,7 +409,7 @@ li.dropdown { padding: 2px 24px !important; }
 body.theme-main {
   background-color: #fff;
   color: #000000;
-  font-family: "VarelaRoundRegular" !important;
+  font-family: "NexaLight" !important;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
