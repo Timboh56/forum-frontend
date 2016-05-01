@@ -4,7 +4,9 @@ export default Ember.Route.extend({
   scrollPagination: Ember.inject.service('scroll-pagination'),
   queryParams: {
     keywords: {
-      replace: true
+      replace: true,
+      refresh: true,
+      refreshModel: true
     }
   },
 
