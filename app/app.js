@@ -13,6 +13,10 @@ App = Ember.Application.extend({
   Resolver
 });
 
+Ember.Logger.error = function (message, cause, stack) {
+  console.log('Ember.Logger.error handler', message, cause, stack);
+};
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;

@@ -390,6 +390,18 @@ li.dropdown { padding: 2px 24px !important; }
 .question-container-right-col {
   min-height: 100px;
 }
+.badge-container {
+  padding: 7px 15px;
+  background: #333;
+  color: white;
+  display: inline-block;
+  .badge-icon {
+    padding: 5px;
+    border-radius: 5px;
+    height: 5px;
+    display: inline-block;
+  }
+}
 .profile-pic-container {}
 
 .profile-pic-lg {

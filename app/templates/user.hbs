@@ -12,6 +12,21 @@
       <div class='m-t-md font-md'>
         Member since {{ moment-from-now model.createdAt }}
       </div>
+      {{#if model.userBadges }}
+        <div class='m-t-md font-md'>
+          Badges:
+
+          {{#each model.userBadges as |userBadge| }}
+            <div class='badge-container'>
+              <span class='bold'>
+                {{ userBadge.badge.name }}
+              </span>
+              <span class='badge-icon' style='background: {{ userBadge.badge.colorHex }};'>
+              </span>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
     </div>
   </div>
 
