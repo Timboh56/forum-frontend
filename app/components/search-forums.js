@@ -13,7 +13,9 @@ export default Ember.Component.extend(SearchForumsMixin, {
       window.document.body.addEventListener('click', function() {
         self.set('showResults', false);
       });
-    } 
+    } else {
+      self.set('showResults', false);
+    }
 
   }).observes('model'),
 
