@@ -1,19 +1,25 @@
 {{input type='text' value=keywords placeholder='Search for a question topic' class='float-right search-forums-input form-control' }}
 {{#if showResults }}
   <div class='search-results-container full-width shadow'>
-    {{#each model as |question|}}
-      {{ search-result-row model=question }}
-    {{/each}}
-    <div class='row'>
-      <div class='col-xs-12'>
-        <div class='col-xs-12 show-more-row'>
-          {{#link-to 'forum.questions.index' (query-params query=true keywords=keywords)}}
-            <div class='full-width bold'>
-              {{ fa-icon 'list' }} Show all results for '{{ keywords }}'
-            </div>
-          {{/link-to}}
+    {{#if model}}
+      {{#each model as |question|}}
+        {{ search-result-row model=question }}
+      {{/each}}
+      <div class='row'>
+        <div class='col-xs-12'>
+          <div class='col-xs-12 show-more-row'>
+            {{#link-to 'forum.questions.index' (query-params query=true keywords=keywords)}}
+              <div class='full-width bold'>
+                {{ fa-icon 'list' }} Show all results for '{{ keywords }}'
+              </div>
+            {{/link-to}}
+          </div>
         </div>
       </div>
-    </div>
+    {{else}}
+      <div class='full-width text-center'>
+        <img src='/assets/img/misc/gears.gif' class='margin-auto'/>
+      </div>
+    {{/if}}
   </div>
 {{/if}}

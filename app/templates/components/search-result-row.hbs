@@ -2,11 +2,9 @@
   <div {{ action 'goToQuestion' model.id }} class='col-xs-12 padding-left-sm'>
     {{#link-to 'question' model.id class='light-gray-text' }}
       <div class='full-width border-bottom search-result-row'>
-        <div class='col-xs-9 bold title'>
-          {{ model.title }}
-        </div>
-        <div class='col-xs-3 float-right text-left title padding-right-sm'>
-          {{ fa-icon 'user' }}
+        <div class='col-xs-12 bold title'>
+          <span class='bold'>{{ model.title }}</span>
+           by {{ model.user.username }}
         </div>
       </div>
     {{/link-to}}
