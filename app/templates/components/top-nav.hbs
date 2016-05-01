@@ -1,60 +1,47 @@
-<nav class="navbar fixed navbar-dash navbar-fixed-top navbar-bottom" role="navigation"> 
-​   <div class='full-width navbar-container'>
-    <div class="navbar-header">
+<div class="navbar fixed navbar-dash navbar-fixed-top navbar-bottom">
+  <div class="full-width navbar-container">
+    <div class="navbar-left navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
         <span class="sr-only">Toggle Navigation</span>
-        <span class="fa fa-leaf theme-text" aria-hidden="true"></span>
+          {{ fa-icon 'leaf' class='font-white font-xlg' }}
       </button>
       <a href="/forum/questions/index" class="no-padding-top navbar-brand animated flipInX">
-        <img alt="Mentormint" src="/assets/img/logos/default.png" style="max-height: 32px;"> 
+        {{ fa-icon 'leaf' class='font-white font-xlg'}} <span class='logo-text'> MentorMint </span>
       </a>
       <a href="/" class="navbar-brand animated flipInX">
       </a>
     </div>
-​
-    <div class="float-right collapse navbar-collapse inline-block" id="navCollapse">
-      <ul class="hidden-xs visible-sm visible-md visible-lg visible-xlg nav navbar-nav navbar-right">
-        {{#if (guest currentUser) }}
-          <li class='hidden-xs'>
-            Welcome, guest.
-          </li>
-        {{/if}}
-        {{ top-nav-drop-down }}
-        <li class="visible-xs">
-          <a><i class="fa fa-line-chart fa-fw nav-icon-text"></i>&nbsp; Admin</a> 
-        </li>
-        <li class='top-nav-btn-li'>
-          {{#link-to 'login' class='btn-header'}}
-            login
+    <div class='navbar-middle'>
+      <div class='float-left'>
+        {{ search-forums searchItems=searchItems model=model goToQuestion='goToQuestion' }}
+      </div>
+      <div class='float-right text-right btn-header-container'>
+        {{#link-to 'forum.questions.index' class='btn-header'}}
+          {{ fa-icon 'question-circle-o '}} all questions
+        {{/link-to}}
+        {{#if currentUser}}
+          {{#link-to 'forum.questions.new' class='btn-header'}}
+            {{ fa-icon 'edit' }} ask question
           {{/link-to}}
-        </li>
-        <li class="visible-xs">
-          <a class="text-capitalize">
-            <img src='/assets/img/icons/session.png' class='mm-icon' /> inbox
-          </a>
-        </li>
-        <li class="visible-xs">
-          <a>
-            <i class="fa fa-heart-o fa-fw nav-icon-text"></i>&nbsp; MentorMint
-          </a>
-        </li> 
-        <li class="visible-xs">
-          <a><i class="fa fa-user fa-fw nav-icon-text"></i>&nbsp; Profile</a>
-        </li>
-        <li class="visible-xs">
-          <a><i class="fa fa-usd fa-fw nav-icon-text"></i>&nbsp; Finance</a>
-        </li>
-        <li class="visible-xs">
-          <a href="/account-signout"><i class="fa fa-sign-out fa-fw nav-icon-text"></i>&nbsp; Sign out</a>
-        </li>
-
-        {{#if session.isAuthenticated }}
-          <li><a href="/account-create?type=mentor"><strong>Become a Mentor</strong></a></li>
-          <li><a href="/account-create?type=mentee"><strong>Find a Mentor</strong></a></li>
-          <li><a href="/account-create">Sign Up</a></li>
-          <li><a href="/account-signin">Log In</a></li>
+          {{#link-to 'forum.bookmarks' class='btn-header'}}
+            {{ fa-icon 'bookmark'}} bookmarks
+          {{/link-to}}
+          {{#link-to 'user' currentUser class='btn-header'}}
+            {{ fa-icon 'user' }} me
+          {{/link-to}}
+        {{else}}
+          {{#link-to 'login' class='btn-header'}}
+            {{ fa-icon 'user '}} login
+          {{/link-to}}
         {{/if}}
-      </ul>
+      </div>
+    </div>
+    <div class='navbar-right'>
+      <div class='float-right'>
+        {{#link-to 'login' class='btn-header border-none float-right'}}
+          {{ fa-icon 'gear' class='font-white font-xlg' }}
+        {{/link-to}}
+      </div>
     </div>
   </div>
-</nav>
+</div>

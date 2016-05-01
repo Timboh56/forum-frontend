@@ -2,7 +2,7 @@
  * Main theme for website
  * Copyright 2014 MentorMint, Inc.
  */
- 
+
  /* Site Base Theme
  ----------------------------------------------------------------------------------------------------------------*/
 .com-words {
@@ -46,7 +46,7 @@
 }
 
 .wrapper-body {
-    padding-top: 60px;
+    top: 45px;
     min-height:100%;
     position:relative;
 }
@@ -59,7 +59,7 @@
   padding: 40px 15px 20px;
 }
 .wrapper-task {
-  padding: 0px; 
+  padding: 0px;
 }
 
 .wrapper-intro {
@@ -72,7 +72,7 @@
 .mentor-wrap {
   padding:20px;
   margin-bottom: 20px;
-  background-color: #fff;   
+  background-color: #fff;
 }
 
 .teal-bg {
@@ -301,7 +301,7 @@ a.list-group-item.active {
  .btn-chat {
       border:1px solid #D7D7DD;
       border-radius:4px;
-      padding-top:4px; 
+      padding-top:4px;
       padding-bottom:4px;
       color: #FFFFFF;
       font-size:16px;
@@ -311,14 +311,14 @@ a.list-group-item.active {
  .btn-chat2 {
       border:1px solid #696996;
       border-radius:4px;
-      padding-top:4px; 
+      padding-top:4px;
       padding-bottom:4px;
       color: #696996;
       font-size:16px;
       /*font-weight:300;*/
       line-height:1.5
  }
- 
+
 .btn-social {
       color: #333;
       background-color: #FFF;
@@ -358,7 +358,7 @@ fieldset[disabled] .btn-social.active {
 .btn-green:hover,
 .btn-green:focus,
 .btn-green:active,
-.btn-green.active, 
+.btn-green.active,
 .open > .dropdown-toggle.btn-green {
   color: #FFF;
   background-color: #00c17f;
@@ -532,11 +532,11 @@ fieldset[disabled] .btn-orange-light.active {
 }
 
 .input-head-dash{
-      min-width: 140px;     
+      min-width: 140px;
 }
 
 .input-dash{
-      width: 100%;     
+      width: 100%;
 }
 
 .btn-file {
@@ -791,16 +791,16 @@ input[readonly] {
 
 #front-nav-spacing {
       padding-top: 40px;
-      padding-bottom: 20px; 
+      padding-bottom: 20px;
 }
 
 #dash-space {
       padding-top: 40px;
 }
- 
+
 .content-space {
       padding-top: 30px;
-      padding-bottom: 20px; 
+      padding-bottom: 20px;
  }
 
    /* Dashboard
@@ -824,8 +824,8 @@ input[readonly] {
       -webkit-transform: scale(1, 1);
       -moz-transform: scale(1, 1);
       -ms-transform: scale(1, 1);
-      transform: scale(1, 1); 
-} 
+      transform: scale(1, 1);
+}
 
 .dropdown-menu {
       -webkit-transform-origin: top;
@@ -834,8 +834,8 @@ input[readonly] {
       transform-origin: top;
       -webkit-animation-fill-mode: forwards;
       -moz-animation-fill-mode: forwards;
-      -ms-animation-fill-mode: forwards;   
-      animation-fill-mode: forwards; 
+      -ms-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
       -webkit-transform: scale(1, 0);
       -moz-transform: scale(1, 0);
       -ms-transform: scale(1, 0);
@@ -856,11 +856,11 @@ input[readonly] {
   max-height: 100px;
   height: 100px;
   background-color: white;
-  border-collapse: separate; 
-  border: 1px solid rgb(204, 204, 204); 
-  padding: 4px; 
-  box-sizing: content-box; 
-  -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset; 
+  border-collapse: separate;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 4px;
+  box-sizing: content-box;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
   box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
   border-top-right-radius: 3px; border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px; border-top-left-radius: 3px;
@@ -997,13 +997,13 @@ div[data-role="editor-toolbar"] {
 @media(max-width: 767px){
       #aside-md {
           width: 150px;
-      } 
+      }
 }
 @media(min-width: 768px){
       #aside-md {
           width: 270px;
-      } 
-}  
+      }
+}
 
 .aside-lg {
     width: 368px;
@@ -1121,7 +1121,7 @@ div[data-role="editor-toolbar"] {
 #note-list .note-name {
       white-space: nowrap;
       overflow: hidden;
-      margin-bottom: 6px; 
+      margin-bottom: 6px;
  }
 
 #note-list .note-desc {
@@ -1303,7 +1303,7 @@ a:hover .caret-white {
 }
 
 .list-margin {
-      margin: 2px 2px; 
+      margin: 2px 2px;
 }
 
 .line-separator {
@@ -1386,7 +1386,7 @@ p.matches-images {
   text-overflow: clip;
   text-overflow: ellipsis;
   text-overflow: "â€¦";
-} 
+}
 .introImagePanel {
   width: 48px;
   height: 48px;
@@ -1418,10 +1418,10 @@ p.matches-images {
   height: 65px;
   margin: 3px;
 }
-.programImage:hover { 
+.programImage:hover {
   transform: scale(1.1);
 }
-.addProgram:hover { 
+.addProgram:hover {
   transform: scale(1.1);
 }
 
@@ -1432,7 +1432,7 @@ p.matches-images {
 }
 
 .profileBtnPosit {
-     position: relative; 
+     position: relative;
      bottom: -60px;
 }
 
@@ -1496,10 +1496,10 @@ p.matches-images {
  .profileList {
       list-style-type:none;
  }
- 
+
 
 /*Modal
- ----------------------------------------------------------------------------------------------------------------*/ 
+ ----------------------------------------------------------------------------------------------------------------*/
 /*.modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
        -o-transition:      -o-transform .3s ease-out;
@@ -1554,14 +1554,10 @@ p.matches-images {
       border-bottom-color: #ddd;
  }
 
-.navbar-dash {
-      min-height: 60px;
-}
-
 .navbar-dash .nav-menu {
       padding-top: 0px;
       padding-bottom: 0px;
-      min-width: 100px;      
+      min-width: 100px;
 }
 
 .navbar-dash .navbar-brand {
@@ -1685,8 +1681,6 @@ p.matches-images {
 }
 
 .navbar-right {
-  font-size: 16px;
-  line-height: 16px;
   margin: 0;
   /*position: relative; top: 5px;*/
 }
@@ -1697,7 +1691,6 @@ p.matches-images {
 .navbar-right > span > span {
   font-size: 14px;
   font-weight: normal;
-  line-height: 14px;
 }
 
 /*Navtabs
@@ -1872,11 +1865,11 @@ p.blocktext {
 .center-pills > li > a,
 .center-pills > li > a:focus,
 .center-pills > li > a:hover {
-   background-color: transparent; 
+   background-color: transparent;
 }
 
-.align-inline { 
-      display: inline; 
+.align-inline {
+      display: inline;
 }
 
 .margin-sm {
@@ -2074,14 +2067,14 @@ p.blocktext {
       margin-left: -35px;
       margin-right: -35px;
       padding-top: 30px;
-      padding-bottom: 20px; 
+      padding-bottom: 20px;
  }
 
  #payment-flush {
       margin-left: -35px;
       margin-right: -35px;
       padding-top: 40px;
-      padding-bottom: 20px; 
+      padding-bottom: 20px;
  }
 
  .m-right-a {
@@ -2174,7 +2167,7 @@ p.blocktext {
 }
 
 .table-hover > thead > tr > th {
-  /*color: #726D6B;*/ 
+  /*color: #726D6B;*/
 }
 .table-hover > tbody > tr > th,
 .table-hover > tfoot > tr > th,
@@ -2266,7 +2259,7 @@ p.blocktext {
       background-color: #f8f8f8;
       border-radius: 6px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .well-fadeout {
@@ -2276,7 +2269,7 @@ p.blocktext {
       background-color: rgba(0, 0, 0, .5);
       border-radius: 6px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
  .well-dash {
@@ -2288,7 +2281,7 @@ p.blocktext {
       color: #fff;
       border-radius: 4px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
   .well-match {
@@ -2301,7 +2294,7 @@ p.blocktext {
       border-width: 1px;
       border-color:#ddd;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
 .well-dash-chat {
@@ -2314,7 +2307,7 @@ p.blocktext {
       border-width: 1px;
       border-color:#ddd;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
  .well-dash-forum {
@@ -2326,7 +2319,7 @@ p.blocktext {
       color: #fff;
       border-radius: 4px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
   .well-forum {
@@ -2334,11 +2327,11 @@ p.blocktext {
       padding: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
-      background-color: #F2F4F1; 
+      background-color: #F2F4F1;
       color: inherit;
       border-radius: 4px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
  .well-task {
@@ -2348,7 +2341,7 @@ p.blocktext {
       background-color: #f8f8f8;
       border-radius: 2px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
 .well-task-details {
@@ -2361,7 +2354,7 @@ p.blocktext {
       color: #717171;
       border-radius: 2px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05); 
+              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
  }
 
 
@@ -2407,7 +2400,7 @@ p.blocktext {
 
 /*Extra Effects*/
 
-/* Effect: Fade in and scale up 
+/* Effect: Fade in and scale up
 ----------------------------------------*/
 /*.modal.fade .modal-dialog {
   -webkit-transform: scale(0.7);
@@ -2428,7 +2421,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: Slide from the right 
+/* Effect: Slide from the right
 ----------------------------------------*/
 /*.modal.fade .modal-dialog  {
   -webkit-transform: translateX(20%);
@@ -2449,7 +2442,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: Slide from the bottom 
+/* Effect: Slide from the bottom
 ----------------------------------------*/
 /*.modal.fade .modal-dialog  {
   -webkit-transform: translateY(20%);
@@ -2470,7 +2463,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: Newspaper 
+/* Effect: Newspaper
 ----------------------------------------*/
 /*.modal {
   -webkit-transform: scale(0) rotate(720deg);
@@ -2494,7 +2487,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: fall 
+/* Effect: fall
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2506,10 +2499,10 @@ p.blocktext {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: translateZ(600px) rotateX(20deg); 
-  -moz-transform: translateZ(600px) rotateX(20deg); 
-  -ms-transform: translateZ(600px) rotateX(20deg); 
-  transform: translateZ(600px) rotateX(20deg); 
+  -webkit-transform: translateZ(600px) rotateX(20deg);
+  -moz-transform: translateZ(600px) rotateX(20deg);
+  -ms-transform: translateZ(600px) rotateX(20deg);
+  transform: translateZ(600px) rotateX(20deg);
   opacity: 0;
 }
 
@@ -2520,11 +2513,11 @@ p.blocktext {
   -webkit-transform: translateZ(0px) rotateX(0deg);
   -moz-transform: translateZ(0px) rotateX(0deg);
   -ms-transform: translateZ(0px) rotateX(0deg);
-  transform: translateZ(0px) rotateX(0deg); 
+  transform: translateZ(0px) rotateX(0deg);
   opacity: 1;
 }*/
 
-/* Effect: side fall 
+/* Effect: side fall
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2536,10 +2529,10 @@ p.blocktext {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: translate(30%) translateZ(600px) rotate(10deg); 
+  -webkit-transform: translate(30%) translateZ(600px) rotate(10deg);
   -moz-transform: translate(30%) translateZ(600px) rotate(10deg);
   -ms-transform: translate(30%) translateZ(600px) rotate(10deg);
-  transform: translate(30%) translateZ(600px) rotate(10deg); 
+  transform: translate(30%) translateZ(600px) rotate(10deg);
   opacity: 0;
 }
 
@@ -2554,7 +2547,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect:  slide and stick to top 
+/* Effect:  slide and stick to top
 ----------------------------------------*/
 /*.modal{
   top: 0;
@@ -2584,7 +2577,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: 3D flip horizontal 
+/* Effect: 3D flip horizontal
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2614,7 +2607,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: 3D flip vertical 
+/* Effect: 3D flip vertical
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2644,7 +2637,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: 3D sign 
+/* Effect: 3D sign
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2677,7 +2670,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: Super scaled 
+/* Effect: Super scaled
 ----------------------------------------*/
 /*.modal.fade .modal-dialog  {
   -webkit-transform: scale(2);
@@ -2698,7 +2691,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect: 3D slit 
+/* Effect: 3D slit
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2738,7 +2731,7 @@ p.blocktext {
   100% { transform: translateZ(0) rotateY(0deg); opacity: 1; }
 }*/
 
-/* Effect:  3D Rotate from bottom 
+/* Effect:  3D Rotate from bottom
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;
@@ -2771,7 +2764,7 @@ p.blocktext {
   opacity: 1;
 }*/
 
-/* Effect:  3D Rotate in from left 
+/* Effect:  3D Rotate in from left
 ----------------------------------------*/
 /*.modal {
   -webkit-perspective: 1300px;

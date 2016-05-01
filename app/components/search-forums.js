@@ -1,14 +1,16 @@
 import Ember from 'ember';
+import SearchForumsMixin from '../mixins/search-forums';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(SearchForumsMixin, {
   prevKeywords: '',
   keywords: '',
   hideResults: true,
+  tagName: ['span'],
   showingResults: (function() {
     if (this.get('model.length') > 0)
-      this.set('hideResults', false);
+      this.set('showResults', true);
     else
-      this.set('hideResults', true);
+      this.set('showResults', false);
 
   }).observes('model'),
 
@@ -25,7 +27,7 @@ export default Ember.Component.extend({
           prevKeywords = self.get('prevKeywords');
 
         if (currKeywords != prevKeywords) {
-          self.sendAction('searchItems', currKeywords);
+          self.get('actions.searchItems').apply(self, [currKeywords]);
         }
         self.set('prevKeywords', currKeywords)
     }, 1000);
@@ -35,7 +37,7 @@ export default Ember.Component.extend({
 
   actions: {
     goToQuestion: function(id) {
-      this.set('hideResults', true);
+      this.set('showResults', false);
       this.sendAction('goToQuestion', id);
     }
   }

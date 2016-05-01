@@ -1,0 +1,14 @@
+<div class='row font-sm'>
+  <div class='col-xs-12 padding-left-sm'>
+    <div class='full-width border-bottom search-result-row'>
+      {{#link-to 'question' model }}
+        <span class='h5 bold title'>
+          {{ model.title }}
+        </span>
+        <span class='float-right title padding-right-sm'>
+          {{ fa-icon 'user' }} {{ model.user.username }}
+        </span>
+      {{/link-to}}
+    </div>
+  </div>
+</div>

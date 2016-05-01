@@ -1,8 +1,8 @@
-<html lang="en"><head> 
-      
+<html lang="en"><head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>MentorMint</title> 
+<title>MentorMint</title>
 <meta name="description" content="Booking and reserving sessions are how mentors and mentees coordinate their meetings. MentorMint provides a precise booking platform to serve this.">
 <meta name="author" content="MentorMint">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,12 +14,13 @@
 
 {{content-for 'head-footer'}}
 
-  <body class="theme-main"> 
+  <body class="theme-main">
     <script src="assets/vendor.js"></script>
     <script src="assets/mentormint.js"></script>
     <script src='/assets/js/bootstrap-tags.min.js'></script>
     <div class="loading-container hide text-center">
       <img src='/assets/img/misc/gears.gif' class='loading-spinner-gif'/>
     </div>
+    {{ content-for 'body'}}
   </body>
 </html>

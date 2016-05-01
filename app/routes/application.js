@@ -3,6 +3,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend({
   loadingSpinner: Ember.inject.service('loading-spinner'),
+
   beforeModel: function(state) {
     var self = this,
       CurrentUserService = this.get('current-user'),
@@ -19,7 +20,7 @@ export default Ember.Route.extend({
             self.get('notifications').setup(currentUser);
           LoadingSpinnerService.stop();
             resolve(currentUser);
-          }); 
+          });
         });
       });
     });
