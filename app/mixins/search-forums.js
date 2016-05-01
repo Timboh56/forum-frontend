@@ -28,7 +28,8 @@ export default Ember.Mixin.create({
 
       var resources = self.store.query(resource_name,
         {
-          keywords: keyword
+          keywords: keyword,
+          limit: 5
         }
       );
 

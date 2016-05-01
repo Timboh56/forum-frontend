@@ -4,13 +4,18 @@ import SearchForumsMixin from '../mixins/search-forums';
 export default Ember.Component.extend(SearchForumsMixin, {
   prevKeywords: '',
   keywords: '',
-  hideResults: true,
+  showResults: false,
   tagName: ['span'],
   showingResults: (function() {
-    if (this.get('model.length') > 0)
+    var self = this;
+    if (this.get('model.length') > 0) {
       this.set('showResults', true);
-    else
+      window.document.body.addEventListener('click', function() {
+        self.set('showResults', false);
+      });
+    } else{
       this.set('showResults', false);
+    }
 
   }).observes('model'),
 
@@ -27,18 +32,12 @@ export default Ember.Component.extend(SearchForumsMixin, {
           prevKeywords = self.get('prevKeywords');
 
         if (currKeywords != prevKeywords) {
+          self.set('showResults', true);
           self.get('actions.searchItems').apply(self, [currKeywords]);
         }
         self.set('prevKeywords', currKeywords)
     }, 1000);
 
     this._super();
-  },
-
-  actions: {
-    goToQuestion: function(id) {
-      this.set('showResults', false);
-      this.sendAction('goToQuestion', id);
-    }
   }
 });

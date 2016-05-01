@@ -3,7 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   scrollPagination: Ember.inject.service('scroll-pagination'),
   model: function(params) {
-    return this.store.findAll('question', params);
+    if (params.query)
+      return this.store.query('question', params);
+    else {
+      return this.store.findAll('question', params);
+    }
   },
 
   setupController(controller, model) {

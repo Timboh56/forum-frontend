@@ -13,35 +13,37 @@
     </div>
     <div class='navbar-middle'>
       <div class='float-left'>
-        {{ search-forums searchItems=searchItems model=model goToQuestion='goToQuestion' }}
+        {{ search-forums searchItems=searchItems model=model }}
       </div>
       <div class='float-right text-right btn-header-container'>
-        {{#link-to 'forum.questions.index' class='btn-header'}}
-          {{ fa-icon 'question-circle-o '}} all questions
-        {{/link-to}}
-        {{#if currentUser}}
-          {{#link-to 'forum.questions.new' class='btn-header'}}
-            {{ fa-icon 'edit' }} ask question
+        <div class='hidden-xs visible-sm visible-md visible-lg'>
+          {{#link-to 'forum.questions.index' class='btn-header'}}
+            {{ fa-icon 'list'}} all questions
           {{/link-to}}
-          {{#link-to 'forum.bookmarks' class='btn-header'}}
-            {{ fa-icon 'bookmark'}} bookmarks
-          {{/link-to}}
-          {{#link-to 'user' currentUser class='btn-header'}}
-            {{ fa-icon 'user' }} me
-          {{/link-to}}
-        {{else}}
-          {{#link-to 'login' class='btn-header'}}
-            {{ fa-icon 'user '}} login
-          {{/link-to}}
-        {{/if}}
+          {{#if currentUser}}
+            {{#link-to 'forum.questions.new' class='btn-header'}}
+              {{ fa-icon 'edit' }} ask question
+            {{/link-to}}
+            {{#link-to 'forum.bookmarks' class='btn-header'}}
+              {{ fa-icon 'bookmark'}} bookmarks
+            {{/link-to}}
+            {{#link-to 'user' currentUser class='btn-header'}}
+              {{ fa-icon 'user' }} me
+            {{/link-to}}
+          {{else}}
+            {{#link-to 'login' class='btn-header'}}
+              {{ fa-icon 'user '}} login
+            {{/link-to}}
+          {{/if}}
+        </div>
       </div>
     </div>
-    <div class='navbar-right'>
+    <!--<div class='navbar-right hidden-xs hidden-sm visible-md visible-lg visible-xlg'>
       <div class='float-right'>
         {{#link-to 'login' class='btn-header border-none float-right'}}
           {{ fa-icon 'gear' class='font-white font-xlg' }}
         {{/link-to}}
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
