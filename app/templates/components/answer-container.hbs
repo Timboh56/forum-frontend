@@ -16,9 +16,11 @@
     <p>
       {{ answer.text }}
     </p>
-    <div class='m-t-xlg'>
-      {{ comment-box getComments="getComments" postComment='postComment' commentable=answer commentableType="answer" }}
+    <div class='m-t-md'>
       {{ profile-container model=answer }}
+    </div>
+    <div class='m-t-md'>
+      {{ comment-box getComments="getComments" postComment='postComment' commentable=answer commentableType="answer" }}
     </div>
   </div>
 </div>
