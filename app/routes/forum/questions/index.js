@@ -18,7 +18,8 @@ export default Ember.Route.extend({
     }
   },
 
-  setupController(controller, model) {
+  setupController(controller, model, q) {
+    controller.set('qp', q.queryParams);
     controller.set('model', model);
     this.get('scrollPagination').initializePaginator(model, "#forum-questions-index-container");
   }

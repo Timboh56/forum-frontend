@@ -2,6 +2,15 @@
 
 <div class="tab-content p-top" id="forum-questions-index-container">
   <div class='container-fluid'>
+    {{#if qp.keywords }}
+      <div class='row h4'>
+        <div class="col-xs-12">
+          Searching keywords <span class='bold'>
+            "{{ qp.keywords }}"
+          </span>
+        </div>
+      </div>
+    {{/if}}
     <div role="tabpanel" class="row active" id="qa">
       <div class="col-sm-12">
         <div id="mainTable">
@@ -13,7 +22,7 @@
             </tbody>
           </table>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 </div>
