@@ -11,7 +11,7 @@ export default Ember.Route.extend({
   },
 
   model: function(params) {
-    if (params.query)
+    if (params.query && params.query == true)
       return this.store.query('question', params);
     else {
       return this.store.findAll('question', params);

@@ -17,7 +17,7 @@
       </div>
       <div class='float-right text-right btn-header-container'>
         <div class='hidden-xs visible-sm visible-md visible-lg'>
-          {{#link-to 'forum.questions.index' class='btn-header'}}
+          {{#link-to 'forum.questions.index' (query-params keywords=null  query=false) class='btn-header'}}
             {{ fa-icon 'list'}} all questions
           {{/link-to}}
           {{#if currentUser}}
