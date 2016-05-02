@@ -285,7 +285,10 @@ li.dropdown { padding: 2px 24px !important; }
 .search-forums-container {
   background: $teal;
 }
-
+.profile-pic-container {}
+.forum-index-container {
+  padding: 10px 30px;
+}
 .alert {
   margin-bottom: 0 !important;
 }
@@ -402,7 +405,6 @@ li.dropdown { padding: 2px 24px !important; }
     display: inline-block;
   }
 }
-.profile-pic-container {}
 
 .profile-pic-lg {
   height: 80px;
