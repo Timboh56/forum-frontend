@@ -79,11 +79,9 @@ textarea { resize: none; }
 
 @keyframes fadein {
     from {
-      top: -1000px;
       opacity: 0;
     }
     to   {
-      top: 0px;
       opacity: 1;
     }
 }
@@ -91,7 +89,6 @@ textarea { resize: none; }
 /* Firefox < 16 */
 @-moz-keyframes fadein {
     from {
-      top: -1000px;
       opacity: 0;
     }
     to   {
@@ -103,7 +100,6 @@ textarea { resize: none; }
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
     from {
-      top: -1000px;
       opacity: 0;
     }
     to   {
@@ -115,7 +111,6 @@ textarea { resize: none; }
 /* Internet Explorer */
 @-ms-keyframes fadein {
     from {
-      top: -1000px;
       opacity: 0;
     }
     to   {
@@ -289,7 +284,9 @@ textarea { resize: none; }
 }
 
 li.dropdown { padding: 2px 24px !important; }
-
+.container-fluid {
+  @extend .fade-in;
+}
 .search-forums-container {
   background: $teal;
 }
