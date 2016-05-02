@@ -9,6 +9,10 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     let tabs = ENV.RESOURCES.BOOKMARK_TABS;
     controller.set('tabs', tabs);
+    controller.set('model', model);
+    this.controllerFor('forum.bookmarks.index').set('sortedModel', model);
+    this.controllerFor('forum.bookmarks.newest').set('sortedModel', model);
+    this.controllerFor('forum.bookmarks.most-active').set('sortedModel', model);
   },
 
   actions: {
