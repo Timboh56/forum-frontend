@@ -14,15 +14,6 @@ export default Ember.Route.extend({
 
     controller.set('tabs', [
       {
-        label: 'questions',
-        id: 'index',
-        icon: 'edit',
-        linkTo: 'user.index',
-        modelName: 'question',
-        recordId: model.id,
-        count: questions.length
-      },
-      {
         label: 'answers',
         id: 'answers',
         icon: 'edit',
@@ -30,6 +21,15 @@ export default Ember.Route.extend({
         modelName: 'answer',
         recordId: model.id,
         count: answers.length
+      },
+      {
+        label: 'questions',
+        id: 'index',
+        icon: 'edit',
+        linkTo: 'user.index',
+        modelName: 'question',
+        recordId: model.id,
+        count: questions.length
       }
     ]);
   }

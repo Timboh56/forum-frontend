@@ -28,8 +28,8 @@ export default Ember.Component.extend({
       else
         this.get('router').transitionTo(link).then(LoadingSpinner.stop, LoadingSpinner.stop);
 
-      if (tab.count && tab.modelName)
-        this.set('forumHeaderLabel', tab.count + ' ' + tab.modelName + '(s)')
+      if (tab.count || tab.modelName)
+        this.set('forumHeaderLabel', ( tab.count || 0 ) + ' ' + tab.modelName + ( tab.count && tab.count == 1 ? '' : 's'))
 
       this.set('selectedTab', tab.label);
 
