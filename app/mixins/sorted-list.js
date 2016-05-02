@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const sortableProperties = [ 
+const sortableProperties = [
   {
     propertyName: 'sortedByViewCount',
     sortedProperty: 'viewCount'
@@ -42,7 +42,7 @@ for (var i = 0; i < sortableProperties.length; i++) ( function(s){
     this.set(propertyName, Ember.ArrayProxy.create({
       content: sortedModel
     }).sortBy(sortedProperty).reverse());
-  }.observes(propertyName);
+  }.observes(mixin['sortedModelName']);
 
 })(sortableProperties[i]);
 
