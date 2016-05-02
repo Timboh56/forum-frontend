@@ -24,9 +24,9 @@ export default Ember.Component.extend({
       LoadingSpinner.start();
 
       if (tab.recordId)
-        this.get('router').transitionTo(link, tab.recordId).then(LoadingSpinner.stop);
+        this.get('router').transitionTo(link, tab.recordId).then(LoadingSpinner.stop, LoadingSpinner.stop);
       else
-        this.get('router').transitionTo(link).then(LoadingSpinner.stop);
+        this.get('router').transitionTo(link).then(LoadingSpinner.stop, LoadingSpinner.stop);
 
       if (tab.count && tab.modelName)
         this.set('forumHeaderLabel', tab.count + ' ' + tab.modelName + '(s)')
