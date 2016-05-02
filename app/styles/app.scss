@@ -45,7 +45,11 @@ a:hover, a:visited, a:link, a:active {
 .m-t-lg { margin-top: 32px; }
 .m-t-xlg { margin-top: 64px; }
 .m-t-md { margin-top: 16px; }
-.m-t-sm { margin-top: 8px; }
+.m-b-sm { margin-bottom: 8px; }
+.m-b-lg { margin-bottom: 32px; }
+.m-b-xlg { margin-bottom: 64px; }
+.m-b-md { margin-bottom: 16px; }
+.m-b-sm { margin-bottom: 8px; }
 .p-t-lg { padding-top: 32px; }
 .p-t-md { padding-top: 16px; }
 .p-t-sm { padding-top: 8px; }
@@ -152,6 +156,10 @@ textarea { resize: none; }
 }
 .border-left-blue { border-left: 3px solid $darkblue; }
 .no-border { border: none !important; }
+.tooltip {
+  padding: 10px !important;
+  font-size: 18px !important;
+}
 @media (max-width: 640px) { .border-left-blue { border-left: none !important; }}
 .inline-block { display: inline-block !important; }
 .full-width { width: 100%; }

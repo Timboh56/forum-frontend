@@ -17,13 +17,7 @@
           Badges:
 
           {{#each model.userBadges as |userBadge| }}
-            <div class='badge-container'>
-              <span class='bold'>
-                {{ userBadge.badge.name }}
-              </span>
-              <span class='badge-icon' style='background: {{ userBadge.badge.colorHex }};'>
-              </span>
-            </div>
+            {{ badge-container userBadge=userBadge}}
           {{/each}}
         </div>
       {{/if}}
