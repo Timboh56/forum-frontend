@@ -20,6 +20,9 @@
           {{#link-to 'forum.questions.index' (query-params keywords=''  query=false) class='btn-header'}}
             {{ fa-icon 'list'}} all questions
           {{/link-to}}
+          {{#link-to 'forum.tags' class='btn-header'}}
+            {{ fa-icon 'star'}} popular tags
+          {{/link-to}}
           {{#if currentUser}}
             {{#link-to 'forum.questions.new' class='btn-header'}}
               {{ fa-icon 'edit' }} ask question

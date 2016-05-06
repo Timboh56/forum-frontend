@@ -43,6 +43,7 @@ Router.map(function() {
       this.route('most-voted');
     });
     this.route('inbox');
+    this.route('tags');
     this.resource('tag', { path: '/tag/:text' });
   });
   this.route("404", { path: "*path"});

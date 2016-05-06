@@ -245,7 +245,7 @@ textarea { resize: none; }
   font-family: 'NationalRegular';
   padding: 3px 15px !important;
   text-align: center;
-  border-right: 1px solid #111;
+  //border-right: 1px solid #111;
   height: auto !important;
   display: inline-block;
   font-size: 14px;
@@ -517,7 +517,7 @@ body.theme-main #content {
 }
 .navbar {
   z-index: 99999;
-  background: #333;
+  background: #45BBAC;//#333;
 }
 .navbar::before, nav::before, .navbar::after, nav::after {
   content: none !important;
