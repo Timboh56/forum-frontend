@@ -11,6 +11,14 @@
       </h4>
       <div class='m-t-md font-sm'>
         Most popular tags:
+        {{#each model as |tag|}}
+          {{#link-to 'tag' tag }}
+            <span class='m-t-lg m-l-lg'>
+              <span class='tag m-t-lg m-l-md'> {{ tag.text }} </span>
+               <b>x{{ tag.taggingsCount }}</b>
+            </span>
+          {{/link-to}}
+        {{/each}}
       </div>
     </div>
   </div>
