@@ -34,7 +34,7 @@
     </div>
     <div class="form-group">
       <div class="col-md-offset-1 col-md-10 col-sm-12">
-        {{textarea class='form-control' required=true value=model.text placeholder='Describe your question.' }}
+        {{summer-note height=contentHeight btnSize=bs-sm content=model.text airMode=false focus=false header="Example" disabled=editingDisabled disabledOptions=disabledOptions}}
       </div>
     </div>
     <div class="form-group">

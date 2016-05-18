@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['application'],
   readTags: function () {
     var tagContainers = $('.tag.label'),
       tagString = '';
@@ -11,6 +10,11 @@ export default Ember.Controller.extend({
 
     return tagString;
   },
+
+  contentHeight: 200,
+  postContent: "Some intial contents go here. Lorem Ipsum is simply dummy text of the printing.",
+  editingDisabled: false,
+
 
   actions: {
     createQuestion() {
@@ -25,9 +29,9 @@ export default Ember.Controller.extend({
           priority: 100,
         });
         $("html, body").animate(
-          { 
+          {
             scrollTop: 0
-          }, 
+          },
         "slow");
         this.transitionToRoute('question', question);
       })
@@ -45,4 +49,4 @@ export default Ember.Controller.extend({
       this.transitionToRoute('forum.questions');
     }
   }
-}); 
+});
