@@ -3,25 +3,22 @@
     <div class="navbar-left navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
         <span class="sr-only">Toggle Navigation</span>
-          {{ fa-icon 'leaf' class='font-white font-xlg' }}
+          {{ fa-icon 'leaf' class='font-xlg' }}
       </button>
       <a href="/forum/" class="no-padding-top navbar-brand animated flipInX">
-        {{ fa-icon 'leaf' class='font-white font-xlg'}} <span class='logo-text'> MentorMint </span>
+        <img src='assets/img/logos/default.png' class='logo' />
       </a>
       <a href="/" class="navbar-brand animated flipInX">
       </a>
     </div>
     <div class='navbar-middle'>
-      <div class='float-left'>
-        {{ search-forums searchItems=searchItems model=model }}
-      </div>
-      <div class='float-right text-right btn-header-container'>
+      <div class='float-left text-right btn-header-container'>
         <div class='hidden-xs visible-sm visible-md visible-lg'>
           {{#link-to 'forum.questions.index' (query-params keywords=''  query=false) class='btn-header'}}
-            {{ fa-icon 'list'}} all questions
+            {{ fa-icon 'list'}} questions
           {{/link-to}}
           {{#link-to 'forum.tags' class='btn-header'}}
-            {{ fa-icon 'star'}} popular tags
+            {{ fa-icon 'star'}} tags
           {{/link-to}}
           {{#if currentUser}}
             {{#link-to 'forum.questions.new' class='btn-header'}}
@@ -41,15 +38,17 @@
         </div>
       </div>
     </div>
-    <!--<div class='navbar-right hidden-xs hidden-sm visible-md visible-lg visible-xlg'>
+    <div class='navbar-right hidden-xs hidden-sm visible-md visible-lg visible-xlg'>
       <div class='float-right'>
-        {{#link-to 'login' class='btn-header border-none float-right'}}
-          {{ fa-icon 'gear' class='font-white font-xlg' }}
+        {{#link-to 'login' class='btn-header gear border-none float-right'}}
+          Dashboard {{ fa-icon 'gear' class='font-xlg' }}
         {{/link-to}}
       </div>
-    </div> -->
+    </div>
   </div>
-  <div class='row'>
-
+  <div class='top-nav-second-row'>
+    <div class='search-forums-container'>
+      {{ search-forums searchItems=searchItems model=model }}
+    </div>
   </div>
 </div>

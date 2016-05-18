@@ -1,4 +1,7 @@
-{{input type='text' value=keywords placeholder='Search for a question topic' class='float-right search-forums-input form-control' }}
+{{input type='text' value=keywords placeholder='Search for a question topic' class='float-left search-forums-input form-control' }}
+<span class='btn'>
+  {{ fa-icon 'search' }}
+</span>
 {{#if showResults }}
   <div class='search-results-container full-width shadow'>
     {{#if model}}
