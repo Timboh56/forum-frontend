@@ -14,6 +14,9 @@
     <div class='navbar-middle'>
       <div class='float-left text-right btn-header-container'>
         <div class='hidden-xs visible-sm visible-md visible-lg'>
+          {{#link-to 'forum.questions.new' class='btn-header btn-orange'}}
+            {{ fa-icon 'edit' }} ask question
+          {{/link-to}}
           {{#link-to 'forum.questions.index' (query-params keywords=''  query=false) class='btn-header'}}
             {{ fa-icon 'list'}} questions
           {{/link-to}}
@@ -21,9 +24,6 @@
             {{ fa-icon 'star'}} tags
           {{/link-to}}
           {{#if currentUser}}
-            {{#link-to 'forum.questions.new' class='btn-header'}}
-              {{ fa-icon 'edit' }} ask question
-            {{/link-to}}
             {{#link-to 'forum.bookmarks' class='btn-header'}}
               {{ fa-icon 'bookmark'}} bookmarks
             {{/link-to}}
