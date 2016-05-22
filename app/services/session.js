@@ -12,6 +12,10 @@ export default Ember.Service.extend({
 
       console.log(apiToken);
       console.log(apiToken2);
+      var x = document.cookie;
+
+      console.log(x);
+
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       $.ajax({
