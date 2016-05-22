@@ -7,9 +7,11 @@ export default Ember.Service.extend({
     var self = this,
       username = Cookies.get('User'),
       token = Cookies.get('Token'),
-      apiToken = Cookies.get('_mentormint-api_session');
+      apiToken = Cookies.get('_mentormint-api_session'),
+      apiToken2 = Cookies.get('mentormint-api_session');
 
-      debugger
+      console.log(apiToken);
+      console.log(apiToken2);
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       $.ajax({
