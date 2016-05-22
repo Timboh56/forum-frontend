@@ -6,7 +6,10 @@ export default Ember.Service.extend({
   getCredentials: function() {
     var self = this,
       username = Cookies.get('User'),
-      token = Cookies.get('Token');
+      token = Cookies.get('Token'),
+      apiToken = Cookies.get('_mentormint-api_session');
+
+      debugger
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       $.ajax({
