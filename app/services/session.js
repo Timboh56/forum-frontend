@@ -2,26 +2,35 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 export default Ember.Service.extend({
-  routing: Ember.inject.service('-routing'),
 
   getCredentials: function() {
     var self = this,
-      username = Cookies.get('User'),
+      username = Cookies.get('User') || 'test_user',
       token = Cookies.get('Token');
-      console.log(username);
-      console.log(token);
-      var x = document.cookie;
 
-      console.log(x);
+    return self.get('login').apply(this, [{
+      username: username,
+      token: token
+    }]);
+  },
 
-    if( username && token) {
-      return new Ember.RSVP.Promise(function(resolve, reject) {
+  login: function(params) {
+    var self = this,
+      email = params['email'],
+      username = params['username'],
+      token = params['token'],
+      password = params['password'];
+
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      if(username || token || email || pasword) {
         $.ajax({
           type: 'POST',
           url: ENV.APP.LOGIN_PATH,
           data: {
-           username: username,
-           token: token
+            email: email,
+            username: username,
+            token: token,
+            password: password
           },
 
           dataType: 'json',
@@ -44,10 +53,7 @@ export default Ember.Service.extend({
             reject();
           }
         });
-      });
-    } else {
-      console.log("You are not logged in");
-      this.get("routing").transitionTo("login");
-    }
-  },
+      } else reject();
+    });
+  }
 });

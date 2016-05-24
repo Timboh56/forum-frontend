@@ -11,36 +11,10 @@ export default Ember.Controller.extend({
   actions: {
     login() {
       let options = this.get('options'),
-        Session = this.get('session');
+        Session = this.get('session'),
+        params = this.get('options');
 
-      return new Ember.RSVP.Promise((resolve, reject) => {
-          Ember.$.ajax({
-            url: ENV.APP.LOGIN_PATH,
-            type: 'POST',
-            data: JSON.stringify({
-                username: options.email,
-                password: options.password
-            }),
-            beforeSend(xhr) {
-              xhr.setRequestHeader('Accept', 'application/vnd.api+json');
-              xhr.setRequestHeader('AUTHORIZATION_TOKEN',Session.get('authToken'));
-              xhr.setRequestHeader('AUTHORIZATION', ENV.APIKEY);
-            },
-            contentType: 'application/json;charset=utf-8',
-            dataType: 'json'
-          }).then(function(response) {
-            Ember.run(function() {
-              resolve({
-                token: response.id_token
-              });
-            });
-          }, function(xhr, status, error) {
-              var response = xhr.responseText;
-              Ember.run(function() {
-                  reject(response);
-              });
-          });
-      });
+      Session.login(params);
     }
   }
 });

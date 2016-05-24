@@ -8,7 +8,8 @@ export default Ember.Route.extend({
     var self = this,
       CurrentUserService = this.get('current-user'),
       SessionService = this.get('session'),
-      LoadingSpinnerService = self.get('loadingSpinner');
+      LoadingSpinnerService = self.get('loadingSpinner'),
+      flashMessages = this.get('flashMessages');
 
     LoadingSpinnerService.start();
 
@@ -18,9 +19,14 @@ export default Ember.Route.extend({
         SessionService.getCredentials().then(function() {
           CurrentUserService.getCurrentUser().then(function(currentUser) {
             self.get('notifications').setup(currentUser);
-          LoadingSpinnerService.stop();
+            LoadingSpinnerService.stop();
             resolve(currentUser);
           });
+        }, function() {
+          resolve();
+          flashMessages.danger('Please login!');
+          LoadingSpinnerService.stop();
+          self.transitionTo('login');
         });
       });
     });
