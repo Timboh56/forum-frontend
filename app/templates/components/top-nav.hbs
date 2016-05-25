@@ -27,9 +27,6 @@
             {{#link-to 'forum.bookmarks' class='btn-header'}}
               {{ fa-icon 'bookmark'}} bookmarks
             {{/link-to}}
-            {{#link-to 'user' currentUser class='btn-header'}}
-              {{ fa-icon 'user' }} me
-            {{/link-to}}
           {{else}}
             {{#link-to 'login' class='btn-header'}}
               {{ fa-icon 'user '}} login
@@ -40,7 +37,7 @@
     </div>
     <div class='navbar-right hidden-xs hidden-sm visible-md visible-lg visible-xlg'>
       <div class='float-right'>
-        {{#link-to 'login' class='btn-header gear border-none float-right'}}
+        {{#link-to 'user' currentUser class='btn-header'}}
           Dashboard {{ fa-icon 'gear' class='font-xlg' }}
         {{/link-to}}
       </div>
