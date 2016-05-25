@@ -331,9 +331,8 @@ li.dropdown { padding: 2px 24px !important; }
 .search-results-container {
   position: fixed;
   background: white;
-  width: $searchWidth;
+  width: 500px;
   top: 104px;
-  margin: 0;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
   -webkit-transform: scale(1, 1);
@@ -341,6 +340,7 @@ li.dropdown { padding: 2px 24px !important; }
     -ms-transform: scale(1, 1);
     transform: scale(1, 1);
     transition: all 1s;
+  margin-left: 10px;
   .search-results-inner-padding {
     padding: 15px;
   }
@@ -596,7 +596,7 @@ body.theme-main #content {
     height: 60px;
     i {
       line-height: 50px;
-      height: 51px;
+      height: 51  px;
     }
   }
 
