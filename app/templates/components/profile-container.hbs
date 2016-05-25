@@ -3,7 +3,7 @@
     <i class='fa fa-user m-r-sm'></i> Posted by
     {{#link-to 'user' model.user.id class='bold'}}
       <span class='profile-pic-container m-l-sm'>
-        <img src='/assets/img/misc/profilepic.jpg' class='profile-pic-sm' />
+        <img src='https://mentormint.com/assets/img/get-image.php?name={{ model.user.username }}&size=thumb' class='profile-pic-sm' />
       </span>
       {{ model.user.username }}
     {{/link-to}}
@@ -16,7 +16,7 @@
     <i class="fa fa-comment">
     </i> Answered by
     <span class='profile-pic-container m-l-sm'>
-      <img src='https://mentormint.com/assets/img/get-image.php?name=Tim_Hui&size=thumb' class='profile-pic-sm' />
+      <img src='https://mentormint.com/assets/img/get-image.php?name={{ model.lastAnswererUsername }}&size=thumb' class='profile-pic-sm' />
     </span>
     {{#link-to 'user' model.lastAnswererUsername }}
       {{ model.lastAnswererUsername }}
