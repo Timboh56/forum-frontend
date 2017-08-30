@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'mentormint',
+    modulePrefix: 'forum',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -75,7 +75,7 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-    APIKEY: 'e14b6cbf8c3b80d0bd1a680d984ca997',
+    APIKEY: '004fb7c5fe59efaac02f8e69363b27df',
     CONSTANTS: {
       GOOGLE_API_URL: 'https://apis.google.com/js/platform.js'
     },

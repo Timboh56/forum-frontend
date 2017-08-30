@@ -26,7 +26,7 @@ export default Ember.Route.extend({
           resolve();
           flashMessages.danger('Please login!');
           LoadingSpinnerService.stop();
-          window.location.href = 'https://dev.mentormint.com/';
+          self.transitionTo('login');
         });
       });
     });
